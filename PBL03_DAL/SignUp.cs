@@ -10,11 +10,18 @@ using System.Windows.Forms;
 
 namespace PBL03_DAL
 {
-    public partial class Form1 : Form
+    public partial class SignUp : Form
     {
-        public Form1()
+        public SignUp()
         {
             InitializeComponent();
+        }
+
+        private void btnreturn_Click(object sender, EventArgs e)
+        {
+            Login lg = new Login();
+            this.Hide();
+            lg.Show();  
         }
     }
 }

@@ -25,6 +25,33 @@ namespace PBL03_DAL
 
         }
 
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            Login lg = new Login();
+            this.Hide();
+            lg.Show();
+        }
 
+        private void guna2Button4_Click(object sender, EventArgs e)
+        {
+            QLDocGia qldg = new QLDocGia();
+            this.Hide();
+            qldg.Show();
+        }
+
+        private void guna2Button5_Click(object sender, EventArgs e)
+        {
+            QLNV qlnv = new QLNV();
+            this.Hide();
+            qlnv.Show();    
+        }
+
+        private void guna2Button6_Click(object sender, EventArgs e)
+        {
+            QLMuonTra qlmt = new QLMuonTra();
+            this.Hide();
+            qlmt.Show();
+
+        }
     }
 }

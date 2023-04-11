@@ -10,24 +10,24 @@ using System.Windows.Forms;
 
 namespace PBL03_DAL
 {
-    public partial class QLSach : Form
+    public partial class QLDocGia : Form
     {
-        public QLSach()
+        public QLDocGia()
         {
             InitializeComponent();
         }
 
-        private void guna2Button2_Click(object sender, EventArgs e)
+        private void btnExitDG_Click(object sender, EventArgs e)
         {
             MainForm mf = new MainForm();
             this.Hide();
             mf.Show();
         }
 
-        private void btnthemS_Click(object sender, EventArgs e)
+        private void btnthemDG_Click(object sender, EventArgs e)
         {
-            FormAddSach fas = new FormAddSach();
-            fas.Show();
+            FormAddDocGia fdg = new FormAddDocGia();
+            fdg.Show();
         }
     }
 }

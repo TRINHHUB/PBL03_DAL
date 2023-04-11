@@ -63,6 +63,16 @@ namespace PBL03_DAL.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap download {
+            get {
+                object obj = ResourceManager.GetObject("download", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Free_Vector___Hand_drawn_flat_design_library_logo_template {
             get {
                 object obj = ResourceManager.GetObject("Free Vector _ Hand drawn flat design library logo template", resourceCulture);

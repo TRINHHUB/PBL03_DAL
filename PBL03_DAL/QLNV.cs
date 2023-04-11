@@ -10,11 +10,18 @@ using System.Windows.Forms;
 
 namespace PBL03_DAL
 {
-    public partial class QL : Form
+    public partial class QLNV : Form
     {
-        public QL()
+        public QLNV()
         {
             InitializeComponent();
+        }
+
+        private void btnexitNV_Click(object sender, EventArgs e)
+        {
+            MainForm mf = new MainForm();
+            this.Hide();
+            mf.Show();
         }
     }
 }

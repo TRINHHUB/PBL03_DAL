@@ -10,24 +10,18 @@ using System.Windows.Forms;
 
 namespace PBL03_DAL
 {
-    public partial class QLSach : Form
+    public partial class QLMuonTra : Form
     {
-        public QLSach()
+        public QLMuonTra()
         {
             InitializeComponent();
         }
 
-        private void guna2Button2_Click(object sender, EventArgs e)
+        private void btnexitMT_Click(object sender, EventArgs e)
         {
             MainForm mf = new MainForm();
             this.Hide();
             mf.Show();
-        }
-
-        private void btnthemS_Click(object sender, EventArgs e)
-        {
-            FormAddSach fas = new FormAddSach();
-            fas.Show();
         }
     }
 }

@@ -10,25 +10,21 @@ using System.Windows.Forms;
 
 namespace PBL03_DAL
 {
-    public partial class Login : Form
+    public partial class FormAddSach : Form
     {
-        public Login()
+        public FormAddSach()
         {
             InitializeComponent();
         }
 
-        private void guna2Button2_Click(object sender, EventArgs e)
-        {
-            SignUp sgu = new SignUp();
-            this.Hide();
-            sgu.Show();
-        }
-
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-            MainForm mf = new MainForm();
+
+        }
+
+        private void btnexitaddS_Click(object sender, EventArgs e)
+        {
             this.Hide();
-            mf.Show();
         }
     }
 }
