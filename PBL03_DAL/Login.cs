@@ -1,4 +1,5 @@
 ﻿using System;
+using System.CodeDom;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,7 @@ namespace PBL03_DAL
 {
     public partial class Login : Form
     {
+        private QLNS qlns = new QLNS();
         public Login()
         {
             InitializeComponent();
@@ -26,9 +28,51 @@ namespace PBL03_DAL
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-            MainForm mf = new MainForm();
-            this.Hide();
-            mf.Show();
+            
+            string username = txtTK.Text;
+            string password = txtMK.Text;
+            CheckLogin(username,password);
+
+        }
+        public void CheckLogin(string username, string password)
+        {
+            var user = qlns.accountts.Where(p => p.TaiKhoan.Equals(username)).ToList();
+
+            // kiểm tra xem tài khoản có tồn tại trong cơ sở dữ liệu hay không
+            if(user.Count() > 0)
+            {
+                // tồn tại,tiếp theo kiểm tra xem mật khẩu có đúng hay không ?
+                // do user là 1 collection( ở trên đã ToList() ) nên chỉ lấy bản ghi đầu tiên để kiểm tra
+                if (user[0].MatKhau.Equals(password))
+                {
+                    //khớp
+                    MessageBox.Show("Đăng nhập thành công!");
+                    MainForm mf = new MainForm();
+                    this.Hide();
+                    mf.Show();
+                }
+                else
+                {
+                    //không khớp
+                    MessageBox.Show("Mật khẩu không đúng,vui lòng nhập lại");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Tài khoản không tồn tại trong hệ thống");
+            }
+        }
+
+        private void hideMK_CheckedChanged(object sender, EventArgs e)
+        {
+            if (hideMK.Checked.Equals(false))
+            {
+                txtMK.PasswordChar = '*';
+            }
+            else
+            {
+                txtMK.PasswordChar = '\0';
+            }
         }
     }
 }

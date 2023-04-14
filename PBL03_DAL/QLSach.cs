@@ -29,5 +29,34 @@ namespace PBL03_DAL
             FormAddSach fas = new FormAddSach();
             fas.Show();
         }
+
+        private void btnviewS_Click(object sender, EventArgs e)
+        {
+            ShowDGV();
+            AddColumn();
+        }
+        public void ShowDGV()
+        {
+            QLNS qlns = new QLNS();
+            dgrS.DataSource = qlns.saches
+            .Select(p => new
+            {
+                p.masach,
+                p.tensach,
+                p.namxb,
+                p.nxb.tennxb,
+                p.tacgia.tentacgia,
+                p.theloai.tentheloai,
+                p.soluong,
+                p.ghichu,
+                p.khusach
+            }).ToList();
+        }
+        public void AddColumn()
+        {
+            var newColumn = new DataGridViewTextBoxColumn();
+            newColumn.Name = "NewColumn";
+            newColumn.HeaderText = "New Column Header";
+        }
     }
 }

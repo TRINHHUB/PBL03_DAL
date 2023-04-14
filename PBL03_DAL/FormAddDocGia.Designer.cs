@@ -216,6 +216,7 @@
             this.btnokaddDG.TabIndex = 9;
             this.btnokaddDG.Text = "OK";
             this.btnokaddDG.UseTransparentBackground = true;
+            this.btnokaddDG.Click += new System.EventHandler(this.btnokaddDG_Click);
             // 
             // txtaddsdtDG
             // 

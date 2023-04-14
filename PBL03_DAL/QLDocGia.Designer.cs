@@ -39,6 +39,12 @@
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.dgrDG = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.MaDG = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenDG = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgaySinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DiaChiDG = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.genderDG = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtTKDG = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnTKDG = new Guna.UI2.WinForms.Guna2Button();
             this.btnviewDG = new Guna.UI2.WinForms.Guna2Button();
@@ -63,7 +69,7 @@
             this.MenuAdmin.FillColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(198)))), ((int)(((byte)(184)))));
             this.MenuAdmin.Location = new System.Drawing.Point(0, 0);
             this.MenuAdmin.Name = "MenuAdmin";
-            this.MenuAdmin.Size = new System.Drawing.Size(143, 487);
+            this.MenuAdmin.Size = new System.Drawing.Size(143, 520);
             this.MenuAdmin.TabIndex = 1;
             // 
             // btnExitDG
@@ -165,6 +171,7 @@
             // 
             // dgrDG
             // 
+            this.dgrDG.AllowUserToResizeColumns = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             this.dgrDG.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -177,6 +184,13 @@
             this.dgrDG.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgrDG.ColumnHeadersHeight = 4;
             this.dgrDG.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.dgrDG.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.MaDG,
+            this.TenDG,
+            this.NgaySinh,
+            this.DiaChiDG,
+            this.SDT,
+            this.genderDG});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -186,10 +200,11 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgrDG.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgrDG.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgrDG.Location = new System.Drawing.Point(160, 162);
+            this.dgrDG.Location = new System.Drawing.Point(160, 148);
             this.dgrDG.Name = "dgrDG";
             this.dgrDG.RowHeadersVisible = false;
-            this.dgrDG.Size = new System.Drawing.Size(704, 302);
+            this.dgrDG.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.dgrDG.Size = new System.Drawing.Size(704, 360);
             this.dgrDG.TabIndex = 3;
             this.dgrDG.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgrDG.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -212,6 +227,48 @@
             this.dgrDG.ThemeStyle.RowsStyle.Height = 22;
             this.dgrDG.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgrDG.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            // 
+            // MaDG
+            // 
+            this.MaDG.DataPropertyName = "madocgia";
+            this.MaDG.DividerWidth = 2;
+            this.MaDG.HeaderText = "Mã Độc Giả";
+            this.MaDG.Name = "MaDG";
+            // 
+            // TenDG
+            // 
+            this.TenDG.DataPropertyName = "hoten";
+            this.TenDG.DividerWidth = 2;
+            this.TenDG.HeaderText = "Họ Tên";
+            this.TenDG.Name = "TenDG";
+            // 
+            // NgaySinh
+            // 
+            this.NgaySinh.DataPropertyName = "ngaysinh";
+            this.NgaySinh.DividerWidth = 2;
+            this.NgaySinh.HeaderText = "Ngày Sinh";
+            this.NgaySinh.Name = "NgaySinh";
+            // 
+            // DiaChiDG
+            // 
+            this.DiaChiDG.DataPropertyName = "diachi";
+            this.DiaChiDG.DividerWidth = 2;
+            this.DiaChiDG.HeaderText = "Địa Chỉ";
+            this.DiaChiDG.Name = "DiaChiDG";
+            // 
+            // SDT
+            // 
+            this.SDT.DataPropertyName = "sdt";
+            this.SDT.DividerWidth = 2;
+            this.SDT.HeaderText = "SDT";
+            this.SDT.Name = "SDT";
+            // 
+            // genderDG
+            // 
+            this.genderDG.DataPropertyName = "gioitinh";
+            this.genderDG.DividerWidth = 2;
+            this.genderDG.HeaderText = "Giới Tính";
+            this.genderDG.Name = "genderDG";
             // 
             // txtTKDG
             // 
@@ -285,6 +342,7 @@
             this.btnviewDG.Text = "View";
             this.btnviewDG.TextOffset = new System.Drawing.Point(10, 0);
             this.btnviewDG.UseTransparentBackground = true;
+            this.btnviewDG.Click += new System.EventHandler(this.btnviewDG_Click);
             // 
             // btnxoaDG
             // 
@@ -338,6 +396,7 @@
             this.btneditDG.Text = "Sửa";
             this.btneditDG.TextOffset = new System.Drawing.Point(10, 0);
             this.btneditDG.UseTransparentBackground = true;
+            this.btneditDG.Click += new System.EventHandler(this.btneditDG_Click);
             // 
             // btnthemDG
             // 
@@ -374,7 +433,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1113, 487);
+            this.ClientSize = new System.Drawing.Size(1113, 520);
             this.Controls.Add(this.btnTKDG);
             this.Controls.Add(this.btnviewDG);
             this.Controls.Add(this.btnxoaDG);
@@ -410,5 +469,11 @@
         private Guna.UI2.WinForms.Guna2Button btnxoaDG;
         private Guna.UI2.WinForms.Guna2Button btnviewDG;
         private Guna.UI2.WinForms.Guna2Button btnTKDG;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaDG;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenDG;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NgaySinh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DiaChiDG;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SDT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn genderDG;
     }
 }
