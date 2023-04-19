@@ -64,5 +64,10 @@ namespace PBL03_DAL
                 }
             }
         }
+
+        private void btnTKDG_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

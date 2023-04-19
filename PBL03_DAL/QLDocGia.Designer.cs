@@ -29,6 +29,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -51,6 +52,7 @@
             this.btnxoaDG = new Guna.UI2.WinForms.Guna2Button();
             this.btneditDG = new Guna.UI2.WinForms.Guna2Button();
             this.btnthemDG = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
             this.MenuAdmin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
             this.guna2Panel1.SuspendLayout();
@@ -69,7 +71,7 @@
             this.MenuAdmin.FillColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(198)))), ((int)(((byte)(184)))));
             this.MenuAdmin.Location = new System.Drawing.Point(0, 0);
             this.MenuAdmin.Name = "MenuAdmin";
-            this.MenuAdmin.Size = new System.Drawing.Size(143, 520);
+            this.MenuAdmin.Size = new System.Drawing.Size(127, 632);
             this.MenuAdmin.TabIndex = 1;
             // 
             // btnExitDG
@@ -93,7 +95,7 @@
             this.btnExitDG.IndicateFocus = true;
             this.btnExitDG.Location = new System.Drawing.Point(0, 106);
             this.btnExitDG.Name = "btnExitDG";
-            this.btnExitDG.Size = new System.Drawing.Size(143, 45);
+            this.btnExitDG.Size = new System.Drawing.Size(127, 45);
             this.btnExitDG.TabIndex = 2;
             this.btnExitDG.Text = "THOÁT";
             this.btnExitDG.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -122,7 +124,7 @@
             this.guna2Button1.ImeMode = System.Windows.Forms.ImeMode.On;
             this.guna2Button1.Location = new System.Drawing.Point(0, 61);
             this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Size = new System.Drawing.Size(143, 45);
+            this.guna2Button1.Size = new System.Drawing.Size(127, 45);
             this.guna2Button1.TabIndex = 1;
             this.guna2Button1.Text = "ADMIN";
             this.guna2Button1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -140,7 +142,7 @@
             this.guna2CirclePictureBox1.Location = new System.Drawing.Point(0, 0);
             this.guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
             this.guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CirclePictureBox1.Size = new System.Drawing.Size(143, 61);
+            this.guna2CirclePictureBox1.Size = new System.Drawing.Size(127, 61);
             this.guna2CirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.guna2CirclePictureBox1.TabIndex = 0;
             this.guna2CirclePictureBox1.TabStop = false;
@@ -151,9 +153,9 @@
             this.guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(198)))), ((int)(((byte)(184)))));
             this.guna2Panel1.Controls.Add(this.label1);
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.guna2Panel1.Location = new System.Drawing.Point(143, 0);
+            this.guna2Panel1.Location = new System.Drawing.Point(127, 0);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(970, 55);
+            this.guna2Panel1.Size = new System.Drawing.Size(1119, 55);
             this.guna2Panel1.TabIndex = 2;
             // 
             // label1
@@ -162,7 +164,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(350, 18);
+            this.label1.Location = new System.Drawing.Point(434, 16);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(185, 25);
             this.label1.TabIndex = 0;
@@ -182,7 +184,7 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgrDG.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgrDG.ColumnHeadersHeight = 4;
+            this.dgrDG.ColumnHeadersHeight = 25;
             this.dgrDG.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.dgrDG.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MaDG,
@@ -204,7 +206,7 @@
             this.dgrDG.Name = "dgrDG";
             this.dgrDG.RowHeadersVisible = false;
             this.dgrDG.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.dgrDG.Size = new System.Drawing.Size(704, 360);
+            this.dgrDG.Size = new System.Drawing.Size(810, 488);
             this.dgrDG.TabIndex = 3;
             this.dgrDG.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgrDG.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -218,7 +220,7 @@
             this.dgrDG.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgrDG.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.dgrDG.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.dgrDG.ThemeStyle.HeaderStyle.Height = 4;
+            this.dgrDG.ThemeStyle.HeaderStyle.Height = 25;
             this.dgrDG.ThemeStyle.ReadOnly = false;
             this.dgrDG.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
             this.dgrDG.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
@@ -286,7 +288,7 @@
             this.txtTKDG.PasswordChar = '\0';
             this.txtTKDG.PlaceholderText = "";
             this.txtTKDG.SelectedText = "";
-            this.txtTKDG.Size = new System.Drawing.Size(552, 36);
+            this.txtTKDG.Size = new System.Drawing.Size(651, 36);
             this.txtTKDG.TabIndex = 4;
             // 
             // btnTKDG
@@ -308,13 +310,14 @@
             this.btnTKDG.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnTKDG.ImageOffset = new System.Drawing.Point(10, 0);
             this.btnTKDG.ImageSize = new System.Drawing.Size(18, 18);
-            this.btnTKDG.Location = new System.Drawing.Point(734, 95);
+            this.btnTKDG.Location = new System.Drawing.Point(840, 95);
             this.btnTKDG.Name = "btnTKDG";
             this.btnTKDG.Size = new System.Drawing.Size(130, 36);
             this.btnTKDG.TabIndex = 10;
             this.btnTKDG.Text = "Tìm Kiếm";
             this.btnTKDG.TextOffset = new System.Drawing.Point(10, 0);
             this.btnTKDG.UseTransparentBackground = true;
+            this.btnTKDG.Click += new System.EventHandler(this.btnTKDG_Click);
             // 
             // btnviewDG
             // 
@@ -335,7 +338,7 @@
             this.btnviewDG.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnviewDG.ImageOffset = new System.Drawing.Point(10, 0);
             this.btnviewDG.ImageSize = new System.Drawing.Size(18, 18);
-            this.btnviewDG.Location = new System.Drawing.Point(892, 419);
+            this.btnviewDG.Location = new System.Drawing.Point(1056, 229);
             this.btnviewDG.Name = "btnviewDG";
             this.btnviewDG.Size = new System.Drawing.Size(109, 45);
             this.btnviewDG.TabIndex = 9;
@@ -362,7 +365,7 @@
             this.btnxoaDG.Image = global::PBL03_DAL.Properties.Resources.icons8_remove_32;
             this.btnxoaDG.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnxoaDG.ImageOffset = new System.Drawing.Point(10, 0);
-            this.btnxoaDG.Location = new System.Drawing.Point(892, 337);
+            this.btnxoaDG.Location = new System.Drawing.Point(1056, 468);
             this.btnxoaDG.Name = "btnxoaDG";
             this.btnxoaDG.Size = new System.Drawing.Size(109, 45);
             this.btnxoaDG.TabIndex = 8;
@@ -389,7 +392,7 @@
             this.btneditDG.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btneditDG.ImageOffset = new System.Drawing.Point(10, 0);
             this.btneditDG.ImageSize = new System.Drawing.Size(18, 18);
-            this.btneditDG.Location = new System.Drawing.Point(892, 261);
+            this.btneditDG.Location = new System.Drawing.Point(1056, 383);
             this.btneditDG.Name = "btneditDG";
             this.btneditDG.Size = new System.Drawing.Size(109, 45);
             this.btneditDG.TabIndex = 7;
@@ -420,7 +423,7 @@
             this.btnthemDG.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnthemDG.ImageOffset = new System.Drawing.Point(10, 0);
             this.btnthemDG.ImageSize = new System.Drawing.Size(18, 18);
-            this.btnthemDG.Location = new System.Drawing.Point(892, 186);
+            this.btnthemDG.Location = new System.Drawing.Point(1056, 302);
             this.btnthemDG.Name = "btnthemDG";
             this.btnthemDG.Size = new System.Drawing.Size(109, 45);
             this.btnthemDG.TabIndex = 6;
@@ -433,7 +436,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1113, 520);
+            this.ClientSize = new System.Drawing.Size(1246, 632);
             this.Controls.Add(this.btnTKDG);
             this.Controls.Add(this.btnviewDG);
             this.Controls.Add(this.btnxoaDG);
@@ -475,5 +478,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DiaChiDG;
         private System.Windows.Forms.DataGridViewTextBoxColumn SDT;
         private System.Windows.Forms.DataGridViewTextBoxColumn genderDG;
+        private Guna.UI2.WinForms.Guna2AnimateWindow guna2AnimateWindow1;
     }
 }

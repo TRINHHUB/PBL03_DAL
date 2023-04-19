@@ -30,26 +30,27 @@
         {
             this.components = new System.ComponentModel.Container();
             this.MenuAdmin = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.btnexitADMIN = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
-            this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.btnTHONGKE = new Guna.UI2.WinForms.Guna2Button();
             this.btnQLMT = new Guna.UI2.WinForms.Guna2Button();
             this.btnQLNV = new Guna.UI2.WinForms.Guna2Button();
             this.btnQLDG = new Guna.UI2.WinForms.Guna2Button();
             this.btnQLS = new Guna.UI2.WinForms.Guna2Button();
-            this.btnexitADMIN = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
+            this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.MenuAdmin.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
             this.guna2Panel1.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             this.guna2Panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // MenuAdmin
@@ -67,6 +68,80 @@
             this.MenuAdmin.Size = new System.Drawing.Size(143, 450);
             this.MenuAdmin.TabIndex = 2;
             // 
+            // btnexitADMIN
+            // 
+            this.btnexitADMIN.Animated = true;
+            this.btnexitADMIN.BackColor = System.Drawing.Color.Transparent;
+            this.btnexitADMIN.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(52)))));
+            this.btnexitADMIN.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnexitADMIN.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnexitADMIN.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnexitADMIN.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnexitADMIN.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnexitADMIN.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(198)))), ((int)(((byte)(184)))));
+            this.btnexitADMIN.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.btnexitADMIN.ForeColor = System.Drawing.Color.White;
+            this.btnexitADMIN.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(52)))));
+            this.btnexitADMIN.Image = global::PBL03_DAL.Properties.Resources.icons8_shutdown_60;
+            this.btnexitADMIN.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnexitADMIN.ImageOffset = new System.Drawing.Point(5, 0);
+            this.btnexitADMIN.ImageSize = new System.Drawing.Size(25, 25);
+            this.btnexitADMIN.IndicateFocus = true;
+            this.btnexitADMIN.Location = new System.Drawing.Point(0, 106);
+            this.btnexitADMIN.Name = "btnexitADMIN";
+            this.btnexitADMIN.Size = new System.Drawing.Size(143, 45);
+            this.btnexitADMIN.TabIndex = 2;
+            this.btnexitADMIN.Text = "THOÁT";
+            this.btnexitADMIN.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnexitADMIN.TextOffset = new System.Drawing.Point(20, 0);
+            this.btnexitADMIN.UseTransparentBackground = true;
+            this.btnexitADMIN.Click += new System.EventHandler(this.guna2Button2_Click);
+            // 
+            // guna2Button1
+            // 
+            this.guna2Button1.Animated = true;
+            this.guna2Button1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button1.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(52)))));
+            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.guna2Button1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(198)))), ((int)(((byte)(184)))));
+            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.guna2Button1.ForeColor = System.Drawing.Color.White;
+            this.guna2Button1.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(52)))));
+            this.guna2Button1.Image = global::PBL03_DAL.Properties.Resources.img_users;
+            this.guna2Button1.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.guna2Button1.ImageOffset = new System.Drawing.Point(5, 0);
+            this.guna2Button1.ImageSize = new System.Drawing.Size(25, 25);
+            this.guna2Button1.ImeMode = System.Windows.Forms.ImeMode.On;
+            this.guna2Button1.Location = new System.Drawing.Point(0, 61);
+            this.guna2Button1.Name = "guna2Button1";
+            this.guna2Button1.Size = new System.Drawing.Size(143, 45);
+            this.guna2Button1.TabIndex = 1;
+            this.guna2Button1.Text = "ADMIN";
+            this.guna2Button1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.guna2Button1.TextOffset = new System.Drawing.Point(20, 0);
+            this.guna2Button1.UseTransparentBackground = true;
+            // 
+            // guna2CirclePictureBox1
+            // 
+            this.guna2CirclePictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2CirclePictureBox1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.guna2CirclePictureBox1.Image = global::PBL03_DAL.Properties.Resources.icons8_repository_96;
+            this.guna2CirclePictureBox1.ImageRotate = 0F;
+            this.guna2CirclePictureBox1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.guna2CirclePictureBox1.InitialImage = global::PBL03_DAL.Properties.Resources.icons8_repository_96;
+            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
+            this.guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.guna2CirclePictureBox1.Size = new System.Drawing.Size(143, 61);
+            this.guna2CirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2CirclePictureBox1.TabIndex = 0;
+            this.guna2CirclePictureBox1.TabStop = false;
+            this.guna2CirclePictureBox1.UseTransparentBackground = true;
+            // 
             // guna2Panel1
             // 
             this.guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(147)))), ((int)(((byte)(148)))));
@@ -80,50 +155,6 @@
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(256, 450);
             this.guna2Panel1.TabIndex = 3;
-            // 
-            // guna2Panel2
-            // 
-            this.guna2Panel2.Controls.Add(this.guna2Panel3);
-            this.guna2Panel2.Controls.Add(this.guna2PictureBox1);
-            this.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.guna2Panel2.Location = new System.Drawing.Point(398, 0);
-            this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Size = new System.Drawing.Size(402, 450);
-            this.guna2Panel2.TabIndex = 5;
-            // 
-            // guna2Panel3
-            // 
-            this.guna2Panel3.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.guna2Panel3.Controls.Add(this.label1);
-            this.guna2Panel3.Location = new System.Drawing.Point(0, 304);
-            this.guna2Panel3.Name = "guna2Panel3";
-            this.guna2Panel3.Size = new System.Drawing.Size(402, 29);
-            this.guna2Panel3.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 11F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(115, 5);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(166, 20);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Học, học nữa, học mãi";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // guna2PictureBox1
-            // 
-            this.guna2PictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox1.Image = global::PBL03_DAL.Properties.Resources.download;
-            this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(-12, -36);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(430, 505);
-            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox1.TabIndex = 0;
-            this.guna2PictureBox1.TabStop = false;
-            this.guna2PictureBox1.UseTransparentBackground = true;
             // 
             // btnTHONGKE
             // 
@@ -284,79 +315,55 @@
             this.btnQLS.UseTransparentBackground = true;
             this.btnQLS.Click += new System.EventHandler(this.guna2Button3_Click);
             // 
-            // btnexitADMIN
+            // guna2Panel2
             // 
-            this.btnexitADMIN.Animated = true;
-            this.btnexitADMIN.BackColor = System.Drawing.Color.Transparent;
-            this.btnexitADMIN.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(52)))));
-            this.btnexitADMIN.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnexitADMIN.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnexitADMIN.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnexitADMIN.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnexitADMIN.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnexitADMIN.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(198)))), ((int)(((byte)(184)))));
-            this.btnexitADMIN.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.btnexitADMIN.ForeColor = System.Drawing.Color.White;
-            this.btnexitADMIN.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(52)))));
-            this.btnexitADMIN.Image = global::PBL03_DAL.Properties.Resources.icons8_shutdown_60;
-            this.btnexitADMIN.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnexitADMIN.ImageOffset = new System.Drawing.Point(5, 0);
-            this.btnexitADMIN.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnexitADMIN.IndicateFocus = true;
-            this.btnexitADMIN.Location = new System.Drawing.Point(0, 106);
-            this.btnexitADMIN.Name = "btnexitADMIN";
-            this.btnexitADMIN.Size = new System.Drawing.Size(143, 45);
-            this.btnexitADMIN.TabIndex = 2;
-            this.btnexitADMIN.Text = "THOÁT";
-            this.btnexitADMIN.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnexitADMIN.TextOffset = new System.Drawing.Point(20, 0);
-            this.btnexitADMIN.UseTransparentBackground = true;
-            this.btnexitADMIN.Click += new System.EventHandler(this.guna2Button2_Click);
+            this.guna2Panel2.Controls.Add(this.guna2Panel3);
+            this.guna2Panel2.Controls.Add(this.guna2PictureBox1);
+            this.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.guna2Panel2.Location = new System.Drawing.Point(398, 0);
+            this.guna2Panel2.Name = "guna2Panel2";
+            this.guna2Panel2.Size = new System.Drawing.Size(402, 450);
+            this.guna2Panel2.TabIndex = 5;
             // 
-            // guna2Button1
+            // guna2Panel3
             // 
-            this.guna2Button1.Animated = true;
-            this.guna2Button1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Button1.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(52)))));
-            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.guna2Button1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(198)))), ((int)(((byte)(184)))));
-            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(52)))));
-            this.guna2Button1.Image = global::PBL03_DAL.Properties.Resources.img_users;
-            this.guna2Button1.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guna2Button1.ImageOffset = new System.Drawing.Point(5, 0);
-            this.guna2Button1.ImageSize = new System.Drawing.Size(25, 25);
-            this.guna2Button1.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.guna2Button1.Location = new System.Drawing.Point(0, 61);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Size = new System.Drawing.Size(143, 45);
-            this.guna2Button1.TabIndex = 1;
-            this.guna2Button1.Text = "ADMIN";
-            this.guna2Button1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guna2Button1.TextOffset = new System.Drawing.Point(20, 0);
-            this.guna2Button1.UseTransparentBackground = true;
+            this.guna2Panel3.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.guna2Panel3.Controls.Add(this.label1);
+            this.guna2Panel3.Location = new System.Drawing.Point(0, 304);
+            this.guna2Panel3.Name = "guna2Panel3";
+            this.guna2Panel3.Size = new System.Drawing.Size(402, 29);
+            this.guna2Panel3.TabIndex = 1;
             // 
-            // guna2CirclePictureBox1
+            // label1
             // 
-            this.guna2CirclePictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2CirclePictureBox1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.guna2CirclePictureBox1.Image = global::PBL03_DAL.Properties.Resources.icons8_repository_96;
-            this.guna2CirclePictureBox1.ImageRotate = 0F;
-            this.guna2CirclePictureBox1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.guna2CirclePictureBox1.InitialImage = global::PBL03_DAL.Properties.Resources.icons8_repository_96;
-            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
-            this.guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CirclePictureBox1.Size = new System.Drawing.Size(143, 61);
-            this.guna2CirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2CirclePictureBox1.TabIndex = 0;
-            this.guna2CirclePictureBox1.TabStop = false;
-            this.guna2CirclePictureBox1.UseTransparentBackground = true;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 11F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(115, 5);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(166, 20);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Học, học nữa, học mãi";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // guna2PictureBox1
+            // 
+            this.guna2PictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox1.Image = global::PBL03_DAL.Properties.Resources.download;
+            this.guna2PictureBox1.ImageRotate = 0F;
+            this.guna2PictureBox1.Location = new System.Drawing.Point(-12, -36);
+            this.guna2PictureBox1.Name = "guna2PictureBox1";
+            this.guna2PictureBox1.Size = new System.Drawing.Size(430, 505);
+            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox1.TabIndex = 0;
+            this.guna2PictureBox1.TabStop = false;
+            this.guna2PictureBox1.UseTransparentBackground = true;
+            // 
+            // guna2BorderlessForm1
+            // 
+            this.guna2BorderlessForm1.ContainerControl = this;
+            this.guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6D;
+            this.guna2BorderlessForm1.TransparentWhileDrag = true;
             // 
             // MainForm
             // 
@@ -366,15 +373,16 @@
             this.Controls.Add(this.guna2Panel2);
             this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.MenuAdmin);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MainForm";
             this.Text = "Chức Năng";
             this.MenuAdmin.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel2.ResumeLayout(false);
             this.guna2Panel3.ResumeLayout(false);
             this.guna2Panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -396,5 +404,6 @@
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
         private System.Windows.Forms.Label label1;
+        private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm1;
     }
 }

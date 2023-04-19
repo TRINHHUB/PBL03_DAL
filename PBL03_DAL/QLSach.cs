@@ -33,7 +33,6 @@ namespace PBL03_DAL
         private void btnviewS_Click(object sender, EventArgs e)
         {
             ShowDGV();
-            AddColumn();
         }
         public void ShowDGV()
         {
@@ -49,14 +48,11 @@ namespace PBL03_DAL
                 p.theloai.tentheloai,
                 p.soluong,
                 p.ghichu,
-                p.khusach
+                p.khusach,
+                p.giatien,
+                p.dataanh
             }).ToList();
         }
-        public void AddColumn()
-        {
-            var newColumn = new DataGridViewTextBoxColumn();
-            newColumn.Name = "NewColumn";
-            newColumn.HeaderText = "New Column Header";
-        }
+   
     }
 }

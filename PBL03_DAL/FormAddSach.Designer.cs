@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.txtgiatienS = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtKhusach = new Guna.UI2.WinForms.Guna2TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -47,12 +51,20 @@
             this.txtaddtenS = new Guna.UI2.WinForms.Guna2TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtaddmaS = new Guna.UI2.WinForms.Guna2TextBox();
+            this.PictureBoxaddS = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.btnnewS = new Guna.UI2.WinForms.Guna2Button();
+            this.btnSelectS = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxaddS)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2Panel1
             // 
             this.guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(198)))), ((int)(((byte)(184)))));
+            this.guna2Panel1.Controls.Add(this.txtgiatienS);
+            this.guna2Panel1.Controls.Add(this.label10);
+            this.guna2Panel1.Controls.Add(this.label9);
+            this.guna2Panel1.Controls.Add(this.txtKhusach);
             this.guna2Panel1.Controls.Add(this.label8);
             this.guna2Panel1.Controls.Add(this.label7);
             this.guna2Panel1.Controls.Add(this.label6);
@@ -75,8 +87,66 @@
             this.guna2Panel1.ForeColor = System.Drawing.Color.White;
             this.guna2Panel1.Location = new System.Drawing.Point(-1, 2);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(375, 488);
+            this.guna2Panel1.Size = new System.Drawing.Size(375, 601);
             this.guna2Panel1.TabIndex = 0;
+            // 
+            // txtgiatienS
+            // 
+            this.txtgiatienS.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtgiatienS.DefaultText = "";
+            this.txtgiatienS.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtgiatienS.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtgiatienS.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtgiatienS.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtgiatienS.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtgiatienS.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtgiatienS.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtgiatienS.Location = new System.Drawing.Point(91, 484);
+            this.txtgiatienS.Name = "txtgiatienS";
+            this.txtgiatienS.PasswordChar = '\0';
+            this.txtgiatienS.PlaceholderText = "";
+            this.txtgiatienS.SelectedText = "";
+            this.txtgiatienS.Size = new System.Drawing.Size(246, 32);
+            this.txtgiatienS.TabIndex = 21;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(25, 489);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(60, 19);
+            this.label10.TabIndex = 20;
+            this.label10.Text = "Giá tiền";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(19, 433);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(67, 19);
+            this.label9.TabIndex = 19;
+            this.label9.Text = "Khu sách";
+            // 
+            // txtKhusach
+            // 
+            this.txtKhusach.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtKhusach.DefaultText = "";
+            this.txtKhusach.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtKhusach.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtKhusach.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtKhusach.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtKhusach.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtKhusach.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtKhusach.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtKhusach.Location = new System.Drawing.Point(93, 430);
+            this.txtKhusach.Name = "txtKhusach";
+            this.txtKhusach.PasswordChar = '\0';
+            this.txtKhusach.PlaceholderText = "";
+            this.txtKhusach.SelectedText = "";
+            this.txtKhusach.Size = new System.Drawing.Size(246, 32);
+            this.txtKhusach.TabIndex = 18;
             // 
             // label8
             // 
@@ -164,7 +234,7 @@
             this.btnexitaddS.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnexitaddS.ForeColor = System.Drawing.Color.White;
             this.btnexitaddS.HoverState.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.btnexitaddS.Location = new System.Drawing.Point(215, 438);
+            this.btnexitaddS.Location = new System.Drawing.Point(215, 553);
             this.btnexitaddS.Name = "btnexitaddS";
             this.btnexitaddS.Size = new System.Drawing.Size(100, 39);
             this.btnexitaddS.TabIndex = 10;
@@ -186,13 +256,13 @@
             this.btnokaddS.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnokaddS.ForeColor = System.Drawing.Color.White;
             this.btnokaddS.HoverState.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnokaddS.Location = new System.Drawing.Point(109, 438);
+            this.btnokaddS.Location = new System.Drawing.Point(109, 553);
             this.btnokaddS.Name = "btnokaddS";
             this.btnokaddS.Size = new System.Drawing.Size(100, 39);
             this.btnokaddS.TabIndex = 9;
             this.btnokaddS.Text = "OK";
             this.btnokaddS.UseTransparentBackground = true;
-            this.btnokaddS.Click += new System.EventHandler(this.guna2Button1_Click);
+            this.btnokaddS.Click += new System.EventHandler(this.btnokaddS_Click);
             // 
             // txtaddghichuS
             // 
@@ -356,16 +426,60 @@
             this.txtaddmaS.Size = new System.Drawing.Size(246, 32);
             this.txtaddmaS.TabIndex = 0;
             // 
-            // FormEditDG
+            // PictureBoxaddS
+            // 
+            this.PictureBoxaddS.ImageRotate = 0F;
+            this.PictureBoxaddS.Location = new System.Drawing.Point(436, 60);
+            this.PictureBoxaddS.Name = "PictureBoxaddS";
+            this.PictureBoxaddS.Size = new System.Drawing.Size(233, 222);
+            this.PictureBoxaddS.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.PictureBoxaddS.TabIndex = 1;
+            this.PictureBoxaddS.TabStop = false;
+            // 
+            // btnnewS
+            // 
+            this.btnnewS.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnnewS.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnnewS.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnnewS.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnnewS.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnnewS.ForeColor = System.Drawing.Color.White;
+            this.btnnewS.Location = new System.Drawing.Point(436, 331);
+            this.btnnewS.Name = "btnnewS";
+            this.btnnewS.Size = new System.Drawing.Size(103, 45);
+            this.btnnewS.TabIndex = 2;
+            this.btnnewS.Text = "New";
+            this.btnnewS.Click += new System.EventHandler(this.btnnewS_Click);
+            // 
+            // btnSelectS
+            // 
+            this.btnSelectS.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnSelectS.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnSelectS.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnSelectS.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnSelectS.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnSelectS.ForeColor = System.Drawing.Color.White;
+            this.btnSelectS.Location = new System.Drawing.Point(570, 331);
+            this.btnSelectS.Name = "btnSelectS";
+            this.btnSelectS.Size = new System.Drawing.Size(99, 45);
+            this.btnSelectS.TabIndex = 3;
+            this.btnSelectS.Text = "Select image";
+            this.btnSelectS.Click += new System.EventHandler(this.btnSelectS_Click);
+            // 
+            // FormAddSach
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(376, 491);
+            this.ClientSize = new System.Drawing.Size(713, 606);
+            this.Controls.Add(this.btnSelectS);
+            this.Controls.Add(this.btnnewS);
+            this.Controls.Add(this.PictureBoxaddS);
             this.Controls.Add(this.guna2Panel1);
-            this.Name = "FormEditDG";
+            this.Name = "FormAddSach";
             this.Text = "Sách";
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxaddS)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -391,5 +505,12 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private Guna.UI2.WinForms.Guna2Button btnexitaddS;
+        private Guna.UI2.WinForms.Guna2PictureBox PictureBoxaddS;
+        private Guna.UI2.WinForms.Guna2Button btnnewS;
+        private Guna.UI2.WinForms.Guna2Button btnSelectS;
+        private Guna.UI2.WinForms.Guna2TextBox txtgiatienS;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label9;
+        private Guna.UI2.WinForms.Guna2TextBox txtKhusach;
     }
 }
