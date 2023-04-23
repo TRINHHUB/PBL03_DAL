@@ -16,6 +16,9 @@ namespace PBL03_DAL
         public FormAddSach()
         {
             InitializeComponent();
+            GetcbbNXB();
+            GetcbbTL();
+            GetcbbTG();
         }
 
 
@@ -27,18 +30,43 @@ namespace PBL03_DAL
 
         private void btnnewS_Click(object sender, EventArgs e)
         {
-            txtaddmaS.Text = "";
             txtaddtenS.Text = "";
             txtaddnamxbS.Text = "";
-            txtaddnxbS.Text = "";
-            txtaddtheloaiS.Text = "";
-            txtaddtacgiaS.Text = "";
             txtaddsoluongS.Text = "";
             txtaddghichuS.Text = "";
             txtKhusach.Text = "";
             txtgiatienS.Text = "";
             PictureBoxaddS.Image = null;
         }
+        public void GetcbbNXB()
+        {
+            QLNS qlns = new QLNS();
+
+            var query = from i in qlns.nxbs
+                        select i.tennxb;
+            cbbNXB.DataSource = new BindingSource(query.ToList(), null);
+            cbbNXB.DisplayMember = "Tên NXB";
+        }
+        public void GetcbbTL()
+        {
+            QLNS qlns = new QLNS();
+
+            var query1 = from i in qlns.theloais
+                        select i.tentheloai;
+            cbbTL.DataSource = new BindingSource(query1.ToList(), null);
+            cbbTL.DisplayMember = "Tên Thể Loại";
+        }
+        public void GetcbbTG()
+        {
+            QLNS qlns = new QLNS();
+
+            var query2 = from i in qlns.tacgias
+                        select i.tentacgia;
+            cbbTG.DataSource = new BindingSource(query2.ToList(), null);
+            cbbTG.DisplayMember = "Tên Tác Giả";
+        }
+
+        
 
         private void btnSelectS_Click(object sender, EventArgs e)
         {
@@ -54,27 +82,51 @@ namespace PBL03_DAL
 
         private void btnokaddS_Click(object sender, EventArgs e)
         {
-            Image pimg = PictureBoxaddS.Image;
-            ImageConverter Converter = new ImageConverter();
-            var ImageConver = Converter.ConvertTo(pimg, typeof(byte[]));
-
-            QLNS qlns = new QLNS();
+            QLNS qlns = new QLNS();          
             sach s = new sach();
-            s.masach = Convert.ToInt32(txtaddmaS.Text);
-            s.tensach = txtaddtenS.Text;
-            s.namxb = Convert.ToInt32(txtaddnamxbS.Text);
-            s.manxb = Convert.ToInt32(txtaddnxbS.Text);
-            s.matheloai = Convert.ToInt32(txtaddtheloaiS.Text);
-            s.matacgia = Convert.ToInt32(txtaddtacgiaS.Text);
-            s.soluong = Convert.ToInt32(txtaddsoluongS.Text);
-            s.ghichu = txtaddghichuS.Text;
-            s.khusach = txtKhusach.Text;
-            s.giatien = Convert.ToInt32(txtgiatienS.Text);
-            s.dataanh = (byte[])ImageConver;
 
-            qlns.saches.Add(s);
-            qlns.SaveChanges();
-            MessageBox.Show("Thêm ảnh thành công!");
+            string tentl = cbbTL.Text;
+             int matl = qlns.theloais.Where(p => p.tentheloai == tentl).Select(p => p.matheloai).FirstOrDefault();
+
+            string tennxbget = cbbNXB.Text;
+            int maNXB = qlns.nxbs.Where(p => p.tennxb == tennxbget).Select(p => p.manxb).FirstOrDefault();
+
+
+            string tentg = cbbTG.Text;
+            int matg = qlns.tacgias.Where(p => p.tentacgia == tentg).Select(p => p.matacgia).FirstOrDefault();
+
+          
+            try
+            {
+                Image pimg = PictureBoxaddS.Image;
+                ImageConverter Converter = new ImageConverter();
+                var ImageConver = Converter.ConvertTo(pimg, typeof(byte[]));
+                
+                s.tensach = txtaddtenS.Text;
+                s.namxb = Convert.ToInt32(txtaddnamxbS.Text);
+                s.manxb = maNXB;
+                s.matheloai = matl;
+                s.matacgia = matg;
+                s.soluong = Convert.ToInt32(txtaddsoluongS.Text);
+                s.ghichu = txtaddghichuS.Text;
+                s.khusach = txtKhusach.Text;
+                s.giatien = Convert.ToInt32(txtgiatienS.Text);
+                s.dataanh = (byte[])ImageConver;
+                
+
+                qlns.saches.Add(s);
+                qlns.SaveChanges();
+                MessageBox.Show("Thêm sách thành công!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void FormAddSach_Load(object sender, EventArgs e)
+        {
+            
         }
     }
 }

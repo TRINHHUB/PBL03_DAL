@@ -1,7 +1,8 @@
 ﻿namespace PBL03_DAL
 {
-    partial class ThongTinSach
+    partial class GioHangDocGia
     {
+
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -29,22 +30,22 @@
         private void InitializeComponent()
         {
             this.MenuAdmin = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.btnexitViewSachDocGia = new Guna.UI2.WinForms.Guna2Button();
             this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.guna2ControlBox4 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.guna2ControlBox5 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.guna2ControlBox2 = new Guna.UI2.WinForms.Guna2ControlBox();
-            this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
-            this.btnThoatTTS = new Guna.UI2.WinForms.Guna2Button();
+            this.grbGioHang = new Guna.UI2.WinForms.Guna2GroupBox();
             this.MenuAdmin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
-            this.guna2GroupBox1.SuspendLayout();
+            this.grbGioHang.SuspendLayout();
             this.SuspendLayout();
             // 
             // MenuAdmin
             // 
-            this.MenuAdmin.Controls.Add(this.btnThoatTTS);
+            this.MenuAdmin.Controls.Add(this.guna2Button1);
             this.MenuAdmin.Controls.Add(this.btnexitViewSachDocGia);
             this.MenuAdmin.Controls.Add(this.guna2CirclePictureBox1);
             this.MenuAdmin.Dock = System.Windows.Forms.DockStyle.Left;
@@ -56,6 +57,34 @@
             this.MenuAdmin.Name = "MenuAdmin";
             this.MenuAdmin.Size = new System.Drawing.Size(143, 658);
             this.MenuAdmin.TabIndex = 5;
+            // 
+            // guna2Button1
+            // 
+            this.guna2Button1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button1.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(52)))));
+            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.guna2Button1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(198)))), ((int)(((byte)(184)))));
+            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.guna2Button1.ForeColor = System.Drawing.Color.White;
+            this.guna2Button1.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(52)))));
+            this.guna2Button1.Image = global::PBL03_DAL.Properties.Resources.icons8_shutdown_60;
+            this.guna2Button1.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.guna2Button1.ImageOffset = new System.Drawing.Point(5, 0);
+            this.guna2Button1.ImageSize = new System.Drawing.Size(25, 25);
+            this.guna2Button1.IndicateFocus = true;
+            this.guna2Button1.Location = new System.Drawing.Point(0, 106);
+            this.guna2Button1.Name = "guna2Button1";
+            this.guna2Button1.Size = new System.Drawing.Size(143, 45);
+            this.guna2Button1.TabIndex = 3;
+            this.guna2Button1.Text = "THOÁT";
+            this.guna2Button1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.guna2Button1.TextOffset = new System.Drawing.Point(20, 0);
+            this.guna2Button1.UseTransparentBackground = true;
+            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
             // btnexitViewSachDocGia
             // 
@@ -70,7 +99,7 @@
             this.btnexitViewSachDocGia.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.btnexitViewSachDocGia.ForeColor = System.Drawing.Color.White;
             this.btnexitViewSachDocGia.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(52)))));
-            this.btnexitViewSachDocGia.Image = global::PBL03_DAL.Properties.Resources.icons8_reader_64;
+            this.btnexitViewSachDocGia.Image = global::PBL03_DAL.Properties.Resources.icons8_shopping_cart_60;
             this.btnexitViewSachDocGia.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnexitViewSachDocGia.ImageOffset = new System.Drawing.Point(5, 0);
             this.btnexitViewSachDocGia.ImageSize = new System.Drawing.Size(25, 25);
@@ -144,66 +173,36 @@
             this.guna2ControlBox2.Size = new System.Drawing.Size(23, 20);
             this.guna2ControlBox2.TabIndex = 20;
             // 
-            // guna2GroupBox1
+            // grbGioHang
             // 
-            this.guna2GroupBox1.AutoScroll = true;
-            this.guna2GroupBox1.Controls.Add(this.guna2ControlBox2);
-            this.guna2GroupBox1.Controls.Add(this.guna2ControlBox1);
-            this.guna2GroupBox1.Controls.Add(this.guna2ControlBox5);
-            this.guna2GroupBox1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2GroupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.guna2GroupBox1.Location = new System.Drawing.Point(145, 2);
-            this.guna2GroupBox1.Name = "guna2GroupBox1";
-            this.guna2GroupBox1.Size = new System.Drawing.Size(960, 663);
-            this.guna2GroupBox1.TabIndex = 9;
-            this.guna2GroupBox1.Text = "Thông tin sách";
-            this.guna2GroupBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.guna2GroupBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.guna2GroupBox1_MouseDown);
-            this.guna2GroupBox1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.guna2GroupBox1_MouseMove);
+            this.grbGioHang.AutoScroll = true;
+            this.grbGioHang.Controls.Add(this.guna2ControlBox2);
+            this.grbGioHang.Controls.Add(this.guna2ControlBox1);
+            this.grbGioHang.Controls.Add(this.guna2ControlBox5);
+            this.grbGioHang.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grbGioHang.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.grbGioHang.Location = new System.Drawing.Point(144, 2);
+            this.grbGioHang.Name = "grbGioHang";
+            this.grbGioHang.Size = new System.Drawing.Size(960, 663);
+            this.grbGioHang.TabIndex = 9;
+            this.grbGioHang.Text = "Giỏ hàng";
+            this.grbGioHang.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // btnThoatTTS
-            // 
-            this.btnThoatTTS.BackColor = System.Drawing.Color.Transparent;
-            this.btnThoatTTS.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(52)))));
-            this.btnThoatTTS.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnThoatTTS.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnThoatTTS.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnThoatTTS.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnThoatTTS.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnThoatTTS.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(198)))), ((int)(((byte)(184)))));
-            this.btnThoatTTS.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.btnThoatTTS.ForeColor = System.Drawing.Color.White;
-            this.btnThoatTTS.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(52)))));
-            this.btnThoatTTS.Image = global::PBL03_DAL.Properties.Resources.icons8_shutdown_60;
-            this.btnThoatTTS.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnThoatTTS.ImageOffset = new System.Drawing.Point(5, 0);
-            this.btnThoatTTS.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnThoatTTS.IndicateFocus = true;
-            this.btnThoatTTS.Location = new System.Drawing.Point(0, 106);
-            this.btnThoatTTS.Name = "btnThoatTTS";
-            this.btnThoatTTS.Size = new System.Drawing.Size(143, 45);
-            this.btnThoatTTS.TabIndex = 3;
-            this.btnThoatTTS.Text = "THOÁT";
-            this.btnThoatTTS.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnThoatTTS.TextOffset = new System.Drawing.Point(20, 0);
-            this.btnThoatTTS.UseTransparentBackground = true;
-            this.btnThoatTTS.Click += new System.EventHandler(this.btnThoatTTS_Click);
-            // 
-            // ThongTinSach
+            // GioHangDocGia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1105, 658);
-            this.Controls.Add(this.guna2GroupBox1);
+            this.Controls.Add(this.grbGioHang);
             this.Controls.Add(this.MenuAdmin);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "ThongTinSach";
+            this.Name = "GioHangDocGia";
             this.Text = "ThongTinSach";
-            this.Load += new System.EventHandler(this.ThongTinSach_Load);
+            this.Load += new System.EventHandler(this.GioHangDocGia_Load);
             this.MenuAdmin.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
-            this.guna2GroupBox1.ResumeLayout(false);
+            this.grbGioHang.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -215,8 +214,8 @@
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox5;
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox1;
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox2;
-        private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox1;
+        private Guna.UI2.WinForms.Guna2GroupBox grbGioHang;
         private Guna.UI2.WinForms.Guna2Button btnexitViewSachDocGia;
-        private Guna.UI2.WinForms.Guna2Button btnThoatTTS;
+        private Guna.UI2.WinForms.Guna2Button guna2Button1;
     }
 }

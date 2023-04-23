@@ -77,11 +77,29 @@
     <Compile Include="FormAddSach.Designer.cs">
       <DependentUpon>FormAddSach.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormDocGia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDocGia.Designer.cs">
+      <DependentUpon>FormDocGia.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormEditDocGia.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormEditDocGia.Designer.cs">
       <DependentUpon>FormEditDocGia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMuaSach.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMuaSach.Designer.cs">
+      <DependentUpon>FormMuaSach.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GioHangDocGia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GioHangDocGia.Designer.cs">
+      <DependentUpon>GioHangDocGia.cs</DependentUpon>
     </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -94,6 +112,12 @@
     </Compile>
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MuaSach.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MuaSach.Designer.cs">
+      <DependentUpon>MuaSach.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -146,14 +170,23 @@
     <EmbeddedResource Include="FormAddSach.resx">
       <DependentUpon>FormAddSach.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormDocGia.resx">
+      <DependentUpon>FormDocGia.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormEditDocGia.resx">
       <DependentUpon>FormEditDocGia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GioHangDocGia.resx">
+      <DependentUpon>GioHangDocGia.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MuaSach.resx">
+      <DependentUpon>MuaSach.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -271,6 +304,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-arrow-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-shopping-cart-60.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\packages\Guna.UI2.WinForms.2.0.4.4\lib\net6.0-windows7.0\Guna.UI2.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

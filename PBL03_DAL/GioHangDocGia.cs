@@ -1,39 +1,59 @@
-﻿using System;
+﻿using Guna.UI2.WinForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity;
 using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Drawing.Imaging;
-using Guna.UI2.WinForms;
-using System.Runtime.Remoting.Contexts;
-using System.Management;
-using System.Windows.Documents;
-using System.Security.Cryptography.Xml;
 
 namespace PBL03_DAL
 {
-    public partial class ThongTinSach : Form
+    public partial class GioHangDocGia : Form
     {
-        private Point mouseDownLocation;
-        public ThongTinSach()
+        public GioHangDocGia()
         {
             InitializeComponent();
-            this.MouseDown += new MouseEventHandler(guna2GroupBox1_MouseDown);
-            this.MouseMove += new MouseEventHandler(guna2GroupBox1_MouseMove);
         }
 
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Bạn có muốn thoát không");
+            FormDocGia fdg = new FormDocGia();
+            this.Hide();
+            fdg.Show();
+        }
+
+        private void GioHangDocGia_Load(object sender, EventArgs e)
+        {
+            LoadUserControl();
+        }
         private void LoadUserControl()
         {
             QLNS qlns = new QLNS();
-            sach s = new sach();
             // load anh
-            var image = qlns.saches.Select(p => p.dataanh).ToArray();
-            var tensach = qlns.saches.Select(p => p.tensach).ToArray();
+            var gioHangSach = qlns.giohangs
+                .Join(
+                qlns.saches,
+                giohang => giohang.masach,
+                sach => sach.masach,
+                (giohang, sach) => new
+                {
+                    giohang.magiohang,
+                    giohang.masach,
+                    sach.tensach,
+                    sach.dataanh,
+                    sach.giatien
+                });
+            var image = gioHangSach.Select(p => p.dataanh).ToArray();
+            var nameBook = gioHangSach.Select(p => p.tensach).ToArray();
+
+  
+
 
             int x = 20, y = 71;
             int count = 0;
@@ -42,7 +62,7 @@ namespace PBL03_DAL
             for (int i = 0; i < image.Length; i++)
             {
                 Guna2Panel pn = new Guna2Panel();
-                pn.Size = new Size(189 ,285);
+                pn.Size = new Size(189, 285);
                 pn.Location = new Point(x, y);
 
                 Guna2PictureBox ptb = new Guna2PictureBox();
@@ -55,7 +75,7 @@ namespace PBL03_DAL
                 lb.Location = new Point(0, 215);
                 lb.Size = new Size(101, 17);
                 lb.Font = new Font("Segoe UI", 9, FontStyle.Bold);
-                lb.Text = tensach[i].ToString();
+                lb.Text = nameBook[i].ToString();
                 lb.Anchor = AnchorStyles.None;
                 lb.TextAlignment = ContentAlignment.MiddleCenter;
                 pn.AutoScroll = false;
@@ -80,7 +100,7 @@ namespace PBL03_DAL
                 btn1.Location = new Point(110, 250);
                 btn1.Size = new Size(61, 25);
                 btn1.Font = new Font("Segoe UI", 9, FontStyle.Bold);
-                btn1.Text = "Thêm";
+                btn1.Text = "Xóa";
                 btn1.FillColor = Color.FromArgb(94, 148, 255);
                 btn1.ForeColor = Color.White;
                 btn1.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
@@ -95,7 +115,7 @@ namespace PBL03_DAL
                 pn.Controls.Add(btn1);
                 pn.Controls.Add(lb);
                 pn.Controls.Add(ptb);
-                
+
 
                 count++;
                 if (count == 4)
@@ -114,86 +134,52 @@ namespace PBL03_DAL
                     }
                 }
 
-                guna2GroupBox1.Controls.Add(pn);
+                grbGioHang.Controls.Add(pn);
                 btn.Click += new EventHandler(btn_Click);
                 btn1.Click += new EventHandler(btn1_Click);
             }
-       }
+        }
         private void btn_Click(object sender, EventArgs e)
         {
-            // Xử lý khi button được click
-            // mua,hiện form,xuất hiện đầy đủ các thông tin của sách,số dư ví,số lượng,....
-            
+            // mua
+            // những thứ thay đổi: số lượng,tiền docgia,tiền admin, nếu số lượng  > 0,thì số lượng - theo lượng mua
+            // join bảng admin,docgia,sach;,lấy viadmin,vidocgia,dataanh,tensach,giatien,soluong...
+
         }
         private void btn1_Click(object sender, EventArgs e)
         {
-            // Xử lý khi button được click
-            DialogResult result = MessageBox.Show("Bạn có muốn thêm sách vào giỏ hàng không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult result = MessageBox.Show("Bạn có chắc chắn xóa Sách khỏi giỏ hàng không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             // Xử lý kết quả từ người dùng
             if (result == DialogResult.Yes)
             {
-                Guna2Button btn = sender as Guna2Button;
+                Guna2Button btn1 = sender as Guna2Button;
 
                 QLNS qlns = new QLNS();
+                var jointoDel = qlns.giohangs
+                .Join(
+                qlns.saches,
+                giohang => giohang.masach,
+                sach => sach.masach,
+                (giohang, sach) => new
+                {
+                    giohang.magiohang,
+                    giohang.masach,
+                    sach.tensach,
+                });
                 //Lấy tên sách từ tên nút được chọn
                 string lbContainNameSach = ((Guna2Button)sender).Name;
+                var SelectMaSachToDel = jointoDel.Where(p => p.tensach == lbContainNameSach).Select(p => p.masach).FirstOrDefault();
+                var giohangToDelete = qlns.giohangs.Where(gh => gh.masach == SelectMaSachToDel).FirstOrDefault();
 
-                var gioHang = qlns.saches.Where(s => s.tensach == lbContainNameSach).Select(p => p.masach).FirstOrDefault();
-                giohang ghDB = new giohang();
-                ghDB.masach = gioHang;
-                qlns.giohangs.Add(ghDB);
-                qlns.SaveChanges();
-                MessageBox.Show("Sách đã được thêm vào giỏ hàng");
+                if(giohangToDelete != null)
+                {
+                    qlns.giohangs.Remove(giohangToDelete);
+                    qlns.SaveChanges();
+                }
+                grbGioHang.Controls.Clear();
+                LoadUserControl();
             }
-
-        }
-
-
-
-
-
-        private void ThongTinSach_Load(object sender, EventArgs e)
-        {
-
-            LoadUserControl();
-            guna2GroupBox1.AutoScroll = true;
-            // Tùy chỉnh thanh cuộn ngang
-            guna2GroupBox1.HorizontalScroll.Enabled = false; // Tắt tính năng cuộn ngang
-            guna2GroupBox1.HorizontalScroll.Visible = false; // Ẩn thanh cuộn ngang
-            guna2GroupBox1.HorizontalScroll.Maximum = 0; // Đặt giá trị tối đa của thanh cuộn ngang
-
-            // Tùy chỉnh thanh cuộn dọc
-            guna2GroupBox1.VerticalScroll.Enabled = true; // Kích hoạt tính năng cuộn dọc
-            guna2GroupBox1.VerticalScroll.Visible = true; // Hiển thị thanh cuộn dọc
-            guna2GroupBox1.VerticalScroll.Maximum = 10000; // Đặt giá trị tối đa của thanh cuộn dọc
-
-
-        }
-
-        private void guna2GroupBox1_MouseDown(object sender, MouseEventArgs e)
-        {
-            mouseDownLocation = new Point(e.X, e.Y);
-        }
-
-        private void guna2GroupBox1_MouseMove(object sender, MouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Left)
-            {
-                // Calculate the new form location based on the mouse movement
-                int newX = this.Location.X + e.X - mouseDownLocation.X;
-                int newY = this.Location.Y + e.Y - mouseDownLocation.Y;
-
-                // Set the new form location
-                this.SetDesktopLocation(newX, newY);
-            }
-        }
-
-        private void btnThoatTTS_Click(object sender, EventArgs e)
-        {
-            FormDocGia fdg = new FormDocGia();
-            this.Hide();
-            fdg.Show();
         }
     }
 }
