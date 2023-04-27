@@ -40,27 +40,27 @@ namespace PBL03_DAL
         }
         public void GetcbbNXB()
         {
-            QLNS QLNS  = new QLNS();
+            QLNS qlns  = new QLNS();
 
-            var query = from i in QLNS .nxbs
+            var query = from i in  qlns.nxbs
                         select i.tennxb;
             cbbNXB.DataSource = new BindingSource(query.ToList(), null);
             cbbNXB.DisplayMember = "Tên NXB";
         }
         public void GetcbbTL()
         {
-            QLNS  QLNS  = new QLNS ();
+            QLNS  qlns  = new QLNS ();
 
-            var query1 = from i in QLNS .theloais
+            var query1 = from i in qlns.theloais
                         select i.tentheloai;
             cbbTL.DataSource = new BindingSource(query1.ToList(), null);
             cbbTL.DisplayMember = "Tên Thể Loại";
         }
         public void GetcbbTG()
         {
-            QLNS  QLNS  = new QLNS ();
+            QLNS  qlns = new QLNS ();
 
-            var query2 = from i in QLNS .tacgias
+            var query2 = from i in qlns.tacgias
                         select i.tentacgia;
             cbbTG.DataSource = new BindingSource(query2.ToList(), null);
             cbbTG.DisplayMember = "Tên Tác Giả";
