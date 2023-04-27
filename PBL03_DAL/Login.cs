@@ -36,7 +36,7 @@ namespace PBL03_DAL
         }
         public void CheckLogin(string username, string password)
         {
-            var user = qlns.accountts.Where(p => p.TaiKhoan.Equals(username)).ToList();
+            var user = qlns.acountts.Where(p => p.TaiKhoan.Equals(username)).ToList();
 
             // kiểm tra xem tài khoản có tồn tại trong cơ sở dữ liệu hay không
             if(user.Count() > 0)

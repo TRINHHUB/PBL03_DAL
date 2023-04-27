@@ -74,12 +74,12 @@ namespace PBL03_DAL
             try
             {
                 QLNS qlns = new QLNS();
-                accountt ac = new accountt();
+                acountt ac = new acountt();
 
                 ac.TaiKhoan = txtTKres.Text;
                 ac.MatKhau = txtMKres.Text;
                 ac.Gmail = txtGMres.Text;
-                var signup = qlns.accountts.Add(ac);
+                var signup = qlns.acountts.Add(ac);
                 qlns.SaveChanges();
 
                 if (MessageBox.Show("Đăng kí thành công ! Bạn có muốn đăng nhập luôn không?", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)

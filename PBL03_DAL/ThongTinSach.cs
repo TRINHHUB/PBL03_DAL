@@ -150,9 +150,6 @@ namespace PBL03_DAL
         }
 
 
-
-
-
         private void ThongTinSach_Load(object sender, EventArgs e)
         {
 

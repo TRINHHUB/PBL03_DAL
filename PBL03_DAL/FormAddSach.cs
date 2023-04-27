@@ -40,27 +40,27 @@ namespace PBL03_DAL
         }
         public void GetcbbNXB()
         {
-            QLNS qlns = new QLNS();
+            QLNS QLNS  = new QLNS();
 
-            var query = from i in qlns.nxbs
+            var query = from i in QLNS .nxbs
                         select i.tennxb;
             cbbNXB.DataSource = new BindingSource(query.ToList(), null);
             cbbNXB.DisplayMember = "Tên NXB";
         }
         public void GetcbbTL()
         {
-            QLNS qlns = new QLNS();
+            QLNS  QLNS  = new QLNS ();
 
-            var query1 = from i in qlns.theloais
+            var query1 = from i in QLNS .theloais
                         select i.tentheloai;
             cbbTL.DataSource = new BindingSource(query1.ToList(), null);
             cbbTL.DisplayMember = "Tên Thể Loại";
         }
         public void GetcbbTG()
         {
-            QLNS qlns = new QLNS();
+            QLNS  QLNS  = new QLNS ();
 
-            var query2 = from i in qlns.tacgias
+            var query2 = from i in QLNS .tacgias
                         select i.tentacgia;
             cbbTG.DataSource = new BindingSource(query2.ToList(), null);
             cbbTG.DisplayMember = "Tên Tác Giả";
@@ -82,18 +82,18 @@ namespace PBL03_DAL
 
         private void btnokaddS_Click(object sender, EventArgs e)
         {
-            QLNS qlns = new QLNS();          
+            QLNS QLNS  = new QLNS ();          
             sach s = new sach();
 
             string tentl = cbbTL.Text;
-             int matl = qlns.theloais.Where(p => p.tentheloai == tentl).Select(p => p.matheloai).FirstOrDefault();
+             int matl = QLNS .theloais.Where(p => p.tentheloai == tentl).Select(p => p.matheloai).FirstOrDefault();
 
             string tennxbget = cbbNXB.Text;
-            int maNXB = qlns.nxbs.Where(p => p.tennxb == tennxbget).Select(p => p.manxb).FirstOrDefault();
+            int maNXB = QLNS .nxbs.Where(p => p.tennxb == tennxbget).Select(p => p.manxb).FirstOrDefault();
 
 
             string tentg = cbbTG.Text;
-            int matg = qlns.tacgias.Where(p => p.tentacgia == tentg).Select(p => p.matacgia).FirstOrDefault();
+            int matg = QLNS .tacgias.Where(p => p.tentacgia == tentg).Select(p => p.matacgia).FirstOrDefault();
 
           
             try
@@ -114,8 +114,8 @@ namespace PBL03_DAL
                 s.dataanh = (byte[])ImageConver;
                 
 
-                qlns.saches.Add(s);
-                qlns.SaveChanges();
+                QLNS .saches.Add(s);
+                QLNS .SaveChanges();
                 MessageBox.Show("Thêm sách thành công!");
             }
             catch (Exception ex)
