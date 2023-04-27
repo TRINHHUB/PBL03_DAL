@@ -65,6 +65,15 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="accountt.cs">
+      <DependentUpon>QLNS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="admin.cs">
+      <DependentUpon>QLNS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="docgia.cs">
+      <DependentUpon>QLNS.tt</DependentUpon>
+    </Compile>
     <Compile Include="FormAddDocGia.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,11 +98,8 @@
     <Compile Include="FormEditDocGia.Designer.cs">
       <DependentUpon>FormEditDocGia.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormMuaSach.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormMuaSach.Designer.cs">
-      <DependentUpon>FormMuaSach.cs</DependentUpon>
+    <Compile Include="giohang.cs">
+      <DependentUpon>QLNS.tt</DependentUpon>
     </Compile>
     <Compile Include="GioHangDocGia.cs">
       <SubType>Form</SubType>
@@ -119,6 +125,15 @@
     <Compile Include="MuaSach.Designer.cs">
       <DependentUpon>MuaSach.cs</DependentUpon>
     </Compile>
+    <Compile Include="nhanvien.cs">
+      <DependentUpon>QLNS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="nxb.cs">
+      <DependentUpon>QLNS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="order.cs">
+      <DependentUpon>QLNS.tt</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QLDocGia.cs">
@@ -133,6 +148,21 @@
     <Compile Include="QLMuonTra.Designer.cs">
       <DependentUpon>QLMuonTra.cs</DependentUpon>
     </Compile>
+    <Compile Include="QLNS.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLNS.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="QLNS.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLNS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="QLNS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLNS.edmx</DependentUpon>
+    </Compile>
     <Compile Include="QLNV.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -146,6 +176,9 @@
       <DependentUpon>QLSach.cs</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
+    <Compile Include="sach.cs">
+      <DependentUpon>QLNS.tt</DependentUpon>
+    </Compile>
     <Compile Include="SignUp.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -157,6 +190,21 @@
     </Compile>
     <Compile Include="AddImages.Designer.cs">
       <DependentUpon>AddImages.cs</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagram.cs">
+      <DependentUpon>QLNS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tacgia.cs">
+      <DependentUpon>QLNS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ThanhToanSach.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThanhToanSach.Designer.cs">
+      <DependentUpon>ThanhToanSach.cs</DependentUpon>
+    </Compile>
+    <Compile Include="theloai.cs">
+      <DependentUpon>QLNS.tt</DependentUpon>
     </Compile>
     <Compile Include="ThongTinSach.cs">
       <SubType>Form</SubType>
@@ -216,6 +264,9 @@
     <EmbeddedResource Include="AddImages.resx">
       <DependentUpon>AddImages.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ThanhToanSach.resx">
+      <DependentUpon>ThanhToanSach.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ThongTinSach.resx">
       <DependentUpon>ThongTinSach.cs</DependentUpon>
     </EmbeddedResource>
@@ -234,6 +285,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <EntityDeploy Include="QLNS.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>QLNS.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="QLNS.edmx.diagram">
+      <DependentUpon>QLNS.edmx</DependentUpon>
+    </None>
     <None Include="Resources\icons8-book-shelf-50.png" />
   </ItemGroup>
   <ItemGroup>
@@ -310,6 +368,18 @@
   </ItemGroup>
   <ItemGroup>
     <Analyzer Include="..\packages\Guna.UI2.WinForms.2.0.4.4\lib\net6.0-windows7.0\Guna.UI2.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="QLNS.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>QLNS.edmx</DependentUpon>
+      <LastGenOutput>QLNS.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="QLNS.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>QLNS.edmx</DependentUpon>
+      <LastGenOutput>QLNS.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

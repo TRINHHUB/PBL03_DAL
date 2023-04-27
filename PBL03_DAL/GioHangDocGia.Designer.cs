@@ -181,7 +181,7 @@
             this.grbGioHang.Controls.Add(this.guna2ControlBox5);
             this.grbGioHang.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grbGioHang.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.grbGioHang.Location = new System.Drawing.Point(144, 2);
+            this.grbGioHang.Location = new System.Drawing.Point(144, 1);
             this.grbGioHang.Name = "grbGioHang";
             this.grbGioHang.Size = new System.Drawing.Size(960, 663);
             this.grbGioHang.TabIndex = 9;
@@ -198,6 +198,7 @@
             this.Controls.Add(this.MenuAdmin);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "GioHangDocGia";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ThongTinSach";
             this.Load += new System.EventHandler(this.GioHangDocGia_Load);
             this.MenuAdmin.ResumeLayout(false);

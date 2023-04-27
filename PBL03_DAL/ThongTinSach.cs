@@ -47,7 +47,7 @@ namespace PBL03_DAL
 
                 Guna2PictureBox ptb = new Guna2PictureBox();
                 ptb.Size = new Size(155, 200);
-                ptb.Location = new Point(18, 5);
+                ptb.Location = new Point(12, 5);
                 ptb.Image = Image.FromStream(new MemoryStream(image[i]));
                 ptb.SizeMode = PictureBoxSizeMode.Zoom;
 
@@ -87,12 +87,24 @@ namespace PBL03_DAL
                 btn1.Cursor = Cursors.Hand;
                 btn1.Name = lb.Text;
 
+                Guna2Button btn2 = new Guna2Button();
+                btn2.Location = new Point(165, 10);
+                btn2.Size = new Size(15, 15);
+                btn2.Font = new Font("Tahoma", 8, FontStyle.Bold);
+                btn2.Text = "+";
+                btn2.TextAlign = HorizontalAlignment.Center;
+                btn2.FillColor = Color.FromArgb(94, 148, 255);
+                btn2.ForeColor = Color.Black;
+                btn2.Cursor = Cursors.Hand;
+
+
 
 
 
 
                 pn.Controls.Add(btn);
                 pn.Controls.Add(btn1);
+                pn.Controls.Add(btn2);
                 pn.Controls.Add(lb);
                 pn.Controls.Add(ptb);
                 
@@ -117,8 +129,11 @@ namespace PBL03_DAL
                 guna2GroupBox1.Controls.Add(pn);
                 btn.Click += new EventHandler(btn_Click);
                 btn1.Click += new EventHandler(btn1_Click);
+                btn2.MouseHover += new EventHandler(btn2_MouseHover);
+                btn2.MouseLeave += new EventHandler(btn2_MouseLeave);
+
             }
-       }
+        }
         private void btn_Click(object sender, EventArgs e)
         {
             // Xử lý khi button được click
@@ -148,6 +163,116 @@ namespace PBL03_DAL
             }
 
         }
+        Guna2Panel pn1 = new Guna2Panel();
+        private void btn2_MouseHover(object sender, EventArgs e)
+        {
+            QLNS qlns = new QLNS();
+            string lbContainNameSach = ((Guna2Button)sender).Name;
+            var getMaNXB = qlns.saches.Where( s => s.tensach == lbContainNameSach).Select(p => p.manxb).FirstOrDefault();
+            
+            var getNXBfromMa = qlns.nxbs.Where( nxb => nxb.manxb == getMaNXB ).Select( p => p.tennxb).ToArray();
+            var soluong = qlns.saches.Select(p => p.soluong).ToArray();
+            var giatien = qlns.saches.Select(p => p.giatien).ToArray();
+            
+
+            for (int i = 0; i < giatien.Length; i++)
+            {
+                pn1.Size = new Size(250, 230);
+                pn1.BackColor = Color.FromArgb(147, 198, 184);
+                pn1.Location = new Point(40, 91);
+                pn1.Visible = true;
+
+                Guna2HtmlLabel lb1 = new Guna2HtmlLabel();
+                lb1.Size = new Size(51, 15);
+                lb1.Location = new Point(13, 65);
+                lb1.Font = new Font("Segoe UI", 9, FontStyle.Bold);
+                lb1.Text = "Thể Loại:";
+
+                Guna2HtmlLabel lb2 = new Guna2HtmlLabel();
+                lb2.Size = new Size(47, 15);
+                lb2.Location = new Point(13, 30);
+                lb2.Font = new Font("Segoe UI", 9, FontStyle.Bold);
+                lb2.Text = "Tác Giả:";
+
+                Guna2HtmlLabel lb3 = new Guna2HtmlLabel();
+                lb3.Size = new Size(47, 15);
+                lb3.Location = new Point(13, 100);
+                lb3.Font = new Font("Segoe UI", 9, FontStyle.Bold);
+                lb3.Text = "Nhà xuất bản:";
+
+                Guna2HtmlLabel lb4 = new Guna2HtmlLabel();
+                lb4.Size = new Size(47, 15);
+                lb4.Location = new Point(13, 135);
+                lb4.Font = new Font("Segoe UI", 9, FontStyle.Bold);
+                lb4.Text = "Số lượng còn:";
+
+                Guna2HtmlLabel lb5 = new Guna2HtmlLabel();
+                lb5.Size = new Size(47, 15);
+                lb5.Location = new Point(13, 170);
+                lb5.Font = new Font("Segoe UI", 9, FontStyle.Bold);
+                lb5.Text = "Giá bán:";
+
+                Guna2HtmlLabel lb6 = new Guna2HtmlLabel();
+                lb6.Size = new Size(47, 15);
+                lb6.Location = new Point(65, 30);
+                lb6.Font = new Font("Segoe UI", 9, FontStyle.Bold);
+                lb6.Text = ""; // tacgia
+
+                Guna2HtmlLabel lb7 = new Guna2HtmlLabel();
+                lb7.Size = new Size(47, 15);
+                lb7.Location = new Point(65, 65);
+                lb7.Font = new Font("Segoe UI", 9, FontStyle.Bold);
+                lb7.Text = ""; //theloai
+
+                Guna2HtmlLabel lb8 = new Guna2HtmlLabel();
+                lb8.Size = new Size(47, 15);
+                lb8.Location = new Point(65, 100);
+                lb8.Font = new Font("Segoe UI", 9, FontStyle.Bold);
+/*              lb8.Text = getNXBfromMa[i].ToString();
+*/
+                Guna2HtmlLabel lb9 = new Guna2HtmlLabel();
+                lb9.Size = new Size(47, 15);
+                lb9.Location = new Point(65, 135);
+                lb9.Font = new Font("Segoe UI", 9, FontStyle.Bold);
+                lb9.Text = soluong[i].ToString();
+
+                Guna2HtmlLabel lb10 = new Guna2HtmlLabel();
+                lb10.Size = new Size(47, 15);
+                lb10.Location = new Point(65, 170);
+                lb10.Font = new Font("Segoe UI", 9, FontStyle.Bold);
+                lb10.Text = giatien[i].ToString();
+
+
+
+
+                pn1.Controls.Add(lb1);
+                pn1.Controls.Add(lb2);
+                pn1.Controls.Add(lb3);
+                pn1.Controls.Add(lb4);
+                pn1.Controls.Add(lb5);
+                pn1.Controls.Add(lb6);
+                pn1.Controls.Add(lb7);
+                pn1.Controls.Add(lb8);
+                pn1.Controls.Add(lb9);
+                pn1.Controls.Add(lb10);
+
+
+
+                this.Controls.Add(pn1);
+                pn1.BringToFront();
+
+
+        }
+
+        }
+        private void btn2_MouseLeave(object sender, EventArgs e)
+        {
+            pn1.Visible = false;
+        }
+
+
+
+
 
 
 

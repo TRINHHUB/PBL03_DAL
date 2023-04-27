@@ -47,9 +47,20 @@ namespace PBL03_DAL
                 {
                     //khớp
                     MessageBox.Show("Đăng nhập thành công!");
-                    MainForm mf = new MainForm();
-                    this.Hide();
-                    mf.Show();
+                    if (username == "ADMIN")
+                    {
+                        MainForm mf = new MainForm();
+                        this.Hide();
+                        mf.Show();
+                    }
+                    else
+                    {
+                        FormDocGia fgd = new FormDocGia();
+                        this.Hide();
+                        fgd.Show();
+                    }
+                    
+                    
                 }
                 else
                 {

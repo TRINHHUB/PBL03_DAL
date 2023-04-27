@@ -113,7 +113,6 @@ namespace PBL03_DAL
 
                 pn.Controls.Add(btn);
                 pn.Controls.Add(btn1);
-                pn.Controls.Add(lb);
                 pn.Controls.Add(ptb);
 
 
@@ -127,11 +126,6 @@ namespace PBL03_DAL
                 else
                 {
                     x += 231;
-                    if (count == 4)
-                    {
-                        x = 20;
-                        y += 300;
-                    }
                 }
 
                 grbGioHang.Controls.Add(pn);
@@ -143,7 +137,30 @@ namespace PBL03_DAL
         {
             // mua
             // những thứ thay đổi: số lượng,tiền docgia,tiền admin, nếu số lượng  > 0,thì số lượng - theo lượng mua
-            // join bảng admin,docgia,sach;,lấy viadmin,vidocgia,dataanh,tensach,giatien,soluong...
+            // join bảng adminS,docgia,sach;,lấy viadmin,vidocgia,dataanh,tensach,giatien,soluong...
+            DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn mua sách này không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            // Xử lý kết quả từ người dùng
+            if (result == DialogResult.Yes)
+            {
+                Guna2Button btn = sender as Guna2Button;
+                QLNS qlns = new QLNS();
+                string lbContainNameSach = ((Guna2Button)sender).Name;
+                var sachcanmua = qlns.saches.Select(p => new { p.masach,p.tensach, p.soluong, p.giatien, p.dataanh }).Where(p => p.tensach == lbContainNameSach).FirstOrDefault();
+
+                var thongtinthanhtoan = from tt in qlns.orders
+                                        join dg in qlns.docgias on tt.madocgia equals dg.madocgia
+                                        join ad in qlns.adminS on tt.maadmin equals ad.maadmin
+                                        where tt.masach == sachcanmua.masach
+                                        select new { dg.walletdocgia, ad.walletadmin };
+
+                ThanhToanSach tts = new ThanhToanSach();
+                this.Hide();
+                tts.Show();
+
+
+
+            }
 
         }
         private void btn1_Click(object sender, EventArgs e)
