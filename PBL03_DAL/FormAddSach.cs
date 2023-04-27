@@ -82,18 +82,18 @@ namespace PBL03_DAL
 
         private void btnokaddS_Click(object sender, EventArgs e)
         {
-            QLNS QLNS  = new QLNS ();          
+            QLNS qlns  = new QLNS ();          
             sach s = new sach();
 
             string tentl = cbbTL.Text;
-             int matl = QLNS .theloais.Where(p => p.tentheloai == tentl).Select(p => p.matheloai).FirstOrDefault();
+             int matl = qlns.theloais.Where(p => p.tentheloai == tentl).Select(p => p.matheloai).FirstOrDefault();
 
             string tennxbget = cbbNXB.Text;
-            int maNXB = QLNS .nxbs.Where(p => p.tennxb == tennxbget).Select(p => p.manxb).FirstOrDefault();
+            int maNXB = qlns.nxbs.Where(p => p.tennxb == tennxbget).Select(p => p.manxb).FirstOrDefault();
 
 
             string tentg = cbbTG.Text;
-            int matg = QLNS .tacgias.Where(p => p.tentacgia == tentg).Select(p => p.matacgia).FirstOrDefault();
+            int matg = qlns.tacgias.Where(p => p.tentacgia == tentg).Select(p => p.matacgia).FirstOrDefault();
 
           
             try
@@ -114,8 +114,8 @@ namespace PBL03_DAL
                 s.dataanh = (byte[])ImageConver;
                 
 
-                QLNS .saches.Add(s);
-                QLNS .SaveChanges();
+                qlns.saches.Add(s);
+                qlns.SaveChanges();
                 MessageBox.Show("Thêm sách thành công!");
             }
             catch (Exception ex)
