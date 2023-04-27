@@ -70,8 +70,9 @@
             this.MenuAdmin.FillColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(198)))), ((int)(((byte)(184)))));
             this.MenuAdmin.FillColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(198)))), ((int)(((byte)(184)))));
             this.MenuAdmin.Location = new System.Drawing.Point(0, 0);
+            this.MenuAdmin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MenuAdmin.Name = "MenuAdmin";
-            this.MenuAdmin.Size = new System.Drawing.Size(127, 632);
+            this.MenuAdmin.Size = new System.Drawing.Size(169, 778);
             this.MenuAdmin.TabIndex = 1;
             // 
             // btnExitDG
@@ -93,9 +94,10 @@
             this.btnExitDG.ImageOffset = new System.Drawing.Point(5, 0);
             this.btnExitDG.ImageSize = new System.Drawing.Size(25, 25);
             this.btnExitDG.IndicateFocus = true;
-            this.btnExitDG.Location = new System.Drawing.Point(0, 106);
+            this.btnExitDG.Location = new System.Drawing.Point(0, 130);
+            this.btnExitDG.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnExitDG.Name = "btnExitDG";
-            this.btnExitDG.Size = new System.Drawing.Size(127, 45);
+            this.btnExitDG.Size = new System.Drawing.Size(169, 55);
             this.btnExitDG.TabIndex = 2;
             this.btnExitDG.Text = "THOÁT";
             this.btnExitDG.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -122,9 +124,10 @@
             this.guna2Button1.ImageOffset = new System.Drawing.Point(5, 0);
             this.guna2Button1.ImageSize = new System.Drawing.Size(25, 25);
             this.guna2Button1.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.guna2Button1.Location = new System.Drawing.Point(0, 61);
+            this.guna2Button1.Location = new System.Drawing.Point(0, 75);
+            this.guna2Button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Size = new System.Drawing.Size(127, 45);
+            this.guna2Button1.Size = new System.Drawing.Size(169, 55);
             this.guna2Button1.TabIndex = 1;
             this.guna2Button1.Text = "ADMIN";
             this.guna2Button1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -140,9 +143,10 @@
             this.guna2CirclePictureBox1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.guna2CirclePictureBox1.InitialImage = global::PBL03_DAL.Properties.Resources.icons8_repository_96;
             this.guna2CirclePictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.guna2CirclePictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
             this.guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CirclePictureBox1.Size = new System.Drawing.Size(127, 61);
+            this.guna2CirclePictureBox1.Size = new System.Drawing.Size(169, 75);
             this.guna2CirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.guna2CirclePictureBox1.TabIndex = 0;
             this.guna2CirclePictureBox1.TabStop = false;
@@ -153,9 +157,10 @@
             this.guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(198)))), ((int)(((byte)(184)))));
             this.guna2Panel1.Controls.Add(this.label1);
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.guna2Panel1.Location = new System.Drawing.Point(127, 0);
+            this.guna2Panel1.Location = new System.Drawing.Point(169, 0);
+            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(1119, 55);
+            this.guna2Panel1.Size = new System.Drawing.Size(1492, 68);
             this.guna2Panel1.TabIndex = 2;
             // 
             // label1
@@ -164,9 +169,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(434, 16);
+            this.label1.Location = new System.Drawing.Point(579, 20);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(185, 25);
+            this.label1.Size = new System.Drawing.Size(228, 31);
             this.label1.TabIndex = 0;
             this.label1.Text = "Quản Lí Đọc Giả";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -202,11 +208,13 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgrDG.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgrDG.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgrDG.Location = new System.Drawing.Point(160, 148);
+            this.dgrDG.Location = new System.Drawing.Point(213, 182);
+            this.dgrDG.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgrDG.Name = "dgrDG";
             this.dgrDG.RowHeadersVisible = false;
+            this.dgrDG.RowHeadersWidth = 51;
             this.dgrDG.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.dgrDG.Size = new System.Drawing.Size(810, 488);
+            this.dgrDG.Size = new System.Drawing.Size(1080, 601);
             this.dgrDG.TabIndex = 3;
             this.dgrDG.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgrDG.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -235,6 +243,7 @@
             this.MaDG.DataPropertyName = "madocgia";
             this.MaDG.DividerWidth = 2;
             this.MaDG.HeaderText = "Mã Độc Giả";
+            this.MaDG.MinimumWidth = 6;
             this.MaDG.Name = "MaDG";
             // 
             // TenDG
@@ -242,6 +251,7 @@
             this.TenDG.DataPropertyName = "hoten";
             this.TenDG.DividerWidth = 2;
             this.TenDG.HeaderText = "Họ Tên";
+            this.TenDG.MinimumWidth = 6;
             this.TenDG.Name = "TenDG";
             // 
             // NgaySinh
@@ -249,6 +259,7 @@
             this.NgaySinh.DataPropertyName = "ngaysinh";
             this.NgaySinh.DividerWidth = 2;
             this.NgaySinh.HeaderText = "Ngày Sinh";
+            this.NgaySinh.MinimumWidth = 6;
             this.NgaySinh.Name = "NgaySinh";
             // 
             // DiaChiDG
@@ -256,6 +267,7 @@
             this.DiaChiDG.DataPropertyName = "diachi";
             this.DiaChiDG.DividerWidth = 2;
             this.DiaChiDG.HeaderText = "Địa Chỉ";
+            this.DiaChiDG.MinimumWidth = 6;
             this.DiaChiDG.Name = "DiaChiDG";
             // 
             // SDT
@@ -263,6 +275,7 @@
             this.SDT.DataPropertyName = "sdt";
             this.SDT.DividerWidth = 2;
             this.SDT.HeaderText = "SDT";
+            this.SDT.MinimumWidth = 6;
             this.SDT.Name = "SDT";
             // 
             // genderDG
@@ -270,6 +283,7 @@
             this.genderDG.DataPropertyName = "gioitinh";
             this.genderDG.DividerWidth = 2;
             this.genderDG.HeaderText = "Giới Tính";
+            this.genderDG.MinimumWidth = 6;
             this.genderDG.Name = "genderDG";
             // 
             // txtTKDG
@@ -283,12 +297,13 @@
             this.txtTKDG.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTKDG.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtTKDG.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTKDG.Location = new System.Drawing.Point(160, 95);
+            this.txtTKDG.Location = new System.Drawing.Point(213, 117);
+            this.txtTKDG.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtTKDG.Name = "txtTKDG";
             this.txtTKDG.PasswordChar = '\0';
             this.txtTKDG.PlaceholderText = "";
             this.txtTKDG.SelectedText = "";
-            this.txtTKDG.Size = new System.Drawing.Size(651, 36);
+            this.txtTKDG.Size = new System.Drawing.Size(868, 44);
             this.txtTKDG.TabIndex = 4;
             // 
             // btnTKDG
@@ -310,9 +325,10 @@
             this.btnTKDG.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnTKDG.ImageOffset = new System.Drawing.Point(10, 0);
             this.btnTKDG.ImageSize = new System.Drawing.Size(18, 18);
-            this.btnTKDG.Location = new System.Drawing.Point(840, 95);
+            this.btnTKDG.Location = new System.Drawing.Point(1120, 117);
+            this.btnTKDG.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnTKDG.Name = "btnTKDG";
-            this.btnTKDG.Size = new System.Drawing.Size(130, 36);
+            this.btnTKDG.Size = new System.Drawing.Size(173, 44);
             this.btnTKDG.TabIndex = 10;
             this.btnTKDG.Text = "Tìm Kiếm";
             this.btnTKDG.TextOffset = new System.Drawing.Point(10, 0);
@@ -338,9 +354,10 @@
             this.btnviewDG.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnviewDG.ImageOffset = new System.Drawing.Point(10, 0);
             this.btnviewDG.ImageSize = new System.Drawing.Size(18, 18);
-            this.btnviewDG.Location = new System.Drawing.Point(1056, 229);
+            this.btnviewDG.Location = new System.Drawing.Point(1408, 282);
+            this.btnviewDG.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnviewDG.Name = "btnviewDG";
-            this.btnviewDG.Size = new System.Drawing.Size(109, 45);
+            this.btnviewDG.Size = new System.Drawing.Size(145, 55);
             this.btnviewDG.TabIndex = 9;
             this.btnviewDG.Text = "View";
             this.btnviewDG.TextOffset = new System.Drawing.Point(10, 0);
@@ -365,13 +382,15 @@
             this.btnxoaDG.Image = global::PBL03_DAL.Properties.Resources.icons8_remove_32;
             this.btnxoaDG.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnxoaDG.ImageOffset = new System.Drawing.Point(10, 0);
-            this.btnxoaDG.Location = new System.Drawing.Point(1056, 468);
+            this.btnxoaDG.Location = new System.Drawing.Point(1408, 576);
+            this.btnxoaDG.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnxoaDG.Name = "btnxoaDG";
-            this.btnxoaDG.Size = new System.Drawing.Size(109, 45);
+            this.btnxoaDG.Size = new System.Drawing.Size(145, 55);
             this.btnxoaDG.TabIndex = 8;
             this.btnxoaDG.Text = "Xóa";
             this.btnxoaDG.TextOffset = new System.Drawing.Point(10, 0);
             this.btnxoaDG.UseTransparentBackground = true;
+            this.btnxoaDG.Click += new System.EventHandler(this.btnxoaDG_Click);
             // 
             // btneditDG
             // 
@@ -392,9 +411,10 @@
             this.btneditDG.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btneditDG.ImageOffset = new System.Drawing.Point(10, 0);
             this.btneditDG.ImageSize = new System.Drawing.Size(18, 18);
-            this.btneditDG.Location = new System.Drawing.Point(1056, 383);
+            this.btneditDG.Location = new System.Drawing.Point(1408, 471);
+            this.btneditDG.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btneditDG.Name = "btneditDG";
-            this.btneditDG.Size = new System.Drawing.Size(109, 45);
+            this.btneditDG.Size = new System.Drawing.Size(145, 55);
             this.btneditDG.TabIndex = 7;
             this.btneditDG.Text = "Sửa";
             this.btneditDG.TextOffset = new System.Drawing.Point(10, 0);
@@ -423,9 +443,10 @@
             this.btnthemDG.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnthemDG.ImageOffset = new System.Drawing.Point(10, 0);
             this.btnthemDG.ImageSize = new System.Drawing.Size(18, 18);
-            this.btnthemDG.Location = new System.Drawing.Point(1056, 302);
+            this.btnthemDG.Location = new System.Drawing.Point(1408, 372);
+            this.btnthemDG.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnthemDG.Name = "btnthemDG";
-            this.btnthemDG.Size = new System.Drawing.Size(109, 45);
+            this.btnthemDG.Size = new System.Drawing.Size(145, 55);
             this.btnthemDG.TabIndex = 6;
             this.btnthemDG.Text = "Thêm";
             this.btnthemDG.TextOffset = new System.Drawing.Point(10, 0);
@@ -434,9 +455,9 @@
             // 
             // QLDocGia
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1246, 632);
+            this.ClientSize = new System.Drawing.Size(1661, 778);
             this.Controls.Add(this.btnTKDG);
             this.Controls.Add(this.btnviewDG);
             this.Controls.Add(this.btnxoaDG);
@@ -446,6 +467,7 @@
             this.Controls.Add(this.dgrDG);
             this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.MenuAdmin);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "QLDocGia";
             this.Text = "Quản Lí Sách";
             this.MenuAdmin.ResumeLayout(false);

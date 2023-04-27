@@ -25,7 +25,7 @@ namespace PBL03_DAL
             ImageConverter Converter = new ImageConverter();
             var ImageConver = Converter.ConvertTo(pimg, typeof(byte[]));
 
-            QLNS qlns = new QLNS();
+           QLNS qlns = new QLNS();
             sach s = new sach();
 
             /*s.masach = Convert.ToInt32(txtMSimage.Text);*/
