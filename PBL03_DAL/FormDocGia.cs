@@ -30,5 +30,12 @@ namespace PBL03_DAL
             this.Hide();
             ghdg.Show();
         }
+
+        private void btnexitDocGia_Click(object sender, EventArgs e)
+        {
+            Login form = new Login();
+            this.Hide();
+            form.Show();
+        }
     }
 }

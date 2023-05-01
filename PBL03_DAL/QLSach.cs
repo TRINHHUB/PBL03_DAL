@@ -53,6 +53,23 @@ namespace PBL03_DAL
                 p.dataanh
             }).ToList();
         }
-   
+
+        private void btnxoaS_Click(object sender, EventArgs e)
+        {
+            if(dgrS.SelectedRows.Count > 0)
+            {
+                foreach(DataGridViewRow i in dgrS.SelectedRows)
+                {
+                    using(QLNS db = new QLNS())
+                    {
+                        int m = Convert.ToInt32(i.Cells[0].Value.ToString());
+                        sach s = db.saches.Find(m);
+                        db.saches.Remove(s);
+                        db.SaveChanges();
+                        MessageBox.Show("Bạn đã xóa thành công sách này");
+                   }
+                }
+            }
+        }
     }
 }

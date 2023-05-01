@@ -40,6 +40,15 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dgrNV = new Guna.UI2.WinForms.Guna2DataGridView();
             this.txttimkiemNV = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txt_nameNV = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txt_addressNV = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txt_sdtNV = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.btntimkiemNV = new Guna.UI2.WinForms.Guna2Button();
             this.btnviewNV = new Guna.UI2.WinForms.Guna2Button();
             this.btnxoaNV = new Guna.UI2.WinForms.Guna2Button();
@@ -62,8 +71,9 @@
             this.MenuAdmin.FillColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(198)))), ((int)(((byte)(184)))));
             this.MenuAdmin.FillColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(198)))), ((int)(((byte)(184)))));
             this.MenuAdmin.Location = new System.Drawing.Point(0, 0);
+            this.MenuAdmin.Margin = new System.Windows.Forms.Padding(4);
             this.MenuAdmin.Name = "MenuAdmin";
-            this.MenuAdmin.Size = new System.Drawing.Size(143, 487);
+            this.MenuAdmin.Size = new System.Drawing.Size(191, 623);
             this.MenuAdmin.TabIndex = 1;
             // 
             // btnexitNV
@@ -85,9 +95,10 @@
             this.btnexitNV.ImageOffset = new System.Drawing.Point(5, 0);
             this.btnexitNV.ImageSize = new System.Drawing.Size(25, 25);
             this.btnexitNV.IndicateFocus = true;
-            this.btnexitNV.Location = new System.Drawing.Point(0, 106);
+            this.btnexitNV.Location = new System.Drawing.Point(0, 130);
+            this.btnexitNV.Margin = new System.Windows.Forms.Padding(4);
             this.btnexitNV.Name = "btnexitNV";
-            this.btnexitNV.Size = new System.Drawing.Size(143, 45);
+            this.btnexitNV.Size = new System.Drawing.Size(191, 55);
             this.btnexitNV.TabIndex = 2;
             this.btnexitNV.Text = "THOÁT";
             this.btnexitNV.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -114,9 +125,10 @@
             this.guna2Button1.ImageOffset = new System.Drawing.Point(5, 0);
             this.guna2Button1.ImageSize = new System.Drawing.Size(25, 25);
             this.guna2Button1.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.guna2Button1.Location = new System.Drawing.Point(0, 61);
+            this.guna2Button1.Location = new System.Drawing.Point(0, 75);
+            this.guna2Button1.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Size = new System.Drawing.Size(143, 45);
+            this.guna2Button1.Size = new System.Drawing.Size(191, 55);
             this.guna2Button1.TabIndex = 1;
             this.guna2Button1.Text = "ADMIN";
             this.guna2Button1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -127,14 +139,15 @@
             // 
             this.guna2CirclePictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.guna2CirclePictureBox1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.guna2CirclePictureBox1.Image = global::PBL03_DAL.Properties.Resources.icons8_repository_96;
+            this.guna2CirclePictureBox1.Image = global::PBL03_DAL.Properties.Resources.icons8_collaborator_female_60;
             this.guna2CirclePictureBox1.ImageRotate = 0F;
             this.guna2CirclePictureBox1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.guna2CirclePictureBox1.InitialImage = global::PBL03_DAL.Properties.Resources.icons8_repository_96;
+            this.guna2CirclePictureBox1.InitialImage = global::PBL03_DAL.Properties.Resources.icons8_collaborator_female_60;
             this.guna2CirclePictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.guna2CirclePictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
             this.guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CirclePictureBox1.Size = new System.Drawing.Size(143, 61);
+            this.guna2CirclePictureBox1.Size = new System.Drawing.Size(191, 75);
             this.guna2CirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.guna2CirclePictureBox1.TabIndex = 0;
             this.guna2CirclePictureBox1.TabStop = false;
@@ -145,9 +158,10 @@
             this.guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(198)))), ((int)(((byte)(184)))));
             this.guna2Panel1.Controls.Add(this.label1);
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.guna2Panel1.Location = new System.Drawing.Point(143, 0);
+            this.guna2Panel1.Location = new System.Drawing.Point(191, 0);
+            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(970, 55);
+            this.guna2Panel1.Size = new System.Drawing.Size(1297, 68);
             this.guna2Panel1.TabIndex = 2;
             // 
             // label1
@@ -156,9 +170,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(350, 18);
+            this.label1.Location = new System.Drawing.Point(467, 22);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(210, 25);
+            this.label1.Size = new System.Drawing.Size(258, 31);
             this.label1.TabIndex = 0;
             this.label1.Text = "Quản Lí Nhân Viên";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -186,10 +201,12 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgrNV.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgrNV.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgrNV.Location = new System.Drawing.Point(160, 162);
+            this.dgrNV.Location = new System.Drawing.Point(701, 163);
+            this.dgrNV.Margin = new System.Windows.Forms.Padding(4);
             this.dgrNV.Name = "dgrNV";
             this.dgrNV.RowHeadersVisible = false;
-            this.dgrNV.Size = new System.Drawing.Size(704, 302);
+            this.dgrNV.RowHeadersWidth = 51;
+            this.dgrNV.Size = new System.Drawing.Size(736, 372);
             this.dgrNV.TabIndex = 3;
             this.dgrNV.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgrNV.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -212,6 +229,7 @@
             this.dgrNV.ThemeStyle.RowsStyle.Height = 22;
             this.dgrNV.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgrNV.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dgrNV.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgrNV_RowHeaderMouseClick);
             // 
             // txttimkiemNV
             // 
@@ -224,13 +242,154 @@
             this.txttimkiemNV.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txttimkiemNV.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txttimkiemNV.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txttimkiemNV.Location = new System.Drawing.Point(160, 95);
+            this.txttimkiemNV.Location = new System.Drawing.Point(703, 86);
+            this.txttimkiemNV.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txttimkiemNV.Name = "txttimkiemNV";
             this.txttimkiemNV.PasswordChar = '\0';
             this.txttimkiemNV.PlaceholderText = "";
             this.txttimkiemNV.SelectedText = "";
-            this.txttimkiemNV.Size = new System.Drawing.Size(552, 36);
+            this.txttimkiemNV.Size = new System.Drawing.Size(532, 44);
             this.txttimkiemNV.TabIndex = 4;
+            // 
+            // txt_nameNV
+            // 
+            this.txt_nameNV.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txt_nameNV.DefaultText = "";
+            this.txt_nameNV.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txt_nameNV.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txt_nameNV.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txt_nameNV.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txt_nameNV.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txt_nameNV.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txt_nameNV.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txt_nameNV.Location = new System.Drawing.Point(355, 163);
+            this.txt_nameNV.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txt_nameNV.Name = "txt_nameNV";
+            this.txt_nameNV.PasswordChar = '\0';
+            this.txt_nameNV.PlaceholderText = "";
+            this.txt_nameNV.SelectedText = "";
+            this.txt_nameNV.Size = new System.Drawing.Size(289, 48);
+            this.txt_nameNV.TabIndex = 11;
+            // 
+            // txt_addressNV
+            // 
+            this.txt_addressNV.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txt_addressNV.DefaultText = "";
+            this.txt_addressNV.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txt_addressNV.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txt_addressNV.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txt_addressNV.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txt_addressNV.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txt_addressNV.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txt_addressNV.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txt_addressNV.Location = new System.Drawing.Point(355, 232);
+            this.txt_addressNV.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txt_addressNV.Name = "txt_addressNV";
+            this.txt_addressNV.PasswordChar = '\0';
+            this.txt_addressNV.PlaceholderText = "";
+            this.txt_addressNV.SelectedText = "";
+            this.txt_addressNV.Size = new System.Drawing.Size(289, 48);
+            this.txt_addressNV.TabIndex = 12;
+            // 
+            // txt_sdtNV
+            // 
+            this.txt_sdtNV.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txt_sdtNV.DefaultText = "";
+            this.txt_sdtNV.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txt_sdtNV.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txt_sdtNV.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txt_sdtNV.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txt_sdtNV.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txt_sdtNV.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txt_sdtNV.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txt_sdtNV.Location = new System.Drawing.Point(355, 360);
+            this.txt_sdtNV.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txt_sdtNV.Name = "txt_sdtNV";
+            this.txt_sdtNV.PasswordChar = '\0';
+            this.txt_sdtNV.PlaceholderText = "";
+            this.txt_sdtNV.SelectedText = "";
+            this.txt_sdtNV.Size = new System.Drawing.Size(289, 48);
+            this.txt_sdtNV.TabIndex = 14;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(218, 180);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(109, 31);
+            this.label2.TabIndex = 16;
+            this.label2.Text = "Họ Tên";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label3
+            // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(217, 249);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(110, 31);
+            this.label3.TabIndex = 17;
+            this.label3.Text = "Địa Chỉ";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label4
+            // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(217, 318);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(131, 31);
+            this.label4.TabIndex = 18;
+            this.label4.Text = "Giới Tính";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label5
+            // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(221, 377);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(72, 31);
+            this.label5.TabIndex = 19;
+            this.label5.Text = "SĐT";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton1.Location = new System.Drawing.Point(355, 318);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(74, 29);
+            this.radioButton1.TabIndex = 20;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "Nam";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton2.Location = new System.Drawing.Point(459, 318);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(58, 29);
+            this.radioButton2.TabIndex = 21;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "Nữ";
+            this.radioButton2.UseVisualStyleBackColor = true;
             // 
             // btntimkiemNV
             // 
@@ -251,13 +410,15 @@
             this.btntimkiemNV.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btntimkiemNV.ImageOffset = new System.Drawing.Point(10, 0);
             this.btntimkiemNV.ImageSize = new System.Drawing.Size(18, 18);
-            this.btntimkiemNV.Location = new System.Drawing.Point(734, 95);
+            this.btntimkiemNV.Location = new System.Drawing.Point(1264, 86);
+            this.btntimkiemNV.Margin = new System.Windows.Forms.Padding(4);
             this.btntimkiemNV.Name = "btntimkiemNV";
-            this.btntimkiemNV.Size = new System.Drawing.Size(130, 36);
+            this.btntimkiemNV.Size = new System.Drawing.Size(173, 44);
             this.btntimkiemNV.TabIndex = 10;
             this.btntimkiemNV.Text = "Tìm Kiếm";
             this.btntimkiemNV.TextOffset = new System.Drawing.Point(10, 0);
             this.btntimkiemNV.UseTransparentBackground = true;
+            this.btntimkiemNV.Click += new System.EventHandler(this.btntimkiemNV_Click);
             // 
             // btnviewNV
             // 
@@ -278,13 +439,15 @@
             this.btnviewNV.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnviewNV.ImageOffset = new System.Drawing.Point(10, 0);
             this.btnviewNV.ImageSize = new System.Drawing.Size(18, 18);
-            this.btnviewNV.Location = new System.Drawing.Point(892, 419);
+            this.btnviewNV.Location = new System.Drawing.Point(890, 543);
+            this.btnviewNV.Margin = new System.Windows.Forms.Padding(4);
             this.btnviewNV.Name = "btnviewNV";
-            this.btnviewNV.Size = new System.Drawing.Size(109, 45);
+            this.btnviewNV.Size = new System.Drawing.Size(145, 55);
             this.btnviewNV.TabIndex = 9;
             this.btnviewNV.Text = "View";
             this.btnviewNV.TextOffset = new System.Drawing.Point(10, 0);
             this.btnviewNV.UseTransparentBackground = true;
+            this.btnviewNV.Click += new System.EventHandler(this.btnviewNV_Click);
             // 
             // btnxoaNV
             // 
@@ -304,13 +467,15 @@
             this.btnxoaNV.Image = global::PBL03_DAL.Properties.Resources.icons8_remove_32;
             this.btnxoaNV.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnxoaNV.ImageOffset = new System.Drawing.Point(10, 0);
-            this.btnxoaNV.Location = new System.Drawing.Point(892, 337);
+            this.btnxoaNV.Location = new System.Drawing.Point(664, 544);
+            this.btnxoaNV.Margin = new System.Windows.Forms.Padding(4);
             this.btnxoaNV.Name = "btnxoaNV";
-            this.btnxoaNV.Size = new System.Drawing.Size(109, 45);
+            this.btnxoaNV.Size = new System.Drawing.Size(145, 55);
             this.btnxoaNV.TabIndex = 8;
             this.btnxoaNV.Text = "Xóa";
             this.btnxoaNV.TextOffset = new System.Drawing.Point(10, 0);
             this.btnxoaNV.UseTransparentBackground = true;
+            this.btnxoaNV.Click += new System.EventHandler(this.btnxoaNV_Click);
             // 
             // btnsuaNV
             // 
@@ -331,9 +496,10 @@
             this.btnsuaNV.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnsuaNV.ImageOffset = new System.Drawing.Point(10, 0);
             this.btnsuaNV.ImageSize = new System.Drawing.Size(18, 18);
-            this.btnsuaNV.Location = new System.Drawing.Point(892, 261);
+            this.btnsuaNV.Location = new System.Drawing.Point(437, 544);
+            this.btnsuaNV.Margin = new System.Windows.Forms.Padding(4);
             this.btnsuaNV.Name = "btnsuaNV";
-            this.btnsuaNV.Size = new System.Drawing.Size(109, 45);
+            this.btnsuaNV.Size = new System.Drawing.Size(145, 55);
             this.btnsuaNV.TabIndex = 7;
             this.btnsuaNV.Text = "Sửa";
             this.btnsuaNV.TextOffset = new System.Drawing.Point(10, 0);
@@ -361,19 +527,30 @@
             this.guna2Button3.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2Button3.ImageOffset = new System.Drawing.Point(10, 0);
             this.guna2Button3.ImageSize = new System.Drawing.Size(18, 18);
-            this.guna2Button3.Location = new System.Drawing.Point(892, 186);
+            this.guna2Button3.Location = new System.Drawing.Point(213, 544);
+            this.guna2Button3.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Button3.Name = "guna2Button3";
-            this.guna2Button3.Size = new System.Drawing.Size(109, 45);
+            this.guna2Button3.Size = new System.Drawing.Size(145, 55);
             this.guna2Button3.TabIndex = 6;
             this.guna2Button3.Text = "Thêm";
             this.guna2Button3.TextOffset = new System.Drawing.Point(10, 0);
             this.guna2Button3.UseTransparentBackground = true;
+            this.guna2Button3.Click += new System.EventHandler(this.guna2Button3_Click);
             // 
             // QLNV
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1113, 487);
+            this.ClientSize = new System.Drawing.Size(1488, 623);
+            this.Controls.Add(this.radioButton2);
+            this.Controls.Add(this.radioButton1);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.txt_sdtNV);
+            this.Controls.Add(this.txt_addressNV);
+            this.Controls.Add(this.txt_nameNV);
             this.Controls.Add(this.btntimkiemNV);
             this.Controls.Add(this.btnviewNV);
             this.Controls.Add(this.btnxoaNV);
@@ -383,6 +560,7 @@
             this.Controls.Add(this.dgrNV);
             this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.MenuAdmin);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "QLNV";
             this.Text = "Quản Lí Sách";
             this.MenuAdmin.ResumeLayout(false);
@@ -391,6 +569,7 @@
             this.guna2Panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgrNV)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -409,5 +588,14 @@
         private Guna.UI2.WinForms.Guna2Button btnxoaNV;
         private Guna.UI2.WinForms.Guna2Button btnviewNV;
         private Guna.UI2.WinForms.Guna2Button btntimkiemNV;
+        private Guna.UI2.WinForms.Guna2TextBox txt_nameNV;
+        private Guna.UI2.WinForms.Guna2TextBox txt_addressNV;
+        private Guna.UI2.WinForms.Guna2TextBox txt_sdtNV;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton radioButton2;
     }
 }

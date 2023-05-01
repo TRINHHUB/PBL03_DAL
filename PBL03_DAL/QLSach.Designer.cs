@@ -71,8 +71,9 @@
             this.MenuAdmin.FillColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(198)))), ((int)(((byte)(184)))));
             this.MenuAdmin.FillColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(198)))), ((int)(((byte)(184)))));
             this.MenuAdmin.Location = new System.Drawing.Point(0, 0);
+            this.MenuAdmin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MenuAdmin.Name = "MenuAdmin";
-            this.MenuAdmin.Size = new System.Drawing.Size(143, 572);
+            this.MenuAdmin.Size = new System.Drawing.Size(191, 704);
             this.MenuAdmin.TabIndex = 1;
             // 
             // btnexitS
@@ -94,9 +95,10 @@
             this.btnexitS.ImageOffset = new System.Drawing.Point(5, 0);
             this.btnexitS.ImageSize = new System.Drawing.Size(25, 25);
             this.btnexitS.IndicateFocus = true;
-            this.btnexitS.Location = new System.Drawing.Point(0, 106);
+            this.btnexitS.Location = new System.Drawing.Point(0, 130);
+            this.btnexitS.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnexitS.Name = "btnexitS";
-            this.btnexitS.Size = new System.Drawing.Size(143, 45);
+            this.btnexitS.Size = new System.Drawing.Size(191, 55);
             this.btnexitS.TabIndex = 2;
             this.btnexitS.Text = "THOÁT";
             this.btnexitS.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -123,9 +125,10 @@
             this.guna2Button1.ImageOffset = new System.Drawing.Point(5, 0);
             this.guna2Button1.ImageSize = new System.Drawing.Size(25, 25);
             this.guna2Button1.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.guna2Button1.Location = new System.Drawing.Point(0, 61);
+            this.guna2Button1.Location = new System.Drawing.Point(0, 75);
+            this.guna2Button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Size = new System.Drawing.Size(143, 45);
+            this.guna2Button1.Size = new System.Drawing.Size(191, 55);
             this.guna2Button1.TabIndex = 1;
             this.guna2Button1.Text = "ADMIN";
             this.guna2Button1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -141,9 +144,10 @@
             this.guna2CirclePictureBox1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.guna2CirclePictureBox1.InitialImage = global::PBL03_DAL.Properties.Resources.icons8_repository_96;
             this.guna2CirclePictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.guna2CirclePictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
             this.guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CirclePictureBox1.Size = new System.Drawing.Size(143, 61);
+            this.guna2CirclePictureBox1.Size = new System.Drawing.Size(191, 75);
             this.guna2CirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.guna2CirclePictureBox1.TabIndex = 0;
             this.guna2CirclePictureBox1.TabStop = false;
@@ -154,9 +158,10 @@
             this.guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(198)))), ((int)(((byte)(184)))));
             this.guna2Panel1.Controls.Add(this.label1);
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.guna2Panel1.Location = new System.Drawing.Point(143, 0);
+            this.guna2Panel1.Location = new System.Drawing.Point(191, 0);
+            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(1087, 55);
+            this.guna2Panel1.Size = new System.Drawing.Size(1449, 68);
             this.guna2Panel1.TabIndex = 2;
             // 
             // label1
@@ -165,9 +170,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(350, 18);
+            this.label1.Location = new System.Drawing.Point(467, 22);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(154, 25);
+            this.label1.Size = new System.Drawing.Size(189, 31);
             this.label1.TabIndex = 0;
             this.label1.Text = "Quản Lí Sách";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -183,12 +189,13 @@
             this.txttimkiemS.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txttimkiemS.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txttimkiemS.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txttimkiemS.Location = new System.Drawing.Point(160, 95);
+            this.txttimkiemS.Location = new System.Drawing.Point(213, 117);
+            this.txttimkiemS.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txttimkiemS.Name = "txttimkiemS";
             this.txttimkiemS.PasswordChar = '\0';
             this.txttimkiemS.PlaceholderText = "";
             this.txttimkiemS.SelectedText = "";
-            this.txttimkiemS.Size = new System.Drawing.Size(700, 36);
+            this.txttimkiemS.Size = new System.Drawing.Size(933, 44);
             this.txttimkiemS.TabIndex = 4;
             // 
             // btntkS
@@ -210,9 +217,10 @@
             this.btntkS.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btntkS.ImageOffset = new System.Drawing.Point(10, 0);
             this.btntkS.ImageSize = new System.Drawing.Size(18, 18);
-            this.btntkS.Location = new System.Drawing.Point(892, 95);
+            this.btntkS.Location = new System.Drawing.Point(1189, 117);
+            this.btntkS.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btntkS.Name = "btntkS";
-            this.btntkS.Size = new System.Drawing.Size(130, 36);
+            this.btntkS.Size = new System.Drawing.Size(173, 44);
             this.btntkS.TabIndex = 10;
             this.btntkS.Text = "Tìm Kiếm";
             this.btntkS.TextOffset = new System.Drawing.Point(10, 0);
@@ -237,9 +245,10 @@
             this.btnviewS.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnviewS.ImageOffset = new System.Drawing.Point(10, 0);
             this.btnviewS.ImageSize = new System.Drawing.Size(18, 18);
-            this.btnviewS.Location = new System.Drawing.Point(1047, 404);
+            this.btnviewS.Location = new System.Drawing.Point(1396, 497);
+            this.btnviewS.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnviewS.Name = "btnviewS";
-            this.btnviewS.Size = new System.Drawing.Size(109, 45);
+            this.btnviewS.Size = new System.Drawing.Size(145, 55);
             this.btnviewS.TabIndex = 9;
             this.btnviewS.Text = "View";
             this.btnviewS.TextOffset = new System.Drawing.Point(10, 0);
@@ -264,13 +273,15 @@
             this.btnxoaS.Image = global::PBL03_DAL.Properties.Resources.icons8_remove_32;
             this.btnxoaS.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnxoaS.ImageOffset = new System.Drawing.Point(10, 0);
-            this.btnxoaS.Location = new System.Drawing.Point(1047, 327);
+            this.btnxoaS.Location = new System.Drawing.Point(1396, 402);
+            this.btnxoaS.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnxoaS.Name = "btnxoaS";
-            this.btnxoaS.Size = new System.Drawing.Size(109, 45);
+            this.btnxoaS.Size = new System.Drawing.Size(145, 55);
             this.btnxoaS.TabIndex = 8;
             this.btnxoaS.Text = "Xóa";
             this.btnxoaS.TextOffset = new System.Drawing.Point(10, 0);
             this.btnxoaS.UseTransparentBackground = true;
+            this.btnxoaS.Click += new System.EventHandler(this.btnxoaS_Click);
             // 
             // btneditS
             // 
@@ -291,9 +302,10 @@
             this.btneditS.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btneditS.ImageOffset = new System.Drawing.Point(10, 0);
             this.btneditS.ImageSize = new System.Drawing.Size(18, 18);
-            this.btneditS.Location = new System.Drawing.Point(1047, 255);
+            this.btneditS.Location = new System.Drawing.Point(1396, 314);
+            this.btneditS.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btneditS.Name = "btneditS";
-            this.btneditS.Size = new System.Drawing.Size(109, 45);
+            this.btneditS.Size = new System.Drawing.Size(145, 55);
             this.btneditS.TabIndex = 7;
             this.btneditS.Text = "Sửa";
             this.btneditS.TextOffset = new System.Drawing.Point(10, 0);
@@ -321,9 +333,10 @@
             this.btnthemS.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnthemS.ImageOffset = new System.Drawing.Point(10, 0);
             this.btnthemS.ImageSize = new System.Drawing.Size(18, 18);
-            this.btnthemS.Location = new System.Drawing.Point(1047, 180);
+            this.btnthemS.Location = new System.Drawing.Point(1396, 222);
+            this.btnthemS.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnthemS.Name = "btnthemS";
-            this.btnthemS.Size = new System.Drawing.Size(109, 45);
+            this.btnthemS.Size = new System.Drawing.Size(145, 55);
             this.btnthemS.TabIndex = 6;
             this.btnthemS.Text = "Thêm";
             this.btnthemS.TextOffset = new System.Drawing.Point(10, 0);
@@ -366,10 +379,12 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgrS.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgrS.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgrS.Location = new System.Drawing.Point(160, 163);
+            this.dgrS.Location = new System.Drawing.Point(213, 201);
+            this.dgrS.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgrS.Name = "dgrS";
             this.dgrS.RowHeadersVisible = false;
-            this.dgrS.Size = new System.Drawing.Size(862, 397);
+            this.dgrS.RowHeadersWidth = 51;
+            this.dgrS.Size = new System.Drawing.Size(1149, 489);
             this.dgrS.TabIndex = 11;
             this.dgrS.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgrS.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -399,6 +414,7 @@
             this.MaSach.DividerWidth = 2;
             this.MaSach.FillWeight = 65.80766F;
             this.MaSach.HeaderText = "Mã Sách";
+            this.MaSach.MinimumWidth = 6;
             this.MaSach.Name = "MaSach";
             // 
             // TenSach
@@ -407,6 +423,7 @@
             this.TenSach.DividerWidth = 2;
             this.TenSach.FillWeight = 153.1171F;
             this.TenSach.HeaderText = "Tên Sách";
+            this.TenSach.MinimumWidth = 6;
             this.TenSach.Name = "TenSach";
             // 
             // NămXB
@@ -415,6 +432,7 @@
             this.NămXB.DividerWidth = 2;
             this.NămXB.FillWeight = 92.19276F;
             this.NămXB.HeaderText = "NămXB";
+            this.NămXB.MinimumWidth = 6;
             this.NămXB.Name = "NămXB";
             // 
             // TênNXB
@@ -423,6 +441,7 @@
             this.TênNXB.DividerWidth = 2;
             this.TênNXB.FillWeight = 92.19276F;
             this.TênNXB.HeaderText = "NXB";
+            this.TênNXB.MinimumWidth = 6;
             this.TênNXB.Name = "TênNXB";
             // 
             // TênTG
@@ -431,6 +450,7 @@
             this.TênTG.DividerWidth = 2;
             this.TênTG.FillWeight = 127.9188F;
             this.TênTG.HeaderText = "Tác giả";
+            this.TênTG.MinimumWidth = 6;
             this.TênTG.Name = "TênTG";
             // 
             // TenTL
@@ -439,6 +459,7 @@
             this.TenTL.DividerWidth = 2;
             this.TenTL.FillWeight = 92.19276F;
             this.TenTL.HeaderText = "Thể Loại";
+            this.TenTL.MinimumWidth = 6;
             this.TenTL.Name = "TenTL";
             // 
             // SL
@@ -447,6 +468,7 @@
             this.SL.DividerWidth = 2;
             this.SL.FillWeight = 92.19276F;
             this.SL.HeaderText = "Số Lượng";
+            this.SL.MinimumWidth = 6;
             this.SL.Name = "SL";
             // 
             // ghichu
@@ -455,6 +477,7 @@
             this.ghichu.DividerWidth = 2;
             this.ghichu.FillWeight = 92.19276F;
             this.ghichu.HeaderText = "Ghi chú";
+            this.ghichu.MinimumWidth = 6;
             this.ghichu.Name = "ghichu";
             // 
             // KSACH
@@ -463,19 +486,21 @@
             this.KSACH.DividerWidth = 2;
             this.KSACH.FillWeight = 92.19276F;
             this.KSACH.HeaderText = "Khu sách";
+            this.KSACH.MinimumWidth = 6;
             this.KSACH.Name = "KSACH";
             // 
             // IMAGE
             // 
             this.IMAGE.DataPropertyName = "dataanh";
             this.IMAGE.HeaderText = "Image";
+            this.IMAGE.MinimumWidth = 6;
             this.IMAGE.Name = "IMAGE";
             // 
             // QLSach
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1230, 572);
+            this.ClientSize = new System.Drawing.Size(1640, 704);
             this.Controls.Add(this.dgrS);
             this.Controls.Add(this.btntkS);
             this.Controls.Add(this.btnviewS);
@@ -485,6 +510,7 @@
             this.Controls.Add(this.txttimkiemS);
             this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.MenuAdmin);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "QLSach";
             this.Text = "Quản Lí Sách";
             this.MenuAdmin.ResumeLayout(false);

@@ -8,17 +8,28 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Media.Media3D;
 
 namespace PBL03_DAL
-{
+{//trua 1/5
     public partial class Login : Form
     {
         private QLNS qlns = new QLNS();
         public Login()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
+            this.KeyPreview = true; //Để bắt sự kiện nhấn phím
+            this.KeyDown += new KeyEventHandler(Login_KeyDown); 
         }
 
+        private void Login_KeyDown(object sender, KeyEventArgs e)
+        {
+            if((e.KeyCode == Keys.Enter))
+            {
+                btnLogin.PerformClick(); //Kich hoat nut Login
+            }
+        }
         private void guna2Button2_Click(object sender, EventArgs e)
         {
             SignUp sgu = new SignUp();
@@ -47,7 +58,7 @@ namespace PBL03_DAL
                 {
                     //khớp
                     MessageBox.Show("Đăng nhập thành công!");
-                    if (username == "ADMIN")
+                    if (username == "Admin123")
                     {
                         MainForm mf = new MainForm();
                         this.Hide();
@@ -84,6 +95,11 @@ namespace PBL03_DAL
             {
                 txtMK.PasswordChar = '\0';
             }
+        }
+
+        private void guna2Panel2_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

@@ -148,11 +148,11 @@ namespace PBL03_DAL
                 string lbContainNameSach = ((Guna2Button)sender).Name;
                 var sachcanmua = qlns.saches.Select(p => new { p.masach,p.tensach, p.soluong, p.giatien, p.dataanh }).Where(p => p.tensach == lbContainNameSach).FirstOrDefault();
 
-                var thongtinthanhtoan = from tt in qlns.orders
-                                        join dg in qlns.docgias on tt.madocgia equals dg.madocgia
-                                        join ad in qlns.adminS on tt.maadmin equals ad.maadmin
-                                        where tt.masach == sachcanmua.masach
-                                        select new { dg.walletdocgia, ad.walletadmin };
+ //               var thongtinthanhtoan = from tt in qlns.sachmuas
+ //                                       join dg in qlns.docgias on tt.madocgia equals dg.madocgia
+//                                        join ad in qlns.admin on tt.maadmin equals ad.maadmin
+ //                                       where tt.masach == sachcanmua.masach
+ //                                       select new { dg.walletdocgia, ad.walletadmin };
 
                 ThanhToanSach tts = new ThanhToanSach();
                 this.Hide();

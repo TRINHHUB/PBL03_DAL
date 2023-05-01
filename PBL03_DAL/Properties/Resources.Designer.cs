@@ -134,6 +134,16 @@ namespace PBL03_DAL.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_collaborator_female_60 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-collaborator-female-60", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_edit_48 {
             get {
                 object obj = ResourceManager.GetObject("icons8-edit-48", resourceCulture);
@@ -267,6 +277,26 @@ namespace PBL03_DAL.Properties {
         internal static System.Drawing.Bitmap icons8_shutdown_60 {
             get {
                 object obj = ResourceManager.GetObject("icons8-shutdown-60", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_student_100 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-student-100", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_student_64 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-student-64", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

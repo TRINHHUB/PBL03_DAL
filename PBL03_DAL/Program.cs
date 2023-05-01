@@ -16,7 +16,7 @@ namespace PBL03_DAL
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ThongTinSach());
+            Application.Run(new QLSach());
         }
     }
 }
