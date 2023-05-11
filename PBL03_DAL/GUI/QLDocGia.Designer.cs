@@ -34,15 +34,12 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.MenuAdmin = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.btnExitDG = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.dgrDG = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.MaDG = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenDG = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NgaySinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DiaChiDG = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.genderDG = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtTKDG = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
             this.btnTKDG = new Guna.UI2.WinForms.Guna2Button();
@@ -50,13 +47,16 @@
             this.btnxoaDG = new Guna.UI2.WinForms.Guna2Button();
             this.btneditDG = new Guna.UI2.WinForms.Guna2Button();
             this.btnthemDG = new Guna.UI2.WinForms.Guna2Button();
-            this.btnExitDG = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.MaDG = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenDG = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgaySinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DiaChiDG = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.genderDG = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MenuAdmin.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgrDG)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // MenuAdmin
@@ -74,6 +74,83 @@
             this.MenuAdmin.Name = "MenuAdmin";
             this.MenuAdmin.Size = new System.Drawing.Size(169, 778);
             this.MenuAdmin.TabIndex = 1;
+            // 
+            // btnExitDG
+            // 
+            this.btnExitDG.Animated = true;
+            this.btnExitDG.BackColor = System.Drawing.Color.Transparent;
+            this.btnExitDG.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(52)))));
+            this.btnExitDG.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnExitDG.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnExitDG.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnExitDG.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnExitDG.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnExitDG.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(198)))), ((int)(((byte)(184)))));
+            this.btnExitDG.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.btnExitDG.ForeColor = System.Drawing.Color.White;
+            this.btnExitDG.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(52)))));
+            this.btnExitDG.Image = global::PBL03_DAL.Properties.Resources.icons8_shutdown_60;
+            this.btnExitDG.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnExitDG.ImageOffset = new System.Drawing.Point(5, 0);
+            this.btnExitDG.ImageSize = new System.Drawing.Size(25, 25);
+            this.btnExitDG.IndicateFocus = true;
+            this.btnExitDG.Location = new System.Drawing.Point(0, 141);
+            this.btnExitDG.Margin = new System.Windows.Forms.Padding(4);
+            this.btnExitDG.Name = "btnExitDG";
+            this.btnExitDG.Size = new System.Drawing.Size(169, 55);
+            this.btnExitDG.TabIndex = 2;
+            this.btnExitDG.Text = "THOÁT";
+            this.btnExitDG.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnExitDG.TextOffset = new System.Drawing.Point(20, 0);
+            this.btnExitDG.UseTransparentBackground = true;
+            this.btnExitDG.Click += new System.EventHandler(this.btnExitDG_Click);
+            // 
+            // guna2Button1
+            // 
+            this.guna2Button1.Animated = true;
+            this.guna2Button1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button1.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(52)))));
+            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.guna2Button1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(198)))), ((int)(((byte)(184)))));
+            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.guna2Button1.ForeColor = System.Drawing.Color.White;
+            this.guna2Button1.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(52)))));
+            this.guna2Button1.Image = global::PBL03_DAL.Properties.Resources.img_users;
+            this.guna2Button1.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.guna2Button1.ImageOffset = new System.Drawing.Point(5, 0);
+            this.guna2Button1.ImageSize = new System.Drawing.Size(25, 25);
+            this.guna2Button1.ImeMode = System.Windows.Forms.ImeMode.On;
+            this.guna2Button1.Location = new System.Drawing.Point(0, 86);
+            this.guna2Button1.Margin = new System.Windows.Forms.Padding(4);
+            this.guna2Button1.Name = "guna2Button1";
+            this.guna2Button1.Size = new System.Drawing.Size(169, 55);
+            this.guna2Button1.TabIndex = 1;
+            this.guna2Button1.Text = "ADMIN";
+            this.guna2Button1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.guna2Button1.TextOffset = new System.Drawing.Point(20, 0);
+            this.guna2Button1.UseTransparentBackground = true;
+            // 
+            // guna2CirclePictureBox1
+            // 
+            this.guna2CirclePictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2CirclePictureBox1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.guna2CirclePictureBox1.Image = global::PBL03_DAL.Properties.Resources.icons8_student_64;
+            this.guna2CirclePictureBox1.ImageRotate = 0F;
+            this.guna2CirclePictureBox1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.guna2CirclePictureBox1.InitialImage = global::PBL03_DAL.Properties.Resources.icons8_student_64;
+            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.guna2CirclePictureBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
+            this.guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.guna2CirclePictureBox1.Size = new System.Drawing.Size(169, 86);
+            this.guna2CirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2CirclePictureBox1.TabIndex = 0;
+            this.guna2CirclePictureBox1.TabStop = false;
+            this.guna2CirclePictureBox1.UseTransparentBackground = true;
             // 
             // guna2Panel1
             // 
@@ -160,54 +237,6 @@
             this.dgrDG.ThemeStyle.RowsStyle.Height = 22;
             this.dgrDG.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgrDG.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            // 
-            // MaDG
-            // 
-            this.MaDG.DataPropertyName = "madocgia";
-            this.MaDG.DividerWidth = 2;
-            this.MaDG.HeaderText = "Mã Độc Giả";
-            this.MaDG.MinimumWidth = 6;
-            this.MaDG.Name = "MaDG";
-            // 
-            // TenDG
-            // 
-            this.TenDG.DataPropertyName = "hoten";
-            this.TenDG.DividerWidth = 2;
-            this.TenDG.HeaderText = "Họ Tên";
-            this.TenDG.MinimumWidth = 6;
-            this.TenDG.Name = "TenDG";
-            // 
-            // NgaySinh
-            // 
-            this.NgaySinh.DataPropertyName = "ngaysinh";
-            this.NgaySinh.DividerWidth = 2;
-            this.NgaySinh.HeaderText = "Ngày Sinh";
-            this.NgaySinh.MinimumWidth = 6;
-            this.NgaySinh.Name = "NgaySinh";
-            // 
-            // DiaChiDG
-            // 
-            this.DiaChiDG.DataPropertyName = "diachi";
-            this.DiaChiDG.DividerWidth = 2;
-            this.DiaChiDG.HeaderText = "Địa Chỉ";
-            this.DiaChiDG.MinimumWidth = 6;
-            this.DiaChiDG.Name = "DiaChiDG";
-            // 
-            // SDT
-            // 
-            this.SDT.DataPropertyName = "sdt";
-            this.SDT.DividerWidth = 2;
-            this.SDT.HeaderText = "SDT";
-            this.SDT.MinimumWidth = 6;
-            this.SDT.Name = "SDT";
-            // 
-            // genderDG
-            // 
-            this.genderDG.DataPropertyName = "gioitinh";
-            this.genderDG.DividerWidth = 2;
-            this.genderDG.HeaderText = "Giới Tính";
-            this.genderDG.MinimumWidth = 6;
-            this.genderDG.Name = "genderDG";
             // 
             // txtTKDG
             // 
@@ -376,82 +405,53 @@
             this.btnthemDG.UseTransparentBackground = true;
             this.btnthemDG.Click += new System.EventHandler(this.btnthemDG_Click);
             // 
-            // btnExitDG
+            // MaDG
             // 
-            this.btnExitDG.Animated = true;
-            this.btnExitDG.BackColor = System.Drawing.Color.Transparent;
-            this.btnExitDG.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(52)))));
-            this.btnExitDG.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnExitDG.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnExitDG.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnExitDG.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnExitDG.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnExitDG.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(198)))), ((int)(((byte)(184)))));
-            this.btnExitDG.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.btnExitDG.ForeColor = System.Drawing.Color.White;
-            this.btnExitDG.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(52)))));
-            this.btnExitDG.Image = global::PBL03_DAL.Properties.Resources.icons8_shutdown_60;
-            this.btnExitDG.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnExitDG.ImageOffset = new System.Drawing.Point(5, 0);
-            this.btnExitDG.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnExitDG.IndicateFocus = true;
-            this.btnExitDG.Location = new System.Drawing.Point(0, 141);
-            this.btnExitDG.Margin = new System.Windows.Forms.Padding(4);
-            this.btnExitDG.Name = "btnExitDG";
-            this.btnExitDG.Size = new System.Drawing.Size(169, 55);
-            this.btnExitDG.TabIndex = 2;
-            this.btnExitDG.Text = "THOÁT";
-            this.btnExitDG.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnExitDG.TextOffset = new System.Drawing.Point(20, 0);
-            this.btnExitDG.UseTransparentBackground = true;
-            this.btnExitDG.Click += new System.EventHandler(this.btnExitDG_Click);
+            this.MaDG.DataPropertyName = "id";
+            this.MaDG.DividerWidth = 2;
+            this.MaDG.HeaderText = "Mã Độc Giả";
+            this.MaDG.MinimumWidth = 6;
+            this.MaDG.Name = "MaDG";
             // 
-            // guna2Button1
+            // TenDG
             // 
-            this.guna2Button1.Animated = true;
-            this.guna2Button1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Button1.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(52)))));
-            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.guna2Button1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(198)))), ((int)(((byte)(184)))));
-            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(52)))));
-            this.guna2Button1.Image = global::PBL03_DAL.Properties.Resources.img_users;
-            this.guna2Button1.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guna2Button1.ImageOffset = new System.Drawing.Point(5, 0);
-            this.guna2Button1.ImageSize = new System.Drawing.Size(25, 25);
-            this.guna2Button1.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.guna2Button1.Location = new System.Drawing.Point(0, 86);
-            this.guna2Button1.Margin = new System.Windows.Forms.Padding(4);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Size = new System.Drawing.Size(169, 55);
-            this.guna2Button1.TabIndex = 1;
-            this.guna2Button1.Text = "ADMIN";
-            this.guna2Button1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guna2Button1.TextOffset = new System.Drawing.Point(20, 0);
-            this.guna2Button1.UseTransparentBackground = true;
+            this.TenDG.DataPropertyName = "name";
+            this.TenDG.DividerWidth = 2;
+            this.TenDG.HeaderText = "Họ Tên";
+            this.TenDG.MinimumWidth = 6;
+            this.TenDG.Name = "TenDG";
             // 
-            // guna2CirclePictureBox1
+            // NgaySinh
             // 
-            this.guna2CirclePictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2CirclePictureBox1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.guna2CirclePictureBox1.Image = global::PBL03_DAL.Properties.Resources.icons8_student_64;
-            this.guna2CirclePictureBox1.ImageRotate = 0F;
-            this.guna2CirclePictureBox1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.guna2CirclePictureBox1.InitialImage = global::PBL03_DAL.Properties.Resources.icons8_student_64;
-            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.guna2CirclePictureBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
-            this.guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CirclePictureBox1.Size = new System.Drawing.Size(169, 86);
-            this.guna2CirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2CirclePictureBox1.TabIndex = 0;
-            this.guna2CirclePictureBox1.TabStop = false;
-            this.guna2CirclePictureBox1.UseTransparentBackground = true;
+            this.NgaySinh.DataPropertyName = "ngay";
+            this.NgaySinh.DividerWidth = 2;
+            this.NgaySinh.HeaderText = "Ngày Sinh";
+            this.NgaySinh.MinimumWidth = 6;
+            this.NgaySinh.Name = "NgaySinh";
+            // 
+            // DiaChiDG
+            // 
+            this.DiaChiDG.DataPropertyName = "address";
+            this.DiaChiDG.DividerWidth = 2;
+            this.DiaChiDG.HeaderText = "Địa Chỉ";
+            this.DiaChiDG.MinimumWidth = 6;
+            this.DiaChiDG.Name = "DiaChiDG";
+            // 
+            // SDT
+            // 
+            this.SDT.DataPropertyName = "dt";
+            this.SDT.DividerWidth = 2;
+            this.SDT.HeaderText = "SDT";
+            this.SDT.MinimumWidth = 6;
+            this.SDT.Name = "SDT";
+            // 
+            // genderDG
+            // 
+            this.genderDG.DataPropertyName = "gender";
+            this.genderDG.DividerWidth = 2;
+            this.genderDG.HeaderText = "Giới Tính";
+            this.genderDG.MinimumWidth = 6;
+            this.genderDG.Name = "genderDG";
             // 
             // QLDocGia
             // 
@@ -471,10 +471,10 @@
             this.Name = "QLDocGia";
             this.Text = "Quản Lí Sách";
             this.MenuAdmin.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgrDG)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -494,12 +494,12 @@
         private Guna.UI2.WinForms.Guna2Button btnxoaDG;
         private Guna.UI2.WinForms.Guna2Button btnviewDG;
         private Guna.UI2.WinForms.Guna2Button btnTKDG;
+        private Guna.UI2.WinForms.Guna2AnimateWindow guna2AnimateWindow1;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaDG;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenDG;
         private System.Windows.Forms.DataGridViewTextBoxColumn NgaySinh;
         private System.Windows.Forms.DataGridViewTextBoxColumn DiaChiDG;
         private System.Windows.Forms.DataGridViewTextBoxColumn SDT;
         private System.Windows.Forms.DataGridViewTextBoxColumn genderDG;
-        private Guna.UI2.WinForms.Guna2AnimateWindow guna2AnimateWindow1;
     }
 }

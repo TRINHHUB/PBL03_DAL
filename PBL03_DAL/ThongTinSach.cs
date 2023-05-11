@@ -14,6 +14,7 @@ using System.Runtime.Remoting.Contexts;
 using System.Management;
 using System.Windows.Documents;
 using System.Security.Cryptography.Xml;
+using PBL03_DAL.DTO;
 
 namespace PBL03_DAL
 {

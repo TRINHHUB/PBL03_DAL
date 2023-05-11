@@ -1,4 +1,7 @@
-﻿using System;
+﻿using PBL03_DAL.BLL;
+using PBL03_DAL.DAL;
+using PBL03_DAL.DTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -37,18 +40,7 @@ namespace PBL03_DAL
         }
         public void showDGVDG()
         {
-            QLNS qlns = new QLNS();
-            dgrDG.DataSource = qlns.docgias
-                .Select(p => new
-                {
-                    p.madocgia,
-                    p.hoten,
-                    p.ngaysinh,
-                    p.diachi,
-                    p.sdt,
-                    gioitinh = p.gioitinh == true ? "Nam" : (p.gioitinh == false ? "Nữ" : "Không xác định")
-                }).ToList();
-            dgrDG.Refresh();
+            dgrDG.DataSource = BLL_QLDG.Instance.getdg();
         }
 
         private void btneditDG_Click(object sender, EventArgs e)

@@ -44,8 +44,8 @@
             this.btneditS = new Guna.UI2.WinForms.Guna2Button();
             this.btnthemS = new Guna.UI2.WinForms.Guna2Button();
             this.dgrS = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.MaSach = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenSach = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.masach = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NămXB = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TênNXB = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TênTG = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,7 +53,6 @@
             this.SL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ghichu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.KSACH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IMAGE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MenuAdmin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
             this.guna2Panel1.SuspendLayout();
@@ -71,7 +70,7 @@
             this.MenuAdmin.FillColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(198)))), ((int)(((byte)(184)))));
             this.MenuAdmin.FillColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(198)))), ((int)(((byte)(184)))));
             this.MenuAdmin.Location = new System.Drawing.Point(0, 0);
-            this.MenuAdmin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MenuAdmin.Margin = new System.Windows.Forms.Padding(4);
             this.MenuAdmin.Name = "MenuAdmin";
             this.MenuAdmin.Size = new System.Drawing.Size(191, 704);
             this.MenuAdmin.TabIndex = 1;
@@ -96,7 +95,7 @@
             this.btnexitS.ImageSize = new System.Drawing.Size(25, 25);
             this.btnexitS.IndicateFocus = true;
             this.btnexitS.Location = new System.Drawing.Point(0, 130);
-            this.btnexitS.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnexitS.Margin = new System.Windows.Forms.Padding(4);
             this.btnexitS.Name = "btnexitS";
             this.btnexitS.Size = new System.Drawing.Size(191, 55);
             this.btnexitS.TabIndex = 2;
@@ -126,7 +125,7 @@
             this.guna2Button1.ImageSize = new System.Drawing.Size(25, 25);
             this.guna2Button1.ImeMode = System.Windows.Forms.ImeMode.On;
             this.guna2Button1.Location = new System.Drawing.Point(0, 75);
-            this.guna2Button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Button1.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Button1.Name = "guna2Button1";
             this.guna2Button1.Size = new System.Drawing.Size(191, 55);
             this.guna2Button1.TabIndex = 1;
@@ -144,7 +143,7 @@
             this.guna2CirclePictureBox1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.guna2CirclePictureBox1.InitialImage = global::PBL03_DAL.Properties.Resources.icons8_repository_96;
             this.guna2CirclePictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.guna2CirclePictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2CirclePictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
             this.guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.guna2CirclePictureBox1.Size = new System.Drawing.Size(191, 75);
@@ -159,7 +158,7 @@
             this.guna2Panel1.Controls.Add(this.label1);
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.guna2Panel1.Location = new System.Drawing.Point(191, 0);
-            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(1449, 68);
             this.guna2Panel1.TabIndex = 2;
@@ -218,7 +217,7 @@
             this.btntkS.ImageOffset = new System.Drawing.Point(10, 0);
             this.btntkS.ImageSize = new System.Drawing.Size(18, 18);
             this.btntkS.Location = new System.Drawing.Point(1189, 117);
-            this.btntkS.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btntkS.Margin = new System.Windows.Forms.Padding(4);
             this.btntkS.Name = "btntkS";
             this.btntkS.Size = new System.Drawing.Size(173, 44);
             this.btntkS.TabIndex = 10;
@@ -245,8 +244,8 @@
             this.btnviewS.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnviewS.ImageOffset = new System.Drawing.Point(10, 0);
             this.btnviewS.ImageSize = new System.Drawing.Size(18, 18);
-            this.btnviewS.Location = new System.Drawing.Point(1396, 497);
-            this.btnviewS.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnviewS.Location = new System.Drawing.Point(1469, 504);
+            this.btnviewS.Margin = new System.Windows.Forms.Padding(4);
             this.btnviewS.Name = "btnviewS";
             this.btnviewS.Size = new System.Drawing.Size(145, 55);
             this.btnviewS.TabIndex = 9;
@@ -273,8 +272,8 @@
             this.btnxoaS.Image = global::PBL03_DAL.Properties.Resources.icons8_remove_32;
             this.btnxoaS.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnxoaS.ImageOffset = new System.Drawing.Point(10, 0);
-            this.btnxoaS.Location = new System.Drawing.Point(1396, 402);
-            this.btnxoaS.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnxoaS.Location = new System.Drawing.Point(1469, 408);
+            this.btnxoaS.Margin = new System.Windows.Forms.Padding(4);
             this.btnxoaS.Name = "btnxoaS";
             this.btnxoaS.Size = new System.Drawing.Size(145, 55);
             this.btnxoaS.TabIndex = 8;
@@ -302,8 +301,8 @@
             this.btneditS.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btneditS.ImageOffset = new System.Drawing.Point(10, 0);
             this.btneditS.ImageSize = new System.Drawing.Size(18, 18);
-            this.btneditS.Location = new System.Drawing.Point(1396, 314);
-            this.btneditS.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btneditS.Location = new System.Drawing.Point(1469, 312);
+            this.btneditS.Margin = new System.Windows.Forms.Padding(4);
             this.btneditS.Name = "btneditS";
             this.btneditS.Size = new System.Drawing.Size(145, 55);
             this.btneditS.TabIndex = 7;
@@ -333,8 +332,8 @@
             this.btnthemS.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnthemS.ImageOffset = new System.Drawing.Point(10, 0);
             this.btnthemS.ImageSize = new System.Drawing.Size(18, 18);
-            this.btnthemS.Location = new System.Drawing.Point(1396, 222);
-            this.btnthemS.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnthemS.Location = new System.Drawing.Point(1469, 217);
+            this.btnthemS.Margin = new System.Windows.Forms.Padding(4);
             this.btnthemS.Name = "btnthemS";
             this.btnthemS.Size = new System.Drawing.Size(145, 55);
             this.btnthemS.TabIndex = 6;
@@ -360,16 +359,15 @@
             this.dgrS.ColumnHeadersHeight = 25;
             this.dgrS.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.dgrS.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.MaSach,
             this.TenSach,
+            this.masach,
             this.NămXB,
             this.TênNXB,
             this.TênTG,
             this.TenTL,
             this.SL,
             this.ghichu,
-            this.KSACH,
-            this.IMAGE});
+            this.KSACH});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -379,12 +377,12 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgrS.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgrS.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgrS.Location = new System.Drawing.Point(213, 201);
-            this.dgrS.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgrS.Location = new System.Drawing.Point(199, 202);
+            this.dgrS.Margin = new System.Windows.Forms.Padding(4);
             this.dgrS.Name = "dgrS";
             this.dgrS.RowHeadersVisible = false;
             this.dgrS.RowHeadersWidth = 51;
-            this.dgrS.Size = new System.Drawing.Size(1149, 489);
+            this.dgrS.Size = new System.Drawing.Size(1248, 489);
             this.dgrS.TabIndex = 11;
             this.dgrS.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgrS.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -408,29 +406,27 @@
             this.dgrS.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgrS.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             // 
-            // MaSach
-            // 
-            this.MaSach.DataPropertyName = "masach";
-            this.MaSach.DividerWidth = 2;
-            this.MaSach.FillWeight = 65.80766F;
-            this.MaSach.HeaderText = "Mã Sách";
-            this.MaSach.MinimumWidth = 6;
-            this.MaSach.Name = "MaSach";
-            // 
             // TenSach
             // 
-            this.TenSach.DataPropertyName = "tensach";
+            this.TenSach.DataPropertyName = "ma";
             this.TenSach.DividerWidth = 2;
-            this.TenSach.FillWeight = 153.1171F;
-            this.TenSach.HeaderText = "Tên Sách";
+            this.TenSach.FillWeight = 133.8277F;
+            this.TenSach.HeaderText = "Mã Sách";
             this.TenSach.MinimumWidth = 6;
             this.TenSach.Name = "TenSach";
             // 
+            // masach
+            // 
+            this.masach.DataPropertyName = "ten";
+            this.masach.HeaderText = "Tên Sách";
+            this.masach.MinimumWidth = 6;
+            this.masach.Name = "masach";
+            // 
             // NămXB
             // 
-            this.NămXB.DataPropertyName = "namxb";
+            this.NămXB.DataPropertyName = "nam";
             this.NămXB.DividerWidth = 2;
-            this.NămXB.FillWeight = 92.19276F;
+            this.NămXB.FillWeight = 101.7992F;
             this.NămXB.HeaderText = "NămXB";
             this.NămXB.MinimumWidth = 6;
             this.NămXB.Name = "NămXB";
@@ -439,7 +435,7 @@
             // 
             this.TênNXB.DataPropertyName = "tennxb";
             this.TênNXB.DividerWidth = 2;
-            this.TênNXB.FillWeight = 92.19276F;
+            this.TênNXB.FillWeight = 101.7992F;
             this.TênNXB.HeaderText = "NXB";
             this.TênNXB.MinimumWidth = 6;
             this.TênNXB.Name = "TênNXB";
@@ -448,7 +444,7 @@
             // 
             this.TênTG.DataPropertyName = "tentacgia";
             this.TênTG.DividerWidth = 2;
-            this.TênTG.FillWeight = 127.9188F;
+            this.TênTG.FillWeight = 126.8069F;
             this.TênTG.HeaderText = "Tác giả";
             this.TênTG.MinimumWidth = 6;
             this.TênTG.Name = "TênTG";
@@ -457,44 +453,37 @@
             // 
             this.TenTL.DataPropertyName = "tentheloai";
             this.TenTL.DividerWidth = 2;
-            this.TenTL.FillWeight = 92.19276F;
+            this.TenTL.FillWeight = 101.7992F;
             this.TenTL.HeaderText = "Thể Loại";
             this.TenTL.MinimumWidth = 6;
             this.TenTL.Name = "TenTL";
             // 
             // SL
             // 
-            this.SL.DataPropertyName = "soluong";
+            this.SL.DataPropertyName = "sl";
             this.SL.DividerWidth = 2;
-            this.SL.FillWeight = 92.19276F;
+            this.SL.FillWeight = 101.7992F;
             this.SL.HeaderText = "Số Lượng";
             this.SL.MinimumWidth = 6;
             this.SL.Name = "SL";
             // 
             // ghichu
             // 
-            this.ghichu.DataPropertyName = "ghichu";
+            this.ghichu.DataPropertyName = "note";
             this.ghichu.DividerWidth = 2;
-            this.ghichu.FillWeight = 92.19276F;
+            this.ghichu.FillWeight = 101.7992F;
             this.ghichu.HeaderText = "Ghi chú";
             this.ghichu.MinimumWidth = 6;
             this.ghichu.Name = "ghichu";
             // 
             // KSACH
             // 
-            this.KSACH.DataPropertyName = "khusach";
+            this.KSACH.DataPropertyName = "khu";
             this.KSACH.DividerWidth = 2;
-            this.KSACH.FillWeight = 92.19276F;
+            this.KSACH.FillWeight = 64.56183F;
             this.KSACH.HeaderText = "Khu sách";
             this.KSACH.MinimumWidth = 6;
             this.KSACH.Name = "KSACH";
-            // 
-            // IMAGE
-            // 
-            this.IMAGE.DataPropertyName = "dataanh";
-            this.IMAGE.HeaderText = "Image";
-            this.IMAGE.MinimumWidth = 6;
-            this.IMAGE.Name = "IMAGE";
             // 
             // QLSach
             // 
@@ -510,7 +499,7 @@
             this.Controls.Add(this.txttimkiemS);
             this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.MenuAdmin);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "QLSach";
             this.Text = "Quản Lí Sách";
             this.MenuAdmin.ResumeLayout(false);
@@ -537,8 +526,8 @@
         private Guna.UI2.WinForms.Guna2Button btnviewS;
         private Guna.UI2.WinForms.Guna2Button btntkS;
         private Guna.UI2.WinForms.Guna2DataGridView dgrS;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaSach;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenSach;
+        private System.Windows.Forms.DataGridViewTextBoxColumn masach;
         private System.Windows.Forms.DataGridViewTextBoxColumn NămXB;
         private System.Windows.Forms.DataGridViewTextBoxColumn TênNXB;
         private System.Windows.Forms.DataGridViewTextBoxColumn TênTG;
@@ -546,6 +535,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn SL;
         private System.Windows.Forms.DataGridViewTextBoxColumn ghichu;
         private System.Windows.Forms.DataGridViewTextBoxColumn KSACH;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IMAGE;
     }
 }

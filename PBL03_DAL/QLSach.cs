@@ -1,4 +1,6 @@
-﻿using System;
+﻿using PBL03_DAL.BLL;
+using PBL03_DAL.DTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -36,38 +38,31 @@ namespace PBL03_DAL
         }
         public void ShowDGV()
         {
-            QLNS qlns = new QLNS();
-            dgrS.DataSource = qlns.saches
-            .Select(p => new
-            {
-                p.masach,
-                p.tensach,
-                p.namxb,
-                p.nxb.tennxb,
-                p.tacgia.tentacgia,
-                p.theloai.tentheloai,
-                p.soluong,
-                p.ghichu,
-                p.khusach,
-                p.giatien,
-                p.dataanh
-            }).ToList();
+
+            dgrS.DataSource = BLL_QLSACH.Instance.Getsach().ToList();
         }
 
         private void btnxoaS_Click(object sender, EventArgs e)
         {
-            if(dgrS.SelectedRows.Count > 0)
+            if (dgrS.SelectedRows.Count > 0)
             {
-                foreach(DataGridViewRow i in dgrS.SelectedRows)
+                List<int> madel = new List<int>();
+                foreach (DataGridViewRow i in dgrS.SelectedRows)
                 {
-                    using(QLNS db = new QLNS())
+                   
                     {
-                        int m = Convert.ToInt32(i.Cells[0].Value.ToString());
-                        sach s = db.saches.Find(m);
-                        db.saches.Remove(s);
-                        db.SaveChanges();
-                        MessageBox.Show("Bạn đã xóa thành công sách này");
-                   }
+                        madel.Add(Convert.ToInt32(i.Cells[0].Value));
+                        if (BLL_QLSACH.Instance.DelSach(madel))
+                        {
+
+                            MessageBox.Show("Bạn đã xóa thành công sách này");
+                            ShowDGV();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Chon dong can xoa");
+                        }
+                    }
                 }
             }
         }

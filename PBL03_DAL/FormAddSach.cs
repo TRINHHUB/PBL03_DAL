@@ -1,4 +1,7 @@
 ﻿using Guna.UI2.WinForms;
+using PBL03_DAL.BLL;
+using PBL03_DAL.DAL;
+using PBL03_DAL.DTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -40,31 +43,19 @@ namespace PBL03_DAL
         }
         public void GetcbbNXB()
         {
-            QLNS qlns  = new QLNS();
-
-            var query = from i in  qlns.nxbs
-                        select i.tennxb;
-            cbbNXB.DataSource = new BindingSource(query.ToList(), null);
-            cbbNXB.DisplayMember = "Tên NXB";
+            cbbNXB.Items.AddRange(DAL_QLDG.Instance.GetcbbNXB().ToArray());
         }
         public void GetcbbTL()
         {
-            QLNS  qlns  = new QLNS ();
+            cbbTL.Items.AddRange(DAL_QLDG.Instance.GetcbbTheLoai().ToArray());
 
-            var query1 = from i in qlns.theloais
-                        select i.tentheloai;
-            cbbTL.DataSource = new BindingSource(query1.ToList(), null);
-            cbbTL.DisplayMember = "Tên Thể Loại";
         }
         public void GetcbbTG()
         {
-            QLNS  qlns = new QLNS ();
-
-            var query2 = from i in qlns.tacgias
-                        select i.tentacgia;
-            cbbTG.DataSource = new BindingSource(query2.ToList(), null);
-            cbbTG.DisplayMember = "Tên Tác Giả";
+            //cbbTG.Items.AddRange(BLL_QLDG.Instance.Getcbbtacgia().ToArray());
+            cbbTG.Items.AddRange(DAL_QLDG.Instance.GetcbbTG().ToArray());
         }
+
 
         
 

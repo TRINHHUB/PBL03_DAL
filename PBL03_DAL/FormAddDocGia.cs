@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PBL03_DAL.DTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -41,11 +42,6 @@ namespace PBL03_DAL
                 this.Hide();
 
             }
-            
-            
-                
-            
-
         }
     }
 }

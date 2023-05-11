@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PBL03_DAL.DTO;
+using System;
 using System.CodeDom;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -69,9 +70,7 @@ namespace PBL03_DAL
                         FormDocGia fgd = new FormDocGia();
                         this.Hide();
                         fgd.Show();
-                    }
-                    
-                    
+                    }                   
                 }
                 else
                 {
