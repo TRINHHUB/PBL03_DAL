@@ -24,57 +24,7 @@ namespace PBL03_DAL.DAL
             private set { }
         }
 
-        public List<cbbTacGia> GetcbbTG()
-        {
-            List<cbbTacGia> list = new List<cbbTacGia>();
-            using (QLNS db = new QLNS())
-            {
-                foreach (tacgia i in db.tacgias)
-                {
-                    list.Add(new cbbTacGia
-                    {
-                        ID = i.matacgia,
-                        Name = i.tentacgia
-                    });
-                }
-                return list;
-            }    
-                
-        }
-        public List<cbbNXB> GetcbbNXB()
-        {
-            List<cbbNXB> list = new List<cbbNXB>();
-            QLNS db = new QLNS();
-            foreach (nxb i in db.nxbs)
-            {
-                list.Add(new cbbNXB
-                {
-                    ID = i.manxb,
-                    Name = i.tennxb
-
-                });
-
-
-            }
-            return list;
-        }
-        public List<cbbTheLoai> GetcbbTheLoai()
-        {
-            List<cbbTheLoai> list = new List<cbbTheLoai>();
-            QLNS db = new QLNS();
-            foreach (theloai i in db.theloais)
-            {
-                list.Add(new cbbTheLoai
-                {
-                    ID = i.matheloai,
-                    Name = i.tentheloai
-
-                });
-
-            }
-            return list;
-        }
-
+       
         public List<docgia> GetDG()
         {
             using (QLNS db = new QLNS())
@@ -82,6 +32,52 @@ namespace PBL03_DAL.DAL
                 List<docgia> dgs = new List<docgia>();
                 dgs = db.docgias.ToList();
                 return dgs;               
+            }
+        }
+        public void AddDocGia(docgia docgiaAdd)
+        {
+            using (QLNS db = new QLNS())
+            {
+                db.docgias.Add(docgiaAdd);
+                db.SaveChanges();
+            }
+
+        }
+        public bool DelDocGia(List<int> iddocgia)
+        {
+            using (QLNS db = new QLNS())
+            {
+                List<docgia> deldg = db.docgias.Where(p => iddocgia.Contains(p.madocgia)).ToList();
+
+                if (deldg.Count > 0)
+                {
+                    db.docgias.RemoveRange(deldg);
+                    db.SaveChanges();
+                }
+            }
+            return true;
+        }
+        public void UpdateDocGia(docgia editdocgia)
+        {
+            using (QLNS db = new QLNS())
+            {
+               
+                docgia DocgianeedtoEdit = db.docgias.FirstOrDefault(p => p.madocgia == editdocgia.madocgia);
+
+                if (DocgianeedtoEdit != null)
+                {
+
+                    DocgianeedtoEdit.madocgia = editdocgia.madocgia;
+                    DocgianeedtoEdit.hoten = editdocgia.hoten;
+                    DocgianeedtoEdit.ngaysinh = editdocgia.ngaysinh;
+                    DocgianeedtoEdit.gioitinh = editdocgia.gioitinh;
+                    DocgianeedtoEdit.diachi = editdocgia.diachi;
+                    DocgianeedtoEdit.sdt = editdocgia.sdt;
+
+                    db.SaveChanges();
+
+
+                }
             }
         }
     }

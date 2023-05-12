@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace PBL03_DAL.BLL
 {
@@ -36,7 +37,8 @@ namespace PBL03_DAL.BLL
                 tentheloai = DAL_QLSACH.Instance.GetAllTL().Where(n => n.matheloai == p.matheloai).Select(n => n.tentheloai).FirstOrDefault(),
                 sl = (int)p.soluong,
                 note = p.ghichu,
-                khu = p.khusach
+                khu = p.khusach,
+                gia = (int)p.giatien
             }).ToList();
             return dg;
 
@@ -46,5 +48,51 @@ namespace PBL03_DAL.BLL
             DAL_QLSACH.Instance.DelSach(ids);
             return true;
         }
+        public void addsach(sach sachadd)
+        {
+
+            DAL_QLSACH.Instance.AddSach(sachadd);
+        }
+        public void Updatesach(sach editsach)
+        {
+            DAL_QLSACH.Instance.Updatesach(editsach);
+           
+        }
+
+
+        public sach GetsachByidSach(int id)
+        {
+            sach dg = new sach();
+            foreach (sach i in DAL_QLSACH.Instance.GetAllSach())
+            {
+                if (id == i.masach)
+                {
+                    dg = i;
+
+
+                }
+
+            }
+            return dg;
+        }
+        public string GetNXBById(int id)
+        {
+            string tennxb = DAL_QLSACH.Instance.GetAllNXB().Where(n => n.manxb == id).Select(n => n.tennxb).FirstOrDefault();
+            return tennxb;
+        }
+        public string GetTacGiaById(int id)
+        {
+            string tentacgia = DAL_QLSACH.Instance.GetAllTG().Where(n => n.matacgia == id).Select(n => n.tentacgia).FirstOrDefault();
+            return tentacgia;
+        }
+        public string GetTheLoaiById(int id)
+        {
+            string tentheloai = DAL_QLSACH.Instance.GetAllTL().Where(n => n.matheloai == id).Select(n => n.tentheloai).FirstOrDefault();
+            return tentheloai;
+        }
     }
 }
+   
+
+
+

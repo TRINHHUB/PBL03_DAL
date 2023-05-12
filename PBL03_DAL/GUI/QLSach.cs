@@ -1,5 +1,6 @@
 ﻿using PBL03_DAL.BLL;
 using PBL03_DAL.DTO;
+using PBL03_DAL.GUI;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -50,21 +51,36 @@ namespace PBL03_DAL
                 foreach (DataGridViewRow i in dgrS.SelectedRows)
                 {
                    
-                    {
-                        madel.Add(Convert.ToInt32(i.Cells[0].Value));
-                        if (BLL_QLSACH.Instance.DelSach(madel))
+                    
+                       // madel.Add(Convert.ToInt32(i.Cells[0].Value));
+                        if (i.Cells[0].Value != null)
                         {
-
+                            madel.Add(Convert.ToInt32(i.Cells[0].Value));
+                            BLL_QLSACH.Instance.DelSach(madel);
                             MessageBox.Show("Bạn đã xóa thành công sách này");
                             ShowDGV();
-                        }
+                        } 
                         else
                         {
                             MessageBox.Show("Chon dong can xoa");
                         }
-                    }
+                    
                 }
             }
+        }
+
+        private void btneditS_Click(object sender, EventArgs e)
+        {
+            if(dgrS.SelectedRows.Count == 1)
+            {
+                int idsach =Convert.ToInt32( dgrS.SelectedRows[0].Cells[0].Value);
+                FormEditSach form = new FormEditSach(idsach);
+                form.d += new FormEditSach.Mydel(ShowDGV);
+                form.Show();
+
+            }
+          
+                
         }
     }
 }

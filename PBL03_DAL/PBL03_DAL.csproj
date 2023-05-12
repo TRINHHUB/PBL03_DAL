@@ -74,16 +74,16 @@
     <Compile Include="DTO\cbbTacGia.cs" />
     <Compile Include="DTO\cbbTheLoai.cs" />
     <Compile Include="DTO\sachshow.cs" />
-    <Compile Include="FormAddDocGia.cs">
+    <Compile Include="GUI\FormAddDocGia.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormAddDocGia.Designer.cs">
+    <Compile Include="GUI\FormAddDocGia.Designer.cs">
       <DependentUpon>FormAddDocGia.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormAddSach.cs">
+    <Compile Include="GUI\FormAddSach.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormAddSach.Designer.cs">
+    <Compile Include="GUI\FormAddSach.Designer.cs">
       <DependentUpon>FormAddSach.cs</DependentUpon>
     </Compile>
     <Compile Include="FormDocGia.cs">
@@ -92,10 +92,10 @@
     <Compile Include="FormDocGia.Designer.cs">
       <DependentUpon>FormDocGia.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormEditDocGia.cs">
+    <Compile Include="GUI\FormEditDocGia.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormEditDocGia.Designer.cs">
+    <Compile Include="GUI\FormEditDocGia.Designer.cs">
       <DependentUpon>FormEditDocGia.cs</DependentUpon>
     </Compile>
     <Compile Include="GioHangDocGia.cs">
@@ -104,16 +104,22 @@
     <Compile Include="GioHangDocGia.Designer.cs">
       <DependentUpon>GioHangDocGia.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\FormEditSach.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormEditSach.Designer.cs">
+      <DependentUpon>FormEditSach.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Login.cs">
+    <Compile Include="GUI\Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Login.Designer.cs">
+    <Compile Include="GUI\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
     <Compile Include="MuaSach.cs">
@@ -136,23 +142,23 @@
     <Compile Include="QLMuonTra.Designer.cs">
       <DependentUpon>QLMuonTra.cs</DependentUpon>
     </Compile>
-    <Compile Include="QLNV.cs">
+    <Compile Include="GUI\QLNV.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="QLNV.Designer.cs">
+    <Compile Include="GUI\QLNV.Designer.cs">
       <DependentUpon>QLNV.cs</DependentUpon>
     </Compile>
-    <Compile Include="QLSach.cs">
+    <Compile Include="GUI\QLSach.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="QLSach.Designer.cs">
+    <Compile Include="GUI\QLSach.Designer.cs">
       <DependentUpon>QLSach.cs</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
-    <Compile Include="SignUp.cs">
+    <Compile Include="GUI\SignUp.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SignUp.Designer.cs">
+    <Compile Include="GUI\SignUp.Designer.cs">
       <DependentUpon>SignUp.cs</DependentUpon>
     </Compile>
     <Compile Include="AddImages.cs">
@@ -173,25 +179,28 @@
     <Compile Include="ThongTinSach.Designer.cs">
       <DependentUpon>ThongTinSach.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="FormAddDocGia.resx">
+    <EmbeddedResource Include="GUI\FormAddDocGia.resx">
       <DependentUpon>FormAddDocGia.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormAddSach.resx">
+    <EmbeddedResource Include="GUI\FormAddSach.resx">
       <DependentUpon>FormAddSach.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormDocGia.resx">
       <DependentUpon>FormDocGia.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormEditDocGia.resx">
+    <EmbeddedResource Include="GUI\FormEditDocGia.resx">
       <DependentUpon>FormEditDocGia.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GioHangDocGia.resx">
       <DependentUpon>GioHangDocGia.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormEditSach.resx">
+      <DependentUpon>FormEditSach.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Login.resx">
+    <EmbeddedResource Include="GUI\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MuaSach.resx">
@@ -213,13 +222,13 @@
     <EmbeddedResource Include="QLMuonTra.resx">
       <DependentUpon>QLMuonTra.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="QLNV.resx">
+    <EmbeddedResource Include="GUI\QLNV.resx">
       <DependentUpon>QLNV.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="QLSach.resx">
+    <EmbeddedResource Include="GUI\QLSach.resx">
       <DependentUpon>QLSach.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SignUp.resx">
+    <EmbeddedResource Include="GUI\SignUp.resx">
       <DependentUpon>SignUp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AddImages.resx">
@@ -330,6 +339,5 @@
   <ItemGroup>
     <None Include="Resources\icons8-collaborator-female-60.png" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

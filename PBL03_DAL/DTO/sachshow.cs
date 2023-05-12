@@ -17,6 +17,7 @@ namespace PBL03_DAL.DTO
         public int sl { get; set; }
         public string note { get; set; }
         public string khu { get; set; }
+        public int gia { get; set; }
 
     }
 }

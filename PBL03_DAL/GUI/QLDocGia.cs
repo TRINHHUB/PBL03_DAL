@@ -1,6 +1,7 @@
 ﻿using PBL03_DAL.BLL;
 using PBL03_DAL.DAL;
 using PBL03_DAL.DTO;
+using PBL03_DAL.GUI;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -45,7 +46,15 @@ namespace PBL03_DAL
 
         private void btneditDG_Click(object sender, EventArgs e)
         {
-           
+
+            if (dgrDG.SelectedRows.Count == 1)
+            {
+                int iddocgia = Convert.ToInt32(dgrDG.SelectedRows[0].Cells["MaDG"].Value);
+                FormEditDocGia form = new FormEditDocGia(iddocgia);
+                form.d += new FormEditDocGia.Mydel(showDGVDG);
+                form.Show();
+
+            }
         }
 
         private void btnTKDG_Click(object sender, EventArgs e)
@@ -65,32 +74,30 @@ namespace PBL03_DAL
 
         private void btnxoaDG_Click(object sender, EventArgs e)
         {
-           if(dgrDG.SelectedRows.Count > 0)
+            if (dgrDG.SelectedRows.Count > 0)
             {
-                foreach(DataGridViewRow i in dgrDG.SelectedRows)
+                List<int> madel = new List<int>();
+                foreach (DataGridViewRow i in dgrDG.SelectedRows)
                 {
-                    using(QLNS db = new QLNS())
-                    {
-                        int m = Convert.ToInt32(i.Cells[0].Value.ToString());
-                        docgia s = db.docgias.Find(m);
-                        db.docgias.Remove(s);
-                        db.SaveChanges();
-                        MessageBox.Show("Ban da xoa thanh cong doc gia nay");
-                        dgrDG.DataSource = db.docgias.Where(p => p.hoten.Contains(txtTKDG.Text))
-                .Select(p => new
-                {
-                    p.madocgia,
-                    p.hoten,
-                    p.ngaysinh,
-                    p.diachi,
-                    p.sdt,
-                    gioitinh = p.gioitinh == true ? "Nam" : (p.gioitinh == false ? "Nữ" : "Không xác định")
-                }).ToList();
+                    if (i.Cells["MaDG"].Value != null)
+                        {
+                        madel.Add(Convert.ToInt32(i.Cells["MaDG"].Value));
+                        BLL_QLDG.Instance.DelDocgia(madel);
+                        MessageBox.Show("Bạn đã xóa thành công độc giả này");
+                        showDGVDG();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Chon dong can xoa");
+                        }
+
                     }
-                }
-            }    
+
+            }
+           
+        }
 
 
         }
     }
-}
+

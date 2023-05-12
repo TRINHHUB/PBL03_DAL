@@ -40,17 +40,46 @@ namespace PBL03_DAL.BLL
             {
                 id = p.madocgia,
                 name = p.hoten,
-                ngay =(DateTime) p.ngaysinh,
+                ngay = (DateTime)p.ngaysinh,
                 address = p.diachi,
                 dt = p.sdt,
-                //gender = p.gioitinh
+               // gender = p.gioitinh
             }).ToList();
             return dg;
         }
+        public void addDocGia(docgia Docgiaadd)
+        {
+           DAL_QLDG.Instance.AddDocGia(Docgiaadd);
+        }
+        public bool DelDocgia(List<int> iddg)
+        {
+            DAL_QLDG.Instance.DelDocGia(iddg);
+            return true;
 
-        
+        }
+        public void Updatedocgia(docgia editdocgia)
+        {
+            DAL_QLDG.Instance.UpdateDocGia(editdocgia);
+
+        }
+
+        public docgia GetdocgiaByid(int id)
+        {
+            docgia dg = new docgia();
+            foreach (docgia i in DAL_QLDG.Instance.GetDG())
+            {
+                if (id == i.madocgia)
+                {
+                    dg = i;
+                }
+
+            }
+            return dg;
+        }
 
 
-        
+
+
+
     }
 }

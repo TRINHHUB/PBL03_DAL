@@ -1,4 +1,5 @@
-﻿using PBL03_DAL.DTO;
+﻿using PBL03_DAL.BLL;
+using PBL03_DAL.DTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -25,7 +26,7 @@ namespace PBL03_DAL
 
         private void btnokaddDG_Click(object sender, EventArgs e)
         {
-            QLNS qlns = new QLNS();
+           
             docgia s = new docgia();
 
             s.madocgia = Convert.ToInt32(txtaddmaDG.Text);
@@ -35,8 +36,9 @@ namespace PBL03_DAL
             s.diachi = txtadddiachiDG.Text;
             s.sdt = txtaddsdtDG.Text;
 
-            qlns.docgias.Add(s);
-            qlns.SaveChanges();
+            BLL_QLDG.Instance.addDocGia(s);
+            
+         
             if (MessageBox.Show("Thêm độc giả thành công!", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
             {
                 this.Hide();
