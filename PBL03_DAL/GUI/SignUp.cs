@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Text.RegularExpressions;
 using PBL03_DAL.DTO;
 using PBL03_DAL.BLL;
+using System.Security.Cryptography;
 
 namespace PBL03_DAL
 {
@@ -79,7 +80,18 @@ namespace PBL03_DAL
             }
             try
             {
-             
+
+                // Tạo salt ngẫu nhiên
+                byte[] salt = new byte[16];
+                using (var rng = RandomNumberGenerator.Create())
+                {
+                    rng.GetBytes(salt);
+
+                }
+                string saltString = Convert.ToBase64String(salt);
+                string saltAndHash = HashPassword(password, saltString);
+
+
                 accountt ac = new accountt();
 
                 if(cbbSignUp.SelectedIndex == 0)
@@ -91,7 +103,8 @@ namespace PBL03_DAL
                     ac.ID_Position = 2;
                 }
                 ac.TaiKhoan = txtTKres.Text;
-                ac.MatKhau = txtMKres.Text;
+                ac.MatKhau = saltAndHash;
+                ac.Salt = saltString;
                 ac.Gmail = txtGMres.Text;
                 BLL_LOGIN.Instance.addtk(ac);
                 
@@ -115,9 +128,22 @@ namespace PBL03_DAL
         {
             List<cbbPosition> li = new List<cbbPosition>();
             li = BLL_LOGIN.Instance.GetcbbPs();
-            li.RemoveAt(0);
             cbbSignUp.Items.AddRange(li.ToArray());
 
+        }
+        private string HashPassword(string password, string salt)
+        {
+            byte[] saltBytes = Convert.FromBase64String(salt);
+            byte[] passwordBytes = Encoding.UTF8.GetBytes(password);
+            byte[] saltedPasswordBytes = new byte[saltBytes.Length + passwordBytes.Length];
+            saltBytes.CopyTo(saltedPasswordBytes, 0);
+            passwordBytes.CopyTo(saltedPasswordBytes, saltBytes.Length);
+
+            using (var sha256 = SHA256.Create())
+            {
+                byte[] hashedBytes = sha256.ComputeHash(saltedPasswordBytes);
+                return Convert.ToBase64String(hashedBytes);
+            }
         }
 
     }

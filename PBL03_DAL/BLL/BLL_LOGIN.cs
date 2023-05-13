@@ -27,22 +27,6 @@ namespace PBL03_DAL.BLL
 
 
         private BLL_LOGIN() { }
-        //   public accountt CheckAccount(String Username)
-        //   {
-        //       accountt ac = new accountt();
-        //       using (QLNS db = new QLNS())
-        //           foreach (accountt a in db.accountts)
-        //           {
-        //               if(Username == a.TaiKhoan)
-        //               {
-        //                   ac = a;
-        //               }
-
-
-
-        //           }
-        //       return ac;
-        //}
         public accountt GetAccountByUserName(String Username)
         {
             using (QLNS db = new QLNS())
@@ -53,6 +37,7 @@ namespace PBL03_DAL.BLL
                         return a;
                     }
                 }
+            
             return null;
         }
         public List<cbbPosition> GetcbbPs()

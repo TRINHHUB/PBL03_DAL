@@ -63,7 +63,7 @@ namespace PBL03_DAL
                         } 
                         else
                         {
-                            MessageBox.Show("Chon dong can xoa");
+                            MessageBox.Show("Chọn dòng cần xóa");
                         }
                     
                 }

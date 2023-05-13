@@ -80,9 +80,7 @@ namespace PBL03_DAL
 
         private void guna2Button2_Click(object sender, EventArgs e)
         {
-            ThongTinSach tts = new ThongTinSach();
             this.Hide();
-            tts.Show();
         }
 
     }

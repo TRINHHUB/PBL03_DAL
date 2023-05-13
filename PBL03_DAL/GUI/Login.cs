@@ -7,6 +7,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -52,8 +53,9 @@ namespace PBL03_DAL
             if (BLL_LOGIN.Instance.GetAccountByUserName(username) != null)
             {
                 accountt data = BLL_LOGIN.Instance.GetAccountByUserName(username);
-                if (data.MatKhau.Equals(password)) { 
-                    MessageBox.Show("Đăng nhập thành công!");
+                string hashPassWord = HashPassword(password, data.Salt);
+
+                if (data.MatKhau.Equals(hashPassWord)) { 
                     if (data.ID_Position == 1)
                     {
                         MainForm mf = new MainForm();
@@ -77,43 +79,6 @@ namespace PBL03_DAL
             {
                 MessageBox.Show("Tài khoản không tồn tại trong hệ thống");
             }
-
-
-           
-
-            //// kiểm tra xem tài khoản có tồn tại trong cơ sở dữ liệu hay không
-            //if(user.Count() > 0)
-            //{
-            //    // tồn tại,tiếp theo kiểm tra xem mật khẩu có đúng hay không ?
-            //    // do user là 1 collection( ở trên đã ToList() ) nên chỉ lấy bản ghi đầu tiên để kiểm tra
-            //    if (user[0].MatKhau.Equals(password))
-            //    {
-            //        //khớp
-            //        MessageBox.Show("Đăng nhập thành công!");
-            //        if (user[0].ID_Position == 1)
-            //        {
-            //            MainForm mf = new MainForm();
-            //            this.Hide();
-            //            mf.Show();
-            //        }
-            //        else
-            //        {
-            //            FormDocGia fgd = new FormDocGia();
-            //            this.Hide();
-            //            fgd.Show();
-            //        }
-            //        CurrentUser.ID_User = user[0].ID_User;
-            //    }
-            //    else
-            //    {
-            //        //không khớp
-            //        MessageBox.Show("Mật khẩu không đúng,vui lòng nhập lại");
-            //    }
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Tài khoản không tồn tại trong hệ thống");
-            //}
         }
 
         private void hideMK_CheckedChanged(object sender, EventArgs e)
@@ -131,6 +96,20 @@ namespace PBL03_DAL
         private void guna2Panel2_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+        private string HashPassword(string password, string salt)
+        {
+            byte[] saltBytes = Convert.FromBase64String(salt);
+            byte[] passwordBytes = Encoding.UTF8.GetBytes(password);
+            byte[] saltedPasswordBytes = new byte[saltBytes.Length + passwordBytes.Length];
+            saltBytes.CopyTo(saltedPasswordBytes, 0);
+            passwordBytes.CopyTo(saltedPasswordBytes, saltBytes.Length);
+
+            using (var sha256 = SHA256.Create())
+            {
+                byte[] hashedBytes = sha256.ComputeHash(saltedPasswordBytes);
+                return Convert.ToBase64String(hashedBytes);
+            }
         }
     }
 }
