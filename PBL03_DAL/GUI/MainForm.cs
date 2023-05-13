@@ -48,10 +48,15 @@ namespace PBL03_DAL
 
         private void guna2Button6_Click(object sender, EventArgs e)
         {
-            QLMuonTra qlmt = new QLMuonTra();
-            this.Hide();
-            qlmt.Show();
+           
 
+        }
+
+        private void btnTHONGKE_Click(object sender, EventArgs e)
+        {
+            FormThongKe ftk = new FormThongKe();
+            this.Hide();
+            ftk.Show();
         }
     }
 }

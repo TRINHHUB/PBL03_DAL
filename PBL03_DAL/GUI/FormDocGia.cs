@@ -37,5 +37,12 @@ namespace PBL03_DAL
             this.Hide();
             form.Show();
         }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            FormLichSuGiaoDich lsgd = new FormLichSuGiaoDich();
+            this.Hide();
+            lsgd.Show();
+        }
     }
 }

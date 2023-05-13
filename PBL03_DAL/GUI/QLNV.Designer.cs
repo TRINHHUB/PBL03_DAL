@@ -29,16 +29,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.MenuAdmin = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.btnexitNV = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.dgrNV = new Guna.UI2.WinForms.Guna2DataGridView();
             this.txttimkiemNV = new Guna.UI2.WinForms.Guna2TextBox();
             this.txt_nameNV = new Guna.UI2.WinForms.Guna2TextBox();
             this.txt_addressNV = new Guna.UI2.WinForms.Guna2TextBox();
@@ -54,6 +50,7 @@
             this.btnxoaNV = new Guna.UI2.WinForms.Guna2Button();
             this.btnsuaNV = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
+            this.dgrNV = new System.Windows.Forms.DataGridView();
             this.MenuAdmin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
             this.guna2Panel1.SuspendLayout();
@@ -178,59 +175,6 @@
             this.label1.Text = "Quản Lí Nhân Viên";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // dgrNV
-            // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.dgrNV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgrNV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgrNV.ColumnHeadersHeight = 25;
-            this.dgrNV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgrNV.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dgrNV.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgrNV.Location = new System.Drawing.Point(701, 163);
-            this.dgrNV.Margin = new System.Windows.Forms.Padding(4);
-            this.dgrNV.Name = "dgrNV";
-            this.dgrNV.RowHeadersVisible = false;
-            this.dgrNV.RowHeadersWidth = 51;
-            this.dgrNV.Size = new System.Drawing.Size(736, 372);
-            this.dgrNV.TabIndex = 3;
-            this.dgrNV.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
-            this.dgrNV.ThemeStyle.AlternatingRowsStyle.Font = null;
-            this.dgrNV.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
-            this.dgrNV.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
-            this.dgrNV.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.dgrNV.ThemeStyle.BackColor = System.Drawing.Color.White;
-            this.dgrNV.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgrNV.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.dgrNV.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dgrNV.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgrNV.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.dgrNV.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.dgrNV.ThemeStyle.HeaderStyle.Height = 25;
-            this.dgrNV.ThemeStyle.ReadOnly = false;
-            this.dgrNV.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
-            this.dgrNV.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dgrNV.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgrNV.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.dgrNV.ThemeStyle.RowsStyle.Height = 22;
-            this.dgrNV.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgrNV.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.dgrNV.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgrNV_RowHeaderMouseClick);
-            // 
             // txttimkiemNV
             // 
             this.txttimkiemNV.Cursor = System.Windows.Forms.Cursors.IBeam;
@@ -242,7 +186,7 @@
             this.txttimkiemNV.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txttimkiemNV.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txttimkiemNV.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txttimkiemNV.Location = new System.Drawing.Point(703, 86);
+            this.txttimkiemNV.Location = new System.Drawing.Point(679, 86);
             this.txttimkiemNV.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txttimkiemNV.Name = "txttimkiemNV";
             this.txttimkiemNV.PasswordChar = '\0';
@@ -262,13 +206,13 @@
             this.txt_nameNV.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txt_nameNV.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txt_nameNV.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txt_nameNV.Location = new System.Drawing.Point(355, 163);
+            this.txt_nameNV.Location = new System.Drawing.Point(355, 180);
             this.txt_nameNV.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_nameNV.Name = "txt_nameNV";
             this.txt_nameNV.PasswordChar = '\0';
             this.txt_nameNV.PlaceholderText = "";
             this.txt_nameNV.SelectedText = "";
-            this.txt_nameNV.Size = new System.Drawing.Size(289, 48);
+            this.txt_nameNV.Size = new System.Drawing.Size(289, 44);
             this.txt_nameNV.TabIndex = 11;
             // 
             // txt_addressNV
@@ -282,7 +226,7 @@
             this.txt_addressNV.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txt_addressNV.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txt_addressNV.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txt_addressNV.Location = new System.Drawing.Point(355, 232);
+            this.txt_addressNV.Location = new System.Drawing.Point(355, 249);
             this.txt_addressNV.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_addressNV.Name = "txt_addressNV";
             this.txt_addressNV.PasswordChar = '\0';
@@ -302,13 +246,13 @@
             this.txt_sdtNV.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txt_sdtNV.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txt_sdtNV.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txt_sdtNV.Location = new System.Drawing.Point(355, 360);
+            this.txt_sdtNV.Location = new System.Drawing.Point(355, 370);
             this.txt_sdtNV.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_sdtNV.Name = "txt_sdtNV";
             this.txt_sdtNV.PasswordChar = '\0';
             this.txt_sdtNV.PlaceholderText = "";
             this.txt_sdtNV.SelectedText = "";
-            this.txt_sdtNV.Size = new System.Drawing.Size(289, 48);
+            this.txt_sdtNV.Size = new System.Drawing.Size(289, 47);
             this.txt_sdtNV.TabIndex = 14;
             // 
             // label2
@@ -359,13 +303,14 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(221, 377);
+            this.label5.Location = new System.Drawing.Point(218, 386);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(72, 31);
             this.label5.TabIndex = 19;
             this.label5.Text = "SĐT";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // radioButton1
             // 
@@ -410,7 +355,7 @@
             this.btntimkiemNV.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btntimkiemNV.ImageOffset = new System.Drawing.Point(10, 0);
             this.btntimkiemNV.ImageSize = new System.Drawing.Size(18, 18);
-            this.btntimkiemNV.Location = new System.Drawing.Point(1264, 86);
+            this.btntimkiemNV.Location = new System.Drawing.Point(1230, 86);
             this.btntimkiemNV.Margin = new System.Windows.Forms.Padding(4);
             this.btntimkiemNV.Name = "btntimkiemNV";
             this.btntimkiemNV.Size = new System.Drawing.Size(173, 44);
@@ -504,6 +449,7 @@
             this.btnsuaNV.Text = "Sửa";
             this.btnsuaNV.TextOffset = new System.Drawing.Point(10, 0);
             this.btnsuaNV.UseTransparentBackground = true;
+            this.btnsuaNV.Click += new System.EventHandler(this.btnsuaNV_Click);
             // 
             // guna2Button3
             // 
@@ -537,11 +483,23 @@
             this.guna2Button3.UseTransparentBackground = true;
             this.guna2Button3.Click += new System.EventHandler(this.guna2Button3_Click);
             // 
+            // dgrNV
+            // 
+            this.dgrNV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgrNV.Location = new System.Drawing.Point(679, 153);
+            this.dgrNV.Name = "dgrNV";
+            this.dgrNV.RowHeadersWidth = 51;
+            this.dgrNV.RowTemplate.Height = 24;
+            this.dgrNV.Size = new System.Drawing.Size(724, 343);
+            this.dgrNV.TabIndex = 22;
+            this.dgrNV.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgrNV_RowHeaderMouseClick_1);
+            // 
             // QLNV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1488, 623);
+            this.Controls.Add(this.dgrNV);
             this.Controls.Add(this.radioButton2);
             this.Controls.Add(this.radioButton1);
             this.Controls.Add(this.label5);
@@ -557,7 +515,6 @@
             this.Controls.Add(this.btnsuaNV);
             this.Controls.Add(this.guna2Button3);
             this.Controls.Add(this.txttimkiemNV);
-            this.Controls.Add(this.dgrNV);
             this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.MenuAdmin);
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -581,7 +538,6 @@
         private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private System.Windows.Forms.Label label1;
-        private Guna.UI2.WinForms.Guna2DataGridView dgrNV;
         private Guna.UI2.WinForms.Guna2TextBox txttimkiemNV;
         private Guna.UI2.WinForms.Guna2Button guna2Button3;
         private Guna.UI2.WinForms.Guna2Button btnsuaNV;
@@ -597,5 +553,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.DataGridView dgrNV;
     }
 }

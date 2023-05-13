@@ -2,6 +2,7 @@
 using PBL03_DAL.DTO;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Runtime.CompilerServices;
@@ -26,60 +27,132 @@ namespace PBL03_DAL.BLL
             private set { }
         }
 
-        private DAL_QLDG docgiaDAL;
-        private BLL_QLDG()
-        {
-            docgiaDAL = new DAL_QLDG();
-        }
+       
+        private BLL_QLDG() { }
 
 
-        public List<DGSHOW> getdg()
+        //public List<DGSHOW> getdg()
+        //{
+        //    using (QLNS db = new QLNS()) {
+        //        List<DGSHOW> dg = new List<DGSHOW>();
+        //        dg = db.docgias.ToList().Select(p => new DGSHOW
+        //        {
+        //            id = p.madocgia,
+        //            name = p.hoten,
+        //            ngay = (DateTime)p.ngaysinh,
+        //            address = p.diachi,
+        //            dt = p.sdt,
+        //            gender = Convert.ToBoolean(p.gioitinh)
+        //        }).ToList();
+        //        return dg;
+        //    }
+        //}
+        public dynamic getalldg()
         {
-            List<DGSHOW> dg = new List<DGSHOW>();
-            dg = (DAL_QLDG.Instance.GetDG()).Select(p => new DGSHOW
+            using (QLNS db = new QLNS())
             {
-                id = p.madocgia,
-                name = p.hoten,
-                ngay = (DateTime)p.ngaysinh,
-                address = p.diachi,
-                dt = p.sdt,
-               // gender = p.gioitinh
-            }).ToList();
-            return dg;
+                return (from p in db.docgias
+                        let Gioitinh = (p.gioitinh == true) ? "Nam" : "Nữ"
+                        select new
+                        {
+                            p.madocgia,
+                            p.hoten,
+                            p.ngaysinh,
+                            p.diachi,
+                            p.sdt,
+                            Gioitinh,                    
+                        }).ToList();
+
+            }
         }
         public void addDocGia(docgia Docgiaadd)
         {
-           DAL_QLDG.Instance.AddDocGia(Docgiaadd);
+            using (QLNS db = new QLNS())
+            {
+                db.docgias.Add(Docgiaadd);
+                db.SaveChanges();
+            }
         }
         public bool DelDocgia(List<int> iddg)
         {
-            DAL_QLDG.Instance.DelDocGia(iddg);
+            //DAL_QLDG.Instance.DelDocGia(iddg);
+            using (QLNS db = new QLNS())
+            {
+                List<docgia> deldg = db.docgias.Where(p => iddg.Contains(p.madocgia)).ToList();
+
+                if (deldg.Count > 0)
+                {
+                    db.docgias.RemoveRange(deldg);
+                    db.SaveChanges();
+                }
+            }
             return true;
 
         }
         public void Updatedocgia(docgia editdocgia)
         {
-            DAL_QLDG.Instance.UpdateDocGia(editdocgia);
-
+            using (QLNS db = new QLNS())
+            {
+                docgia DocgianeedtoEdit = db.docgias.FirstOrDefault(p => p.madocgia == editdocgia.madocgia);
+                if (DocgianeedtoEdit != null)
+                {
+                    DocgianeedtoEdit.madocgia = editdocgia.madocgia;
+                    DocgianeedtoEdit.hoten = editdocgia.hoten;
+                    DocgianeedtoEdit.ngaysinh = editdocgia.ngaysinh;
+                    DocgianeedtoEdit.gioitinh = editdocgia.gioitinh;
+                    DocgianeedtoEdit.diachi = editdocgia.diachi;
+                    DocgianeedtoEdit.sdt = editdocgia.sdt;
+                    db.SaveChanges();
+                }
+            }
         }
 
         public docgia GetdocgiaByid(int id)
         {
-            docgia dg = new docgia();
-            foreach (docgia i in DAL_QLDG.Instance.GetDG())
-            {
-                if (id == i.madocgia)
+            using (QLNS db = new QLNS()) {
+                docgia dg = new docgia();
+                foreach (docgia i in db.docgias )
                 {
-                    dg = i;
+                    if (id == i.madocgia)
+                    {
+                        dg = i;
+                    }
                 }
-
+                return dg;
             }
-            return dg;
         }
+        //public List<docgia> FindDocGia(String txt, String type)
+        //{
+        //    List<docgia> li = new List<docgia>();
+        //    using(QLNS db = new QLNS())
+        //    {
+        //        if (txt == "" && type =="All")
+        //        {
+        //            li = getalldg();
+        //        }
+        //        else if()
+        //        {
+        //            li = db.docgias.Where(p => p.hoten.Contains(txt)).Select(p => new DGSHOW
+        //            {
+        //                id = p.madocgia,
+        //                name = p.hoten,
+        //                ngay = (DateTime)p.ngaysinh,
+        //                address = p.diachi,
+        //                dt = p.sdt,
+        //                gender = Convert.ToBoolean(p.gioitinh)
+        //            }).ToList();
+        //        }).ToList();
+        //        else if()
+        //        {
 
+        //        }
+        //        else if()
+        //        {
 
-
-
-
+        //        }
+        //        return li;
+        //    }
+            
+        //}       
     }
 }

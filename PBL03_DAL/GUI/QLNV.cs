@@ -1,4 +1,5 @@
-﻿using PBL03_DAL.DTO;
+﻿using PBL03_DAL.BLL;
+using PBL03_DAL.DTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -24,22 +25,19 @@ namespace PBL03_DAL
             this.Hide();
             mf.Show();
         }
-        private void showdata()
-        { 
-            using(QLNS db = new QLNS ())
-            {
-                dgrNV.DataSource = db.nhanviens.Select(p => new { 
-                    p.manhanvien,
-                    p.tennhanvien, 
-                    p.diachi,
-                    p.sdt, 
-                    gioitinh = p.gioitinh == true ? "Nam" :(p.gioitinh == false ? "Nữ" : "Không xác định")  }).ToList();                   
-            }
-
-        }
         private void dgrNV_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             int i = dgrNV.CurrentRow.Index;
+            int id =Convert.ToInt32( dgrNV.Rows[i].Cells["manhanvien"].Value);
+            //if(BLL_QLNV .Instance.GetNVByidNv(id) != null)
+            //{
+            //    txt_nameNV.Text = BLL_QLNV.Instance.GetNVByidNv(id).tennhanvien;
+            //    txt_addressNV.Text = BLL_QLNV.Instance.GetNVByidNv(id).diachi;
+            //    if (dgrNV.Rows[i].Cells["gioitinh"].Value.ToString() == "Nam") radioButton1.Checked = true;
+            //    txt_sdtNV.Text = BLL_QLNV.Instance.GetNVByidNv(id).sdt;
+
+            //}
+            //int i = dgrNV.CurrentRow.Index;
             txt_nameNV.Text = dgrNV.Rows[i].Cells["tennhanvien"].Value.ToString();
             txt_addressNV.Text = dgrNV.Rows[i].Cells["diachi"].Value.ToString();
             txt_sdtNV.Text = dgrNV.Rows[i].Cells["sdt"].Value.ToString();
@@ -48,58 +46,93 @@ namespace PBL03_DAL
         }
         private void btnviewNV_Click(object sender, EventArgs e)
         {
-            showdata();
+
+            ShowDGV();
+        }
+        public void ShowDGV()
+        {
+
+            dgrNV.DataSource = BLL_QLNV.Instance.getallnv();
         }
 
         private void guna2Button3_Click(object sender, EventArgs e)
         {
-            nhanvien s = new nhanvien();
-            using (QLNS db = new QLNS ())
-            {
+            nhanviennhasach s = new nhanviennhasach();
+          
                 s.tennhanvien = txt_nameNV.Text;
                 s.diachi = txt_addressNV.Text;
                 s.sdt = txt_sdtNV.Text;
                 s.gioitinh = radioButton1.Checked;
-                db.nhanviens.Add(s);
-                db.SaveChanges();
-            }
-            showdata();         
+            BLL_QLNV.Instance.addNv(s);
+            ShowDGV();
+               
+              
         }
 
         private void btnxoaNV_Click(object sender, EventArgs e)
         {
             if(dgrNV.SelectedRows.Count > 0)
             {
-                foreach(DataGridViewRow i in dgrNV.SelectedRows)
+                List<int> madel = new List<int>();
+                foreach (DataGridViewRow i in dgrNV.SelectedRows)
                 {
-                    using(QLNS db = new QLNS())
+
+
+                    // madel.Add(Convert.ToInt32(i.Cells[0].Value));
+                    if (i.Cells[0].Value != null)
                     {
-                        int m = Convert.ToInt32(i.Cells["manhanvien"].Value.ToString());
-                        nhanvien s = db.nhanviens.Find(m);
-                        db.nhanviens.Remove(s);
-                        db.SaveChanges();
-                        showdata();
+                        madel.Add(Convert.ToInt32(i.Cells[0].Value));
+                        BLL_QLNV.Instance.Delnv(madel);
+                        MessageBox.Show("Bạn đã xóa thành công sách này");
+                        ShowDGV();
+                        
                     }
+                    else
+                    {
+                        MessageBox.Show("Chon dong can xoa");
+                    }
+
                 }
             }
         }
 
         private void btntimkiemNV_Click(object sender, EventArgs e)
         {
-            using(QLNS db = new QLNS())
-            {
-                dgrNV.DataSource = db.nhanviens.Where(p => p.tennhanvien.Contains(txttimkiemNV.Text))
-                    .Select(p => new {
-                        p.manhanvien,
-                        p.tennhanvien,
-                        p.diachi,
-                        p.sdt,
-                        gioitinh = p.gioitinh == true ? "Nam" : (p.gioitinh == false ? "Nữ" : "Không xác định")
-                    }).ToList();
-            }
+           dgrNV.DataSource= BLL_QLNV.Instance.FindNV(txttimkiemNV.Text);
         
         }
 
-       
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgrNV_RowHeaderMouseClick_1(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            int i = dgrNV.CurrentRow.Index;
+            int id = Convert.ToInt32(dgrNV.Rows[i].Cells["manhanvien"].Value);
+            if (BLL_QLNV.Instance.GetNVByidNv(id) != null)
+            {
+                txt_nameNV.Text = BLL_QLNV.Instance.GetNVByidNv(id).tennhanvien;
+                txt_addressNV.Text = BLL_QLNV.Instance.GetNVByidNv(id).diachi;
+                if (dgrNV.Rows[i].Cells["gioitinh"].Value.ToString() == "Nam") radioButton1.Checked = true;
+                else radioButton2.Checked = true;
+                txt_sdtNV.Text = BLL_QLNV.Instance.GetNVByidNv(id).sdt;
+            }
+ 
+        }
+
+        private void btnsuaNV_Click(object sender, EventArgs e)
+        {
+            nhanviennhasach nv = new nhanviennhasach
+            {
+                tennhanvien = txt_nameNV.Text,
+                diachi = txt_addressNV.Text,
+                gioitinh = radioButton1.Checked,
+                sdt = txt_sdtNV.Text,
+            };
+            BLL_QLNV.Instance.UpdateNV(nv);
+            ShowDGV();
+        }
     }
 }

@@ -32,17 +32,17 @@ namespace PBL03_DAL.GUI
         }
         public void GetcbbNXB()
         {
-            cbb_NXB.Items.AddRange(DAL_QLSACH.Instance.GetcbbNXB().ToArray());
+            cbb_NXB.Items.AddRange(BLL_QLSACH.Instance.GetcbbNXB().ToArray());
         }
         public void GetcbbTL()
         {
-            cbbTL.Items.AddRange(DAL_QLSACH.Instance.GetcbbTheLoai().ToArray());
+            cbbTL.Items.AddRange(BLL_QLSACH.Instance.GetcbbTheLoai().ToArray());
 
         }
         public void GetcbbTG()
         {
             //cbbTG.Items.AddRange(BLL_QLDG.Instance.Getcbbtacgia().ToArray());
-            cbbTG.Items.AddRange(DAL_QLSACH.Instance.GetcbbTG().ToArray());
+            cbbTG.Items.AddRange(BLL_QLSACH.Instance.GetcbbTG().ToArray());
         }
         private void setGUI()
         {

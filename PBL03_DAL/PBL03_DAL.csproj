@@ -65,14 +65,21 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\BLL_LOGIN.cs" />
+    <Compile Include="BLL\BLL_QLNV.cs" />
     <Compile Include="BLL\BLL_QLSACH.cs" />
     <Compile Include="DAL\DAL_QLSACH.cs" />
     <Compile Include="BLL\BLL_QLDG.cs" />
     <Compile Include="DAL\DAL_QLDG.cs" />
+    <Compile Include="DTO\cbbNV.cs" />
+    <Compile Include="DTO\cbbPosition.cs" />
+    <Compile Include="DTO\CurrentNameSach.cs" />
+    <Compile Include="DTO\CurrentUser.cs" />
     <Compile Include="DTO\DGSHOW.cs" />
     <Compile Include="DTO\cbbNXB.cs" />
     <Compile Include="DTO\cbbTacGia.cs" />
     <Compile Include="DTO\cbbTheLoai.cs" />
+    <Compile Include="DTO\Lichsugiaodich.cs" />
     <Compile Include="DTO\sachshow.cs" />
     <Compile Include="GUI\FormAddDocGia.cs">
       <SubType>Form</SubType>
@@ -86,10 +93,10 @@
     <Compile Include="GUI\FormAddSach.Designer.cs">
       <DependentUpon>FormAddSach.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormDocGia.cs">
+    <Compile Include="GUI\FormDocGia.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormDocGia.Designer.cs">
+    <Compile Include="GUI\FormDocGia.Designer.cs">
       <DependentUpon>FormDocGia.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\FormEditDocGia.cs">
@@ -98,10 +105,10 @@
     <Compile Include="GUI\FormEditDocGia.Designer.cs">
       <DependentUpon>FormEditDocGia.cs</DependentUpon>
     </Compile>
-    <Compile Include="GioHangDocGia.cs">
+    <Compile Include="GUI\GioHangDocGia.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GioHangDocGia.Designer.cs">
+    <Compile Include="GUI\GioHangDocGia.Designer.cs">
       <DependentUpon>GioHangDocGia.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\FormEditSach.cs">
@@ -110,10 +117,28 @@
     <Compile Include="GUI\FormEditSach.Designer.cs">
       <DependentUpon>FormEditSach.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainForm.cs">
+    <Compile Include="GUI\FormLichSuGiaoDich.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainForm.Designer.cs">
+    <Compile Include="GUI\FormLichSuGiaoDich.Designer.cs">
+      <DependentUpon>FormLichSuGiaoDich.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FormMuaSach.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormMuaSach.Designer.cs">
+      <DependentUpon>FormMuaSach.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FormThongKe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormThongKe.Designer.cs">
+      <DependentUpon>FormThongKe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Login.cs">
@@ -122,12 +147,6 @@
     <Compile Include="GUI\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="MuaSach.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MuaSach.Designer.cs">
-      <DependentUpon>MuaSach.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="GUI\QLDocGia.cs">
@@ -135,12 +154,6 @@
     </Compile>
     <Compile Include="GUI\QLDocGia.Designer.cs">
       <DependentUpon>QLDocGia.cs</DependentUpon>
-    </Compile>
-    <Compile Include="QLMuonTra.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="QLMuonTra.Designer.cs">
-      <DependentUpon>QLMuonTra.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\QLNV.cs">
       <SubType>Form</SubType>
@@ -161,22 +174,16 @@
     <Compile Include="GUI\SignUp.Designer.cs">
       <DependentUpon>SignUp.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddImages.cs">
+    <Compile Include="GUI\AddImages.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddImages.Designer.cs">
+    <Compile Include="GUI\AddImages.Designer.cs">
       <DependentUpon>AddImages.cs</DependentUpon>
     </Compile>
-    <Compile Include="ThanhToanSach.cs">
+    <Compile Include="GUI\ThongTinSach.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ThanhToanSach.Designer.cs">
-      <DependentUpon>ThanhToanSach.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ThongTinSach.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ThongTinSach.Designer.cs">
+    <Compile Include="GUI\ThongTinSach.Designer.cs">
       <DependentUpon>ThongTinSach.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="GUI\FormAddDocGia.resx">
@@ -185,26 +192,26 @@
     <EmbeddedResource Include="GUI\FormAddSach.resx">
       <DependentUpon>FormAddSach.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormDocGia.resx">
+    <EmbeddedResource Include="GUI\FormDocGia.resx">
       <DependentUpon>FormDocGia.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\FormEditDocGia.resx">
       <DependentUpon>FormEditDocGia.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GioHangDocGia.resx">
+    <EmbeddedResource Include="GUI\GioHangDocGia.resx">
       <DependentUpon>GioHangDocGia.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\FormEditSach.resx">
       <DependentUpon>FormEditSach.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainForm.resx">
+    <EmbeddedResource Include="GUI\FormLichSuGiaoDich.resx">
+      <DependentUpon>FormLichSuGiaoDich.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MuaSach.resx">
-      <DependentUpon>MuaSach.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -219,9 +226,6 @@
     <EmbeddedResource Include="GUI\QLDocGia.resx">
       <DependentUpon>QLDocGia.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="QLMuonTra.resx">
-      <DependentUpon>QLMuonTra.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="GUI\QLNV.resx">
       <DependentUpon>QLNV.cs</DependentUpon>
     </EmbeddedResource>
@@ -231,13 +235,10 @@
     <EmbeddedResource Include="GUI\SignUp.resx">
       <DependentUpon>SignUp.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddImages.resx">
+    <EmbeddedResource Include="GUI\AddImages.resx">
       <DependentUpon>AddImages.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ThanhToanSach.resx">
-      <DependentUpon>ThanhToanSach.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ThongTinSach.resx">
+    <EmbeddedResource Include="GUI\ThongTinSach.resx">
       <DependentUpon>ThongTinSach.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />

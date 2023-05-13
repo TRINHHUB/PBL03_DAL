@@ -37,23 +37,24 @@ namespace PBL03_DAL
         {
             QLNS qlns = new QLNS();
             // load anh
-            var gioHangSach = qlns.giohangs
+            int currentUserID = CurrentUser.ID_User;
+            var gioHangSach = qlns.connects
                 .Join(
                 qlns.saches,
-                giohang => giohang.masach,
+                connect => connect.masach,
                 sach => sach.masach,
-                (giohang, sach) => new
+                (connect, sach) => new
                 {
-                    giohang.magiohang,
-                    giohang.masach,
+                    connect.ID_User,
+                    connect.masach,
                     sach.tensach,
                     sach.dataanh,
                     sach.giatien
                 });
-            var image = gioHangSach.Select(p => p.dataanh).ToArray();
-            var nameBook = gioHangSach.Select(p => p.tensach).ToArray();
+            var image = gioHangSach.Where(p => p.ID_User == currentUserID).Select(p => p.dataanh).ToArray();
+            var nameBook = gioHangSach.Where(p => p.ID_User == currentUserID).Select(p => p.tensach).ToArray();
 
-  
+
 
 
             int x = 20, y = 71;
@@ -136,32 +137,6 @@ namespace PBL03_DAL
         }
         private void btn_Click(object sender, EventArgs e)
         {
-            // mua
-            // những thứ thay đổi: số lượng,tiền docgia,tiền admin, nếu số lượng  > 0,thì số lượng - theo lượng mua
-            // join bảng adminS,docgia,sach;,lấy viadmin,vidocgia,dataanh,tensach,giatien,soluong...
-            DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn mua sách này không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-            // Xử lý kết quả từ người dùng
-            if (result == DialogResult.Yes)
-            {
-                Guna2Button btn = sender as Guna2Button;
-                QLNS qlns = new QLNS();
-                string lbContainNameSach = ((Guna2Button)sender).Name;
-                var sachcanmua = qlns.saches.Select(p => new { p.masach,p.tensach, p.soluong, p.giatien, p.dataanh }).Where(p => p.tensach == lbContainNameSach).FirstOrDefault();
-
- //               var thongtinthanhtoan = from tt in qlns.sachmuas
- //                                       join dg in qlns.docgias on tt.madocgia equals dg.madocgia
-//                                        join ad in qlns.admin on tt.maadmin equals ad.maadmin
- //                                       where tt.masach == sachcanmua.masach
- //                                       select new { dg.walletdocgia, ad.walletadmin };
-
-                ThanhToanSach tts = new ThanhToanSach();
-                this.Hide();
-                tts.Show();
-
-
-
-            }
 
         }
         private void btn1_Click(object sender, EventArgs e)
@@ -171,28 +146,31 @@ namespace PBL03_DAL
             // Xử lý kết quả từ người dùng
             if (result == DialogResult.Yes)
             {
+                int currentUserID = CurrentUser.ID_User;
                 Guna2Button btn1 = sender as Guna2Button;
 
                 QLNS qlns = new QLNS();
-                var jointoDel = qlns.giohangs
+                var jointoDel = qlns.connects
                 .Join(
                 qlns.saches,
-                giohang => giohang.masach,
+                connect => connect.masach,
                 sach => sach.masach,
-                (giohang, sach) => new
+                (connect, sach) => new
                 {
-                    giohang.magiohang,
-                    giohang.masach,
+                    connect.ID_connect,
+                    connect.masach,
+                    connect.ID_User,
                     sach.tensach,
                 });
                 //Lấy tên sách từ tên nút được chọn
                 string lbContainNameSach = ((Guna2Button)sender).Name;
+                var gioHangcheckUser = qlns.accountts.Where(p => p.ID_User == currentUserID).Select(p => p.ID_User).FirstOrDefault();
                 var SelectMaSachToDel = jointoDel.Where(p => p.tensach == lbContainNameSach).Select(p => p.masach).FirstOrDefault();
-                var giohangToDelete = qlns.giohangs.Where(gh => gh.masach == SelectMaSachToDel).FirstOrDefault();
+                var giohangToDelete = qlns.connects.Where(con => con.masach == SelectMaSachToDel && gioHangcheckUser == currentUserID).FirstOrDefault();
 
-                if(giohangToDelete != null)
+                if (giohangToDelete != null)
                 {
-                    qlns.giohangs.Remove(giohangToDelete);
+                    qlns.connects.Remove(giohangToDelete);
                     qlns.SaveChanges();
                 }
                 grbGioHang.Controls.Clear();

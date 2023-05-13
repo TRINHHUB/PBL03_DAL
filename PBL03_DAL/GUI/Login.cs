@@ -1,4 +1,5 @@
-﻿using PBL03_DAL.DTO;
+﻿using PBL03_DAL.BLL;
+using PBL03_DAL.DTO;
 using System;
 using System.CodeDom;
 using System.Collections.Generic;
@@ -48,18 +49,12 @@ namespace PBL03_DAL
         }
         public void CheckLogin(string username, string password)
         {
-            var user = qlns.acountts.Where(p => p.TaiKhoan.Equals(username)).ToList();
-
-            // kiểm tra xem tài khoản có tồn tại trong cơ sở dữ liệu hay không
-            if(user.Count() > 0)
+            if (BLL_LOGIN.Instance.GetAccountByUserName(username) != null)
             {
-                // tồn tại,tiếp theo kiểm tra xem mật khẩu có đúng hay không ?
-                // do user là 1 collection( ở trên đã ToList() ) nên chỉ lấy bản ghi đầu tiên để kiểm tra
-                if (user[0].MatKhau.Equals(password))
-                {
-                    //khớp
+                accountt data = BLL_LOGIN.Instance.GetAccountByUserName(username);
+                if (data.MatKhau.Equals(password)) { 
                     MessageBox.Show("Đăng nhập thành công!");
-                    if (username == "Admin123")
+                    if (data.ID_Position == 1)
                     {
                         MainForm mf = new MainForm();
                         this.Hide();
@@ -70,11 +65,11 @@ namespace PBL03_DAL
                         FormDocGia fgd = new FormDocGia();
                         this.Hide();
                         fgd.Show();
-                    }                   
-                }
+                    }
+                    CurrentUser.ID_User = data.ID_User;
+                  }
                 else
                 {
-                    //không khớp
                     MessageBox.Show("Mật khẩu không đúng,vui lòng nhập lại");
                 }
             }
@@ -82,6 +77,43 @@ namespace PBL03_DAL
             {
                 MessageBox.Show("Tài khoản không tồn tại trong hệ thống");
             }
+
+
+           
+
+            //// kiểm tra xem tài khoản có tồn tại trong cơ sở dữ liệu hay không
+            //if(user.Count() > 0)
+            //{
+            //    // tồn tại,tiếp theo kiểm tra xem mật khẩu có đúng hay không ?
+            //    // do user là 1 collection( ở trên đã ToList() ) nên chỉ lấy bản ghi đầu tiên để kiểm tra
+            //    if (user[0].MatKhau.Equals(password))
+            //    {
+            //        //khớp
+            //        MessageBox.Show("Đăng nhập thành công!");
+            //        if (user[0].ID_Position == 1)
+            //        {
+            //            MainForm mf = new MainForm();
+            //            this.Hide();
+            //            mf.Show();
+            //        }
+            //        else
+            //        {
+            //            FormDocGia fgd = new FormDocGia();
+            //            this.Hide();
+            //            fgd.Show();
+            //        }
+            //        CurrentUser.ID_User = user[0].ID_User;
+            //    }
+            //    else
+            //    {
+            //        //không khớp
+            //        MessageBox.Show("Mật khẩu không đúng,vui lòng nhập lại");
+            //    }
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Tài khoản không tồn tại trong hệ thống");
+            //}
         }
 
         private void hideMK_CheckedChanged(object sender, EventArgs e)

@@ -35,7 +35,6 @@
             this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.btnTHONGKE = new Guna.UI2.WinForms.Guna2Button();
-            this.btnQLMT = new Guna.UI2.WinForms.Guna2Button();
             this.btnQLNV = new Guna.UI2.WinForms.Guna2Button();
             this.btnQLDG = new Guna.UI2.WinForms.Guna2Button();
             this.btnQLS = new Guna.UI2.WinForms.Guna2Button();
@@ -64,7 +63,7 @@
             this.MenuAdmin.FillColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(198)))), ((int)(((byte)(184)))));
             this.MenuAdmin.FillColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(198)))), ((int)(((byte)(184)))));
             this.MenuAdmin.Location = new System.Drawing.Point(0, 0);
-            this.MenuAdmin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MenuAdmin.Margin = new System.Windows.Forms.Padding(4);
             this.MenuAdmin.Name = "MenuAdmin";
             this.MenuAdmin.Size = new System.Drawing.Size(206, 700);
             this.MenuAdmin.TabIndex = 2;
@@ -89,7 +88,7 @@
             this.btnexitADMIN.ImageSize = new System.Drawing.Size(25, 25);
             this.btnexitADMIN.IndicateFocus = true;
             this.btnexitADMIN.Location = new System.Drawing.Point(0, 130);
-            this.btnexitADMIN.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnexitADMIN.Margin = new System.Windows.Forms.Padding(4);
             this.btnexitADMIN.Name = "btnexitADMIN";
             this.btnexitADMIN.Size = new System.Drawing.Size(206, 55);
             this.btnexitADMIN.TabIndex = 2;
@@ -119,7 +118,7 @@
             this.guna2Button1.ImageSize = new System.Drawing.Size(25, 25);
             this.guna2Button1.ImeMode = System.Windows.Forms.ImeMode.On;
             this.guna2Button1.Location = new System.Drawing.Point(0, 75);
-            this.guna2Button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Button1.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Button1.Name = "guna2Button1";
             this.guna2Button1.Size = new System.Drawing.Size(206, 55);
             this.guna2Button1.TabIndex = 1;
@@ -137,7 +136,7 @@
             this.guna2CirclePictureBox1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.guna2CirclePictureBox1.InitialImage = global::PBL03_DAL.Properties.Resources.icons8_repository_96;
             this.guna2CirclePictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.guna2CirclePictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2CirclePictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
             this.guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.guna2CirclePictureBox1.Size = new System.Drawing.Size(206, 75);
@@ -150,13 +149,12 @@
             // 
             this.guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(147)))), ((int)(((byte)(148)))));
             this.guna2Panel1.Controls.Add(this.btnTHONGKE);
-            this.guna2Panel1.Controls.Add(this.btnQLMT);
             this.guna2Panel1.Controls.Add(this.btnQLNV);
             this.guna2Panel1.Controls.Add(this.btnQLDG);
             this.guna2Panel1.Controls.Add(this.btnQLS);
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.guna2Panel1.Location = new System.Drawing.Point(206, 0);
-            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(545, 700);
             this.guna2Panel1.TabIndex = 3;
@@ -183,8 +181,8 @@
             this.btnTHONGKE.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnTHONGKE.ImageOffset = new System.Drawing.Point(30, 0);
             this.btnTHONGKE.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnTHONGKE.Location = new System.Drawing.Point(0, 220);
-            this.btnTHONGKE.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnTHONGKE.Location = new System.Drawing.Point(0, 165);
+            this.btnTHONGKE.Margin = new System.Windows.Forms.Padding(4);
             this.btnTHONGKE.Name = "btnTHONGKE";
             this.btnTHONGKE.Size = new System.Drawing.Size(545, 55);
             this.btnTHONGKE.TabIndex = 5;
@@ -192,39 +190,7 @@
             this.btnTHONGKE.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnTHONGKE.TextOffset = new System.Drawing.Point(45, 0);
             this.btnTHONGKE.UseTransparentBackground = true;
-            // 
-            // btnQLMT
-            // 
-            this.btnQLMT.Animated = true;
-            this.btnQLMT.BackColor = System.Drawing.Color.Transparent;
-            this.btnQLMT.CheckedState.FillColor = System.Drawing.Color.White;
-            this.btnQLMT.CheckedState.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnQLMT.CheckedState.ForeColor = System.Drawing.Color.DimGray;
-            this.btnQLMT.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnQLMT.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnQLMT.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnQLMT.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnQLMT.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnQLMT.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(147)))), ((int)(((byte)(148)))));
-            this.btnQLMT.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnQLMT.ForeColor = System.Drawing.Color.White;
-            this.btnQLMT.HoverState.FillColor = System.Drawing.Color.White;
-            this.btnQLMT.HoverState.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnQLMT.HoverState.ForeColor = System.Drawing.Color.DimGray;
-            this.btnQLMT.Image = global::PBL03_DAL.Properties.Resources.icons8_open_book_50;
-            this.btnQLMT.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnQLMT.ImageOffset = new System.Drawing.Point(30, 0);
-            this.btnQLMT.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnQLMT.Location = new System.Drawing.Point(0, 165);
-            this.btnQLMT.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnQLMT.Name = "btnQLMT";
-            this.btnQLMT.Size = new System.Drawing.Size(545, 55);
-            this.btnQLMT.TabIndex = 4;
-            this.btnQLMT.Text = "Quản Lí Mượn Trả";
-            this.btnQLMT.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnQLMT.TextOffset = new System.Drawing.Point(45, 0);
-            this.btnQLMT.UseTransparentBackground = true;
-            this.btnQLMT.Click += new System.EventHandler(this.guna2Button6_Click);
+            this.btnTHONGKE.Click += new System.EventHandler(this.btnTHONGKE_Click);
             // 
             // btnQLNV
             // 
@@ -249,7 +215,7 @@
             this.btnQLNV.ImageOffset = new System.Drawing.Point(30, 0);
             this.btnQLNV.ImageSize = new System.Drawing.Size(30, 30);
             this.btnQLNV.Location = new System.Drawing.Point(0, 110);
-            this.btnQLNV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnQLNV.Margin = new System.Windows.Forms.Padding(4);
             this.btnQLNV.Name = "btnQLNV";
             this.btnQLNV.Size = new System.Drawing.Size(545, 55);
             this.btnQLNV.TabIndex = 3;
@@ -282,7 +248,7 @@
             this.btnQLDG.ImageOffset = new System.Drawing.Point(30, 0);
             this.btnQLDG.ImageSize = new System.Drawing.Size(30, 30);
             this.btnQLDG.Location = new System.Drawing.Point(0, 55);
-            this.btnQLDG.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnQLDG.Margin = new System.Windows.Forms.Padding(4);
             this.btnQLDG.Name = "btnQLDG";
             this.btnQLDG.Size = new System.Drawing.Size(545, 55);
             this.btnQLDG.TabIndex = 2;
@@ -315,7 +281,7 @@
             this.btnQLS.ImageOffset = new System.Drawing.Point(30, 0);
             this.btnQLS.ImageSize = new System.Drawing.Size(30, 30);
             this.btnQLS.Location = new System.Drawing.Point(0, 0);
-            this.btnQLS.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnQLS.Margin = new System.Windows.Forms.Padding(4);
             this.btnQLS.Name = "btnQLS";
             this.btnQLS.Size = new System.Drawing.Size(545, 55);
             this.btnQLS.TabIndex = 1;
@@ -331,7 +297,7 @@
             this.guna2Panel2.Controls.Add(this.guna2PictureBox1);
             this.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Right;
             this.guna2Panel2.Location = new System.Drawing.Point(664, 0);
-            this.guna2Panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Panel2.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.Size = new System.Drawing.Size(536, 700);
             this.guna2Panel2.TabIndex = 5;
@@ -341,7 +307,7 @@
             this.guna2Panel3.BackColor = System.Drawing.Color.WhiteSmoke;
             this.guna2Panel3.Controls.Add(this.label1);
             this.guna2Panel3.Location = new System.Drawing.Point(0, 374);
-            this.guna2Panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Panel3.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Panel3.Name = "guna2Panel3";
             this.guna2Panel3.Size = new System.Drawing.Size(536, 36);
             this.guna2Panel3.TabIndex = 1;
@@ -365,7 +331,7 @@
             this.guna2PictureBox1.Image = global::PBL03_DAL.Properties.Resources.download;
             this.guna2PictureBox1.ImageRotate = 0F;
             this.guna2PictureBox1.Location = new System.Drawing.Point(4, -68);
-            this.guna2PictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2PictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.guna2PictureBox1.Name = "guna2PictureBox1";
             this.guna2PictureBox1.Size = new System.Drawing.Size(519, 622);
             this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -388,7 +354,7 @@
             this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.MenuAdmin);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MainForm";
             this.Text = "Chức Năng";
             this.MenuAdmin.ResumeLayout(false);
@@ -412,7 +378,6 @@
         private Guna.UI2.WinForms.Guna2Button btnQLS;
         private Guna.UI2.WinForms.Guna2Button btnQLDG;
         private Guna.UI2.WinForms.Guna2Button btnQLNV;
-        private Guna.UI2.WinForms.Guna2Button btnQLMT;
         private Guna.UI2.WinForms.Guna2Button btnTHONGKE;
         private Guna.UI2.WinForms.Guna2AnimateWindow guna2AnimateWindow1;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;

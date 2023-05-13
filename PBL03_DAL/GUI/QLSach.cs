@@ -18,6 +18,7 @@ namespace PBL03_DAL
         public QLSach()
         {
             InitializeComponent();
+          
         }
 
         private void guna2Button2_Click(object sender, EventArgs e)
@@ -82,5 +83,11 @@ namespace PBL03_DAL
           
                 
         }
+
+        private void btntkS_Click(object sender, EventArgs e)
+        {
+           dgrS.DataSource= BLL_QLSACH.Instance.Findsach(txttimkiemS.Text, cbb_typefind.SelectedItem.ToString());
+        }
+       
     }
 }

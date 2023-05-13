@@ -41,7 +41,7 @@ namespace PBL03_DAL
         }
         public void showDGVDG()
         {
-            dgrDG.DataSource = BLL_QLDG.Instance.getdg();
+            dgrDG.DataSource = BLL_QLDG.Instance.getalldg();
         }
 
         private void btneditDG_Click(object sender, EventArgs e)
@@ -59,17 +59,17 @@ namespace PBL03_DAL
 
         private void btnTKDG_Click(object sender, EventArgs e)
         {
-            QLNS db = new QLNS();
-            dgrDG.DataSource = db.docgias.Where(p => p.hoten.Contains(txtTKDG.Text))
-                .Select(p => new
-                {
-                    p.madocgia,
-                    p.hoten,
-                    p.ngaysinh,
-                    p.diachi,
-                    p.sdt,
-                    gioitinh = p.gioitinh == true ? "Nam" : (p.gioitinh == false ? "Nữ" : "Không xác định")
-                }).ToList();
+            //QLNS db = new QLNS();
+            //dgrDG.DataSource = db.docgias.Where(p => p.hoten.Contains(txtTKDG.Text))
+            //    .Select(p => new
+            //    {
+            //        p.madocgia,
+            //        p.hoten,
+            //        p.ngaysinh,
+            //        p.diachi,
+            //        p.sdt,
+            //        gioitinh = p.gioitinh == true ? "Nam" : (p.gioitinh == false ? "Nữ" : "Không xác định")
+            //    }).ToList();
         }
 
         private void btnxoaDG_Click(object sender, EventArgs e)

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
 using PBL03_DAL.DTO;
+using PBL03_DAL.BLL;
 
 namespace PBL03_DAL
 {
@@ -17,6 +18,7 @@ namespace PBL03_DAL
         public SignUp()
         {
             InitializeComponent();
+            LoadCBBPs();
         }
 
         private void btnreturn_Click(object sender, EventArgs e)
@@ -43,6 +45,10 @@ namespace PBL03_DAL
             string password = txtMKres.Text;
             string repassword = txtMKresagain.Text;
             string gmail = txtGMres.Text;
+            if (username == "" || password == "" || repassword == "" || gmail == "" )
+            {
+                MessageBox.Show(" Nhập đầy đủ thông tin cần thiết để đăng ký!");
+            }
             if (!CheckAccount(username))
             {
                 MessageBox.Show("Vui lòng nhập tên tài khoản dài 6-24 kí tự, với các chữ số, chữ hoa và chữ thường");
@@ -71,23 +77,30 @@ namespace PBL03_DAL
                 MessageBox.Show("Vui lòng nhập mật khẩu chính xác");
                 return;
             }
-
             try
             {
-                QLNS qlns = new QLNS();
-                acountt ac = new acountt();
+             
+                accountt ac = new accountt();
 
+                if(cbbSignUp.SelectedIndex == 0)
+                {
+                    ac.ID_Position = 3;
+                }
+                else
+                {
+                    ac.ID_Position = 2;
+                }
                 ac.TaiKhoan = txtTKres.Text;
                 ac.MatKhau = txtMKres.Text;
                 ac.Gmail = txtGMres.Text;
-                var signup = qlns.acountts.Add(ac);
-                qlns.SaveChanges();
+                BLL_LOGIN.Instance.addtk(ac);
+                
 
                 if (MessageBox.Show("Đăng kí thành công ! Bạn có muốn đăng nhập luôn không?", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
                 {
                     Login login = new Login();
-                    login.Show();
                     this.Close();
+                    login.Show();
                 }
 
             }
@@ -98,6 +111,14 @@ namespace PBL03_DAL
             
         }
 
+       public void LoadCBBPs()
+        {
+            List<cbbPosition> li = new List<cbbPosition>();
+            li = BLL_LOGIN.Instance.GetcbbPs();
+            li.RemoveAt(0);
+            cbbSignUp.Items.AddRange(li.ToArray());
+
+        }
 
     }
 }
