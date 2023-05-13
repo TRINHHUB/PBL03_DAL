@@ -32,16 +32,16 @@ namespace PBL03_DAL.BLL
             {
                 dg = (db.saches).Select(p => new sachshow
                 {
-                    ma = p.masach,
-                    ten = p.tensach,
-                    nam = (int)p.namxb,
-                    tennxb = db.nxbs.Where(n => n.manxb == p.manxb).Select(n => n.tennxb).FirstOrDefault(),
-                    tentacgia = db.tacgias.Where(n => n.matacgia == p.matacgia).Select(n => n.tentacgia).FirstOrDefault(),
-                    tentheloai = db.theloais.Where(n => n.matheloai == p.matheloai).Select(n => n.tentheloai).FirstOrDefault(),
-                    sl = (int)p.soluong,
-                    note = p.ghichu,
-                    khu = p.khusach,
-                    gia = (int)p.giatien
+                    MaSach = p.masach,
+                    TenSach = p.tensach,
+                    NamXB = (int)p.namxb,
+                    TenNXB = db.nxbs.Where(n => n.manxb == p.manxb).Select(n => n.tennxb).FirstOrDefault(),
+                    TenTG= db.tacgias.Where(n => n.matacgia == p.matacgia).Select(n => n.tentacgia).FirstOrDefault(),
+                    TenTL = db.theloais.Where(n => n.matheloai == p.matheloai).Select(n => n.tentheloai).FirstOrDefault(),
+                    Soluong = (int)p.soluong,
+                    GhiChu = p.ghichu,
+                    KhuSach = p.khusach,
+                    GiaTien = (int)p.giatien
                 }).ToList();
                 return dg;
             }
@@ -195,10 +195,10 @@ namespace PBL03_DAL.BLL
                            .Where(p => p.madocgia != null)
                            .Select(p => new Lichsugiaodich
                            {
-                               Name = db.saches.Where(s => s.masach == p.masach).Select(s => s.tensach).FirstOrDefault(),
-                               dt = (DateTime)p.thoigiangiaodich,
-                               sl = (int)p.soluongmua,
-                               sum  = p.tongtien == null ? 0 : (int)p.tongtien
+                               TenSach = db.saches.Where(s => s.masach == p.masach).Select(s => s.tensach).FirstOrDefault(),
+                               ThoiGianGiaoDich = (DateTime)p.thoigiangiaodich,
+                               SoLuongMua = (int)p.soluongmua,
+                               TongTien  = (int)p.tongtien
                            }).ToList();
                 return list;
             }
@@ -219,16 +219,16 @@ namespace PBL03_DAL.BLL
                 {
                     li = (db.saches).Where(p => p.tensach.Contains(txtfind)).Select(p => new sachshow
                     {
-                        ma = p.masach,
-                        ten = p.tensach,
-                        nam = (int)p.namxb,
-                        tennxb = db.nxbs.Where(n => n.manxb == p.manxb).Select(n => n.tennxb).FirstOrDefault(),
-                        tentacgia = db.tacgias.Where(n => n.matacgia == p.matacgia).Select(n => n.tentacgia).FirstOrDefault(),
-                        tentheloai = db.theloais.Where(n => n.matheloai == p.matheloai).Select(n => n.tentheloai).FirstOrDefault(),
-                        sl = (int)p.soluong,
-                        note = p.ghichu,
-                        khu = p.khusach,
-                        gia = (int)p.giatien
+                        MaSach = p.masach,
+                        TenSach = p.tensach,
+                        NamXB = (int)p.namxb,
+                        TenNXB = db.nxbs.Where(n => n.manxb == p.manxb).Select(n => n.tennxb).FirstOrDefault(),
+                        TenTG = db.tacgias.Where(n => n.matacgia == p.matacgia).Select(n => n.tentacgia).FirstOrDefault(),
+                        TenTL = db.theloais.Where(n => n.matheloai == p.matheloai).Select(n => n.tentheloai).FirstOrDefault(),
+                        Soluong = (int)p.soluong,
+                        GhiChu = p.ghichu,
+                        KhuSach = p.khusach,
+                        GiaTien = (int)p.giatien
                     }).ToList();
 
                 }
@@ -236,16 +236,16 @@ namespace PBL03_DAL.BLL
                 {
                     li = (db.saches).Where(p => p.nxb.tennxb.Contains(txtfind)).Select(p => new sachshow
                     {
-                        ma = p.masach,
-                        ten = p.tensach,
-                        nam = (int)p.namxb,
-                        tennxb = db.nxbs.Where(n => n.manxb == p.manxb).Select(n => n.tennxb).FirstOrDefault(),
-                        tentacgia = db.tacgias.Where(n => n.matacgia == p.matacgia).Select(n => n.tentacgia).FirstOrDefault(),
-                        tentheloai = db.theloais.Where(n => n.matheloai == p.matheloai).Select(n => n.tentheloai).FirstOrDefault(),
-                        sl = (int)p.soluong,
-                        note = p.ghichu,
-                        khu = p.khusach,
-                        gia = (int)p.giatien
+                        MaSach = p.masach,
+                        TenSach = p.tensach,
+                        NamXB = (int)p.namxb,
+                        TenNXB = db.nxbs.Where(n => n.manxb == p.manxb).Select(n => n.tennxb).FirstOrDefault(),
+                        TenTG = db.tacgias.Where(n => n.matacgia == p.matacgia).Select(n => n.tentacgia).FirstOrDefault(),
+                        TenTL = db.theloais.Where(n => n.matheloai == p.matheloai).Select(n => n.tentheloai).FirstOrDefault(),
+                        Soluong = (int)p.soluong,
+                        GhiChu = p.ghichu,
+                        KhuSach = p.khusach,
+                        GiaTien = (int)p.giatien
                     }).ToList();
 
                 }
@@ -253,16 +253,16 @@ namespace PBL03_DAL.BLL
                 {
                     li = (db.saches).Where(p => p.tacgia.tentacgia.Contains(txtfind)).Select(p => new sachshow
                     {
-                        ma = p.masach,
-                        ten = p.tensach,
-                        nam = (int)p.namxb,
-                        tennxb = db.nxbs.Where(n => n.manxb == p.manxb).Select(n => n.tennxb).FirstOrDefault(),
-                        tentacgia = db.tacgias.Where(n => n.matacgia == p.matacgia).Select(n => n.tentacgia).FirstOrDefault(),
-                        tentheloai = db.theloais.Where(n => n.matheloai == p.matheloai).Select(n => n.tentheloai).FirstOrDefault(),
-                        sl = (int)p.soluong,
-                        note = p.ghichu,
-                        khu = p.khusach,
-                        gia = (int)p.giatien
+                        MaSach = p.masach,
+                        TenSach = p.tensach,
+                        NamXB = (int)p.namxb,
+                        TenNXB = db.nxbs.Where(n => n.manxb == p.manxb).Select(n => n.tennxb).FirstOrDefault(),
+                        TenTG = db.tacgias.Where(n => n.matacgia == p.matacgia).Select(n => n.tentacgia).FirstOrDefault(),
+                        TenTL = db.theloais.Where(n => n.matheloai == p.matheloai).Select(n => n.tentheloai).FirstOrDefault(),
+                        Soluong = (int)p.soluong,
+                        GhiChu = p.ghichu,
+                        KhuSach = p.khusach,
+                        GiaTien = (int)p.giatien
                     }).ToList();
 
                 }
@@ -270,16 +270,16 @@ namespace PBL03_DAL.BLL
                 {
                     li = (db.saches).Where(p => p.theloai.tentheloai.Contains(txtfind)).Select(p => new sachshow
                     {
-                        ma = p.masach,
-                        ten = p.tensach,
-                        nam = (int)p.namxb,
-                        tennxb = db.nxbs.Where(n => n.manxb == p.manxb).Select(n => n.tennxb).FirstOrDefault(),
-                        tentacgia = db.tacgias.Where(n => n.matacgia == p.matacgia).Select(n => n.tentacgia).FirstOrDefault(),
-                        tentheloai = db.theloais.Where(n => n.matheloai == p.matheloai).Select(n => n.tentheloai).FirstOrDefault(),
-                        sl = (int)p.soluong,
-                        note = p.ghichu,
-                        khu = p.khusach,
-                        gia = (int)p.giatien
+                        MaSach = p.masach,
+                        TenSach = p.tensach,
+                        NamXB = (int)p.namxb,
+                        TenNXB = db.nxbs.Where(n => n.manxb == p.manxb).Select(n => n.tennxb).FirstOrDefault(),
+                        TenTG = db.tacgias.Where(n => n.matacgia == p.matacgia).Select(n => n.tentacgia).FirstOrDefault(),
+                        TenTL = db.theloais.Where(n => n.matheloai == p.matheloai).Select(n => n.tentheloai).FirstOrDefault(),
+                        Soluong = (int)p.soluong,
+                        GhiChu = p.ghichu,
+                        KhuSach = p.khusach,
+                        GiaTien = (int)p.giatien
                     }).ToList();
                 }
                 return li;

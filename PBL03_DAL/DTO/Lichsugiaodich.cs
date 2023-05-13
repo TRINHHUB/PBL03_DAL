@@ -8,9 +8,9 @@ namespace PBL03_DAL.DTO
 {
     public class Lichsugiaodich
     {
-        public string Name { get; set; }
-        public DateTime dt { get; set; }
-        public int sl { get; set; }
-        public int sum { get; set; }
+        public string TenSach { get; set; }
+        public DateTime ThoiGianGiaoDich{ get; set; }
+        public int SoLuongMua { get; set; }
+        public int TongTien { get; set; }
     }
 }

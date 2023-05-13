@@ -28,7 +28,7 @@ namespace PBL03_DAL
 
             foreach (Lichsugiaodich i in list)
             {
-                tongtien += (int)i.sum;
+                tongtien += (int)i.TongTien;
             }
 
             if (list != null)

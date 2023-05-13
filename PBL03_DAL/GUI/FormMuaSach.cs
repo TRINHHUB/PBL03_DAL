@@ -30,32 +30,23 @@ namespace PBL03_DAL
             using (QLNS qlns = new QLNS())
             {
                 var getMaNhanVien = qlns.nhanviennhasaches.Where(p => p.tennhanvien == TenNhanVienChon).Select(p => p.manhanvien).FirstOrDefault();//lay ma nhan vien 
-                var thanhtoancheckUser = qlns.accountts.Where(p => p.ID_User == currentUserID).Select(p => p.ID_User).FirstOrDefault();
-                var SelectMaSachToThanhToan = qlns.saches.Where(p => p.tensach == currentNS).Select(p => p.masach).FirstOrDefault();//thanh toan
-                var Sach = qlns.saches.Where(p => p.tensach == currentNS).Select(p => new { p.manxb, p.matacgia, p.matheloai, p.soluong, p.khusach, p.giatien, p.tensach, p.dataanh }).FirstOrDefault();//lay thong tin sach mua
-                var getIDToUpdate = qlns.connects.Where(p => p.masach == SelectMaSachToThanhToan && p.ID_User == currentUserID && p.madocgia != null).Select(p => p.ID_connect).FirstOrDefault();
+                var Sach = qlns.saches.Where(p => p.tensach == currentNS).Select(p => new { p.masach,p.manxb, p.matacgia, p.matheloai, p.soluong, p.khusach, p.giatien, p.tensach, p.dataanh }).FirstOrDefault();//lay thong tin sach mua
+                var getIDToUpdate = qlns.connects.Where(p => p.masach == Sach.masach && p.ID_User == currentUserID && p.madocgia != null).Select(p => p.ID_connect).FirstOrDefault();
                 var updateConnect = qlns.connects.FirstOrDefault(p => p.ID_connect == getIDToUpdate);
 
-                var getMasachUpdate = qlns.saches.Where(p => p.tensach == currentNS).Select(p => p.masach).FirstOrDefault();
-                var UpdateSach = qlns.saches.FirstOrDefault(p => p.masach == getMasachUpdate);
+                var UpdateSach = qlns.saches.FirstOrDefault(p => p.masach == Sach.masach);
 
                 int MaNhanVien = Convert.ToInt32(getMaNhanVien);
-                if (updateConnect != null)
+                if (updateConnect != null && UpdateSach != null)
                 {
                     updateConnect.manhanvien = MaNhanVien;
                     updateConnect.soluongmua = soluongmua;
                     updateConnect.tongtien = soluongmua * Sach.giatien;
-                }
-
-                if (UpdateSach != null)
-                {
                     UpdateSach.soluong -= soluongmua;
-                    
+                    qlns.SaveChanges();
                 }
-                qlns.SaveChanges();
-            }
-
-         
+                
+            } 
             MessageBox.Show("Bạn đã mua thành công!");
 
 
@@ -94,8 +85,5 @@ namespace PBL03_DAL
             tts.Show();
         }
 
-        // da lay duoc sach can mua,gan thong tin cho view
-        // update sach do them manhanvien tu cbb ( neu du dieu kien masach = masachmua && currentID = current && madocgia != null)
-        // 
     }
 }

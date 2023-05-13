@@ -148,9 +148,7 @@ namespace PBL03_DAL
                         con.ID_User
                     }
                     );
-                //var thanhtoancheckUser = qlns.accountts.Where(p => p.ID_User == currentUserID).Select(p => p.ID_User).FirstOrDefault();
                 var SelectMaSachToThanhToan = thanhtoan.Where(p => p.tensach == lbContainNameSachMua).Select(p => p.masach).FirstOrDefault();
-                //var ThanhtoanFull = qlns.connects.Where(con => con.masach == SelectMaSachToThanhToan).Select(con => new { con.manhanvien, con.madocgia, con.ID_User }).FirstOrDefault();
                 var getMadocgiaThanhToan = qlns.docgias.Where(p => p.ID_User == currentUserID).Select(p => p.madocgia).FirstOrDefault();
 
 
@@ -168,7 +166,6 @@ namespace PBL03_DAL
                 }
 
                 FormMuaSach fms = new FormMuaSach();
-                this.Hide();
                 fms.Show();
             }
 
@@ -192,25 +189,26 @@ namespace PBL03_DAL
                 var gioHang = qlns.saches.Where(s => s.tensach == lbContainNameSach).Select(p => p.masach).FirstOrDefault();
                 var gioHangcheckUser = qlns.accountts.Where(p => p.ID_User == currentUserID).Select(p => p.ID_User).FirstOrDefault();
                 var checkExistGioHang = qlns.connects.Where(p => p.ID_User == currentUserID && p.madocgia == null).Select(p => p.masach).FirstOrDefault();
-                
-                if(gioHang != checkExistGioHang)
+
+                if (gioHang != checkExistGioHang)
                 {
                     connect con = new connect();
                     con.masach = gioHang;
                     con.ID_User = gioHangcheckUser;
                     qlns.connects.Add(con);
                     qlns.SaveChanges();
+
                     MessageBox.Show("Sách đã được thêm vào giỏ hàng");
                 }
-            }
+
                 else
                 {
                     MessageBox.Show("Sách này đã có trong giỏ hàng!");
                 }
+            }
                 
 
         }
-        Guna2Panel pn1 = new Guna2Panel();
 
 
 

@@ -8,12 +8,12 @@ namespace PBL03_DAL.DTO
 {
     public class DGSHOW
     {
-        public int id { get; set; }
-        public string name { get; set; }
-        public DateTime ngay { get; set; }
-        public string address { get; set; }
-        public string dt { get; set; }
-        public bool gender { get; set; }
+        public int Madocgia { get; set; }
+        public string Tendocgia { get; set; }
+        public DateTime Ngaysinh { get; set; }
+        public string Diachi { get; set; }
+        public string SDT { get; set; }
+        public bool Gender { get; set; }
 
     }
 }

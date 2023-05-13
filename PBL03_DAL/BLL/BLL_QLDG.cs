@@ -29,24 +29,6 @@ namespace PBL03_DAL.BLL
 
        
         private BLL_QLDG() { }
-
-
-        //public List<DGSHOW> getdg()
-        //{
-        //    using (QLNS db = new QLNS()) {
-        //        List<DGSHOW> dg = new List<DGSHOW>();
-        //        dg = db.docgias.ToList().Select(p => new DGSHOW
-        //        {
-        //            id = p.madocgia,
-        //            name = p.hoten,
-        //            ngay = (DateTime)p.ngaysinh,
-        //            address = p.diachi,
-        //            dt = p.sdt,
-        //            gender = Convert.ToBoolean(p.gioitinh)
-        //        }).ToList();
-        //        return dg;
-        //    }
-        //}
         public dynamic getalldg()
         {
             using (QLNS db = new QLNS())
@@ -75,7 +57,6 @@ namespace PBL03_DAL.BLL
         }
         public bool DelDocgia(List<int> iddg)
         {
-            //DAL_QLDG.Instance.DelDocGia(iddg);
             using (QLNS db = new QLNS())
             {
                 List<docgia> deldg = db.docgias.Where(p => iddg.Contains(p.madocgia)).ToList();
@@ -120,39 +101,6 @@ namespace PBL03_DAL.BLL
                 }
                 return dg;
             }
-        }
-        //public List<docgia> FindDocGia(String txt, String type)
-        //{
-        //    List<docgia> li = new List<docgia>();
-        //    using(QLNS db = new QLNS())
-        //    {
-        //        if (txt == "" && type =="All")
-        //        {
-        //            li = getalldg();
-        //        }
-        //        else if()
-        //        {
-        //            li = db.docgias.Where(p => p.hoten.Contains(txt)).Select(p => new DGSHOW
-        //            {
-        //                id = p.madocgia,
-        //                name = p.hoten,
-        //                ngay = (DateTime)p.ngaysinh,
-        //                address = p.diachi,
-        //                dt = p.sdt,
-        //                gender = Convert.ToBoolean(p.gioitinh)
-        //            }).ToList();
-        //        }).ToList();
-        //        else if()
-        //        {
-
-        //        }
-        //        else if()
-        //        {
-
-        //        }
-        //        return li;
-        //    }
-            
-        //}       
+        } 
     }
 }

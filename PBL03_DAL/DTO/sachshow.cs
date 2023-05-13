@@ -8,16 +8,16 @@ namespace PBL03_DAL.DTO
 {
     public class sachshow
     {
-        public int ma { get; set; }
-        public string ten { get; set; }
-        public int nam { get; set; }
-        public string tennxb { get; set; }
-        public string tentacgia { get; set; }
-        public string tentheloai { get; set; }
-        public int sl { get; set; }
-        public string note { get; set; }
-        public string khu { get; set; }
-        public int gia { get; set; }
+        public int MaSach { get; set; }
+        public string TenSach { get; set; }
+        public int NamXB { get; set; }
+        public string TenNXB { get; set; }
+        public string TenTG { get; set; }
+        public string TenTL { get; set; }
+        public int Soluong { get; set; }
+        public string GhiChu { get; set; }
+        public string KhuSach { get; set; }
+        public int GiaTien { get; set; }
 
     }
 }

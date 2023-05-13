@@ -47,12 +47,13 @@ namespace PBL03_DAL
                 {
                     connect.ID_User,
                     connect.masach,
+                    connect.madocgia,
                     sach.tensach,
                     sach.dataanh,
                     sach.giatien
                 });
-            var image = gioHangSach.Where(p => p.ID_User == currentUserID).Select(p => p.dataanh).ToArray();
-            var nameBook = gioHangSach.Where(p => p.ID_User == currentUserID).Select(p => p.tensach).ToArray();
+            var image = gioHangSach.Where(p => p.ID_User == currentUserID && p.madocgia == null ).Select(p => p.dataanh).ToArray();
+            var nameBook = gioHangSach.Where(p => p.ID_User == currentUserID && p.madocgia == null ).Select(p => p.tensach).ToArray();
 
 
 
@@ -137,7 +138,49 @@ namespace PBL03_DAL
         }
         private void btn_Click(object sender, EventArgs e)
         {
+            // Xử lý khi button được click
+            DialogResult result = MessageBox.Show("Bạn có muốn mua sách này không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                Guna2Button btn = sender as Guna2Button;
+                QLNS qlns = new QLNS();
+                string lbContainNameSachMua = ((Guna2Button)sender).Name;
+                int currentUserID = CurrentUser.ID_User;
+                CurrentNameSach.currentNameSach = lbContainNameSachMua;
 
+                var thanhtoan = qlns.saches.Join(
+                    qlns.connects,
+                    s => s.masach,
+                    con => con.masach,
+                    (s, con) => new
+                    {
+                        s.tensach,
+                        s.masach,
+                        s.soluong,
+                        con.madocgia,
+                        con.ID_User
+                    }
+                    );
+                var SelectMaSachToThanhToan = thanhtoan.Where(p => p.tensach == lbContainNameSachMua).Select(p => p.masach).FirstOrDefault();
+                var getMadocgiaThanhToan = qlns.docgias.Where(p => p.ID_User == currentUserID).Select(p => p.madocgia).FirstOrDefault();
+
+
+                if (true)
+                {
+                    connect c = new connect();
+                    c.ID_User = currentUserID;
+                    c.masach = SelectMaSachToThanhToan;
+                    c.madocgia = getMadocgiaThanhToan;
+                    c.thoigiangiaodich = DateTime.Now;
+
+                    qlns.connects.Add(c);
+                    qlns.SaveChanges();
+
+                }
+
+                FormMuaSach fms = new FormMuaSach();
+                fms.Show();
+            }
         }
         private void btn1_Click(object sender, EventArgs e)
         {
@@ -164,9 +207,8 @@ namespace PBL03_DAL
                 });
                 //Lấy tên sách từ tên nút được chọn
                 string lbContainNameSach = ((Guna2Button)sender).Name;
-                var gioHangcheckUser = qlns.accountts.Where(p => p.ID_User == currentUserID).Select(p => p.ID_User).FirstOrDefault();
                 var SelectMaSachToDel = jointoDel.Where(p => p.tensach == lbContainNameSach).Select(p => p.masach).FirstOrDefault();
-                var giohangToDelete = qlns.connects.Where(con => con.masach == SelectMaSachToDel && gioHangcheckUser == currentUserID).FirstOrDefault();
+                var giohangToDelete = qlns.connects.Where(con => con.masach == SelectMaSachToDel && con.ID_User == currentUserID).FirstOrDefault();
 
                 if (giohangToDelete != null)
                 {
