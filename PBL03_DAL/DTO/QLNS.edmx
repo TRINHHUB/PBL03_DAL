@@ -1,0 +1,706 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="PBL03Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="accountt">
+          <Key>
+            <PropertyRef Name="ID_User" />
+          </Key>
+          <Property Name="ID_User" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TaiKhoan" Type="nvarchar" MaxLength="50" />
+          <Property Name="MatKhau" Type="nvarchar" MaxLength="50" />
+          <Property Name="Gmail" Type="nvarchar" MaxLength="50" />
+          <Property Name="ID_Position" Type="int" />
+          <Property Name="Salt" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="adminS">
+          <Key>
+            <PropertyRef Name="maadmin" />
+          </Key>
+          <Property Name="maadmin" Type="int" Nullable="false" />
+          <Property Name="ID_Users" Type="int" />
+        </EntityType>
+        <EntityType Name="connect">
+          <Key>
+            <PropertyRef Name="ID_connect" />
+          </Key>
+          <Property Name="ID_connect" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="masach" Type="int" />
+          <Property Name="madocgia" Type="int" />
+          <Property Name="manhanvien" Type="int" />
+          <Property Name="thoigiangiaodich" Type="datetime" />
+          <Property Name="ID_User" Type="int" />
+          <Property Name="soluongmua" Type="int" />
+          <Property Name="tongtien" Type="int" />
+        </EntityType>
+        <EntityType Name="docgia">
+          <Key>
+            <PropertyRef Name="madocgia" />
+          </Key>
+          <Property Name="madocgia" Type="int" Nullable="false" />
+          <Property Name="hoten" Type="nvarchar" MaxLength="50" />
+          <Property Name="ngaysinh" Type="date" />
+          <Property Name="diachi" Type="nvarchar" MaxLength="50" />
+          <Property Name="gioitinh" Type="bit" />
+          <Property Name="sdt" Type="nvarchar" MaxLength="50" />
+          <Property Name="ID_User" Type="int" />
+        </EntityType>
+        <EntityType Name="giohang">
+          <Key>
+            <PropertyRef Name="magiohang" />
+          </Key>
+          <Property Name="magiohang" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="masach" Type="int" />
+          <Property Name="ID_User" Type="int" />
+        </EntityType>
+        <EntityType Name="nhanviennhasach">
+          <Key>
+            <PropertyRef Name="manhanvien" />
+          </Key>
+          <Property Name="manhanvien" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="tennhanvien" Type="nvarchar" MaxLength="50" />
+          <Property Name="diachi" Type="nvarchar" MaxLength="50" />
+          <Property Name="sdt" Type="nchar" MaxLength="12" Nullable="false" />
+          <Property Name="gioitinh" Type="bit" />
+          <Property Name="ID_User" Type="int" />
+        </EntityType>
+        <EntityType Name="nxb">
+          <Key>
+            <PropertyRef Name="manxb" />
+          </Key>
+          <Property Name="manxb" Type="int" Nullable="false" />
+          <Property Name="tennxb" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="Position">
+          <Key>
+            <PropertyRef Name="ID_Position" />
+          </Key>
+          <Property Name="ID_Position" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sach">
+          <Key>
+            <PropertyRef Name="masach" />
+          </Key>
+          <Property Name="masach" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="tensach" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="namxb" Type="int" Nullable="false" />
+          <Property Name="manxb" Type="int" Nullable="false" />
+          <Property Name="matheloai" Type="int" Nullable="false" />
+          <Property Name="matacgia" Type="int" Nullable="false" />
+          <Property Name="soluong" Type="int" Nullable="false" />
+          <Property Name="ghichu" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="khusach" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="giatien" Type="int" Nullable="false" />
+          <Property Name="dataanh" Type="image" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="tacgia">
+          <Key>
+            <PropertyRef Name="matacgia" />
+          </Key>
+          <Property Name="matacgia" Type="int" Nullable="false" />
+          <Property Name="tentacgia" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="theloai">
+          <Key>
+            <PropertyRef Name="matheloai" />
+          </Key>
+          <Property Name="matheloai" Type="int" Nullable="false" />
+          <Property Name="tentheloai" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK_accountt_Position">
+          <End Role="Position" Type="Self.Position" Multiplicity="0..1" />
+          <End Role="accountt" Type="Self.accountt" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Position">
+              <PropertyRef Name="ID_Position" />
+            </Principal>
+            <Dependent Role="accountt">
+              <PropertyRef Name="ID_Position" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_connect_accountt">
+          <End Role="accountt" Type="Self.accountt" Multiplicity="0..1" />
+          <End Role="connect" Type="Self.connect" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="accountt">
+              <PropertyRef Name="ID_User" />
+            </Principal>
+            <Dependent Role="connect">
+              <PropertyRef Name="ID_User" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_connect_sach">
+          <End Role="sach" Type="Self.sach" Multiplicity="0..1" />
+          <End Role="connect" Type="Self.connect" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sach">
+              <PropertyRef Name="masach" />
+            </Principal>
+            <Dependent Role="connect">
+              <PropertyRef Name="masach" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_docgia_accountt">
+          <End Role="accountt" Type="Self.accountt" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="docgia" Type="Self.docgia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="accountt">
+              <PropertyRef Name="ID_User" />
+            </Principal>
+            <Dependent Role="docgia">
+              <PropertyRef Name="ID_User" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_nhanviennhasach_accountt">
+          <End Role="accountt" Type="Self.accountt" Multiplicity="0..1" />
+          <End Role="nhanviennhasach" Type="Self.nhanviennhasach" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="accountt">
+              <PropertyRef Name="ID_User" />
+            </Principal>
+            <Dependent Role="nhanviennhasach">
+              <PropertyRef Name="ID_User" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_sach_nxb">
+          <End Role="nxb" Type="Self.nxb" Multiplicity="1" />
+          <End Role="sach" Type="Self.sach" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="nxb">
+              <PropertyRef Name="manxb" />
+            </Principal>
+            <Dependent Role="sach">
+              <PropertyRef Name="manxb" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_sach_tacgia">
+          <End Role="tacgia" Type="Self.tacgia" Multiplicity="1" />
+          <End Role="sach" Type="Self.sach" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tacgia">
+              <PropertyRef Name="matacgia" />
+            </Principal>
+            <Dependent Role="sach">
+              <PropertyRef Name="matacgia" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_sach_theloai">
+          <End Role="theloai" Type="Self.theloai" Multiplicity="1" />
+          <End Role="sach" Type="Self.sach" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="theloai">
+              <PropertyRef Name="matheloai" />
+            </Principal>
+            <Dependent Role="sach">
+              <PropertyRef Name="matheloai" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="PBL03ModelStoreContainer">
+          <EntitySet Name="accountt" EntityType="Self.accountt" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="adminS" EntityType="Self.adminS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="connect" EntityType="Self.connect" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="docgia" EntityType="Self.docgia" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="giohang" EntityType="Self.giohang" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="nhanviennhasach" EntityType="Self.nhanviennhasach" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="nxb" EntityType="Self.nxb" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Position" EntityType="Self.Position" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sach" EntityType="Self.sach" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tacgia" EntityType="Self.tacgia" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="theloai" EntityType="Self.theloai" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_accountt_Position" Association="Self.FK_accountt_Position">
+            <End Role="Position" EntitySet="Position" />
+            <End Role="accountt" EntitySet="accountt" />
+          </AssociationSet>
+          <AssociationSet Name="FK_connect_accountt" Association="Self.FK_connect_accountt">
+            <End Role="accountt" EntitySet="accountt" />
+            <End Role="connect" EntitySet="connect" />
+          </AssociationSet>
+          <AssociationSet Name="FK_connect_sach" Association="Self.FK_connect_sach">
+            <End Role="sach" EntitySet="sach" />
+            <End Role="connect" EntitySet="connect" />
+          </AssociationSet>
+          <AssociationSet Name="FK_docgia_accountt" Association="Self.FK_docgia_accountt">
+            <End Role="accountt" EntitySet="accountt" />
+            <End Role="docgia" EntitySet="docgia" />
+          </AssociationSet>
+          <AssociationSet Name="FK_nhanviennhasach_accountt" Association="Self.FK_nhanviennhasach_accountt">
+            <End Role="accountt" EntitySet="accountt" />
+            <End Role="nhanviennhasach" EntitySet="nhanviennhasach" />
+          </AssociationSet>
+          <AssociationSet Name="FK_sach_nxb" Association="Self.FK_sach_nxb">
+            <End Role="nxb" EntitySet="nxb" />
+            <End Role="sach" EntitySet="sach" />
+          </AssociationSet>
+          <AssociationSet Name="FK_sach_tacgia" Association="Self.FK_sach_tacgia">
+            <End Role="tacgia" EntitySet="tacgia" />
+            <End Role="sach" EntitySet="sach" />
+          </AssociationSet>
+          <AssociationSet Name="FK_sach_theloai" Association="Self.FK_sach_theloai">
+            <End Role="theloai" EntitySet="theloai" />
+            <End Role="sach" EntitySet="sach" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="PBL03Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="accountt">
+          <Key>
+            <PropertyRef Name="ID_User" />
+          </Key>
+          <Property Name="ID_User" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TaiKhoan" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MatKhau" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Gmail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ID_Position" Type="Int32" />
+          <Property Name="Salt" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Position" Relationship="Self.FK_accountt_Position" FromRole="accountt" ToRole="Position" />
+          <NavigationProperty Name="connects" Relationship="Self.FK_connect_accountt" FromRole="accountt" ToRole="connect" />
+          <NavigationProperty Name="docgias" Relationship="Self.FK_docgia_accountt" FromRole="accountt" ToRole="docgia" />
+          <NavigationProperty Name="nhanviennhasaches" Relationship="Self.FK_nhanviennhasach_accountt" FromRole="accountt" ToRole="nhanviennhasach" />
+        </EntityType>
+        <EntityType Name="admin">
+          <Key>
+            <PropertyRef Name="maadmin" />
+          </Key>
+          <Property Name="maadmin" Type="Int32" Nullable="false" />
+          <Property Name="ID_Users" Type="Int32" />
+        </EntityType>
+        <EntityType Name="connect">
+          <Key>
+            <PropertyRef Name="ID_connect" />
+          </Key>
+          <Property Name="ID_connect" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="masach" Type="Int32" />
+          <Property Name="madocgia" Type="Int32" />
+          <Property Name="manhanvien" Type="Int32" />
+          <Property Name="thoigiangiaodich" Type="DateTime" Precision="3" />
+          <Property Name="ID_User" Type="Int32" />
+          <Property Name="soluongmua" Type="Int32" />
+          <Property Name="tongtien" Type="Int32" />
+          <NavigationProperty Name="accountt" Relationship="Self.FK_connect_accountt" FromRole="connect" ToRole="accountt" />
+          <NavigationProperty Name="sach" Relationship="Self.FK_connect_sach" FromRole="connect" ToRole="sach" />
+        </EntityType>
+        <EntityType Name="docgia">
+          <Key>
+            <PropertyRef Name="madocgia" />
+          </Key>
+          <Property Name="madocgia" Type="Int32" Nullable="false" />
+          <Property Name="hoten" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ngaysinh" Type="DateTime" Precision="0" />
+          <Property Name="diachi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="gioitinh" Type="Boolean" />
+          <Property Name="sdt" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ID_User" Type="Int32" />
+          <NavigationProperty Name="accountt" Relationship="Self.FK_docgia_accountt" FromRole="docgia" ToRole="accountt" />
+        </EntityType>
+        <EntityType Name="giohang">
+          <Key>
+            <PropertyRef Name="magiohang" />
+          </Key>
+          <Property Name="magiohang" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="masach" Type="Int32" />
+          <Property Name="ID_User" Type="Int32" />
+        </EntityType>
+        <EntityType Name="nhanviennhasach">
+          <Key>
+            <PropertyRef Name="manhanvien" />
+          </Key>
+          <Property Name="manhanvien" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="tennhanvien" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="diachi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="sdt" Type="String" MaxLength="12" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="gioitinh" Type="Boolean" />
+          <Property Name="ID_User" Type="Int32" />
+          <NavigationProperty Name="accountt" Relationship="Self.FK_nhanviennhasach_accountt" FromRole="nhanviennhasach" ToRole="accountt" />
+        </EntityType>
+        <EntityType Name="nxb">
+          <Key>
+            <PropertyRef Name="manxb" />
+          </Key>
+          <Property Name="manxb" Type="Int32" Nullable="false" />
+          <Property Name="tennxb" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="saches" Relationship="Self.FK_sach_nxb" FromRole="nxb" ToRole="sach" />
+        </EntityType>
+        <EntityType Name="Position">
+          <Key>
+            <PropertyRef Name="ID_Position" />
+          </Key>
+          <Property Name="ID_Position" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="accountts" Relationship="Self.FK_accountt_Position" FromRole="Position" ToRole="accountt" />
+        </EntityType>
+        <EntityType Name="sach">
+          <Key>
+            <PropertyRef Name="masach" />
+          </Key>
+          <Property Name="masach" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="tensach" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="namxb" Type="Int32" Nullable="false" />
+          <Property Name="manxb" Type="Int32" Nullable="false" />
+          <Property Name="matheloai" Type="Int32" Nullable="false" />
+          <Property Name="matacgia" Type="Int32" Nullable="false" />
+          <Property Name="soluong" Type="Int32" Nullable="false" />
+          <Property Name="ghichu" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="khusach" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="giatien" Type="Int32" Nullable="false" />
+          <Property Name="dataanh" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+          <NavigationProperty Name="connects" Relationship="Self.FK_connect_sach" FromRole="sach" ToRole="connect" />
+          <NavigationProperty Name="nxb" Relationship="Self.FK_sach_nxb" FromRole="sach" ToRole="nxb" />
+          <NavigationProperty Name="tacgia" Relationship="Self.FK_sach_tacgia" FromRole="sach" ToRole="tacgia" />
+          <NavigationProperty Name="theloai" Relationship="Self.FK_sach_theloai" FromRole="sach" ToRole="theloai" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="tacgia">
+          <Key>
+            <PropertyRef Name="matacgia" />
+          </Key>
+          <Property Name="matacgia" Type="Int32" Nullable="false" />
+          <Property Name="tentacgia" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="saches" Relationship="Self.FK_sach_tacgia" FromRole="tacgia" ToRole="sach" />
+        </EntityType>
+        <EntityType Name="theloai">
+          <Key>
+            <PropertyRef Name="matheloai" />
+          </Key>
+          <Property Name="matheloai" Type="Int32" Nullable="false" />
+          <Property Name="tentheloai" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="saches" Relationship="Self.FK_sach_theloai" FromRole="theloai" ToRole="sach" />
+        </EntityType>
+        <Association Name="FK_accountt_Position">
+          <End Role="Position" Type="Self.Position" Multiplicity="0..1" />
+          <End Role="accountt" Type="Self.accountt" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Position">
+              <PropertyRef Name="ID_Position" />
+            </Principal>
+            <Dependent Role="accountt">
+              <PropertyRef Name="ID_Position" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_connect_accountt">
+          <End Role="accountt" Type="Self.accountt" Multiplicity="0..1" />
+          <End Role="connect" Type="Self.connect" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="accountt">
+              <PropertyRef Name="ID_User" />
+            </Principal>
+            <Dependent Role="connect">
+              <PropertyRef Name="ID_User" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_docgia_accountt">
+          <End Role="accountt" Type="Self.accountt" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="docgia" Type="Self.docgia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="accountt">
+              <PropertyRef Name="ID_User" />
+            </Principal>
+            <Dependent Role="docgia">
+              <PropertyRef Name="ID_User" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_nhanviennhasach_accountt">
+          <End Role="accountt" Type="Self.accountt" Multiplicity="0..1" />
+          <End Role="nhanviennhasach" Type="Self.nhanviennhasach" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="accountt">
+              <PropertyRef Name="ID_User" />
+            </Principal>
+            <Dependent Role="nhanviennhasach">
+              <PropertyRef Name="ID_User" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_connect_sach">
+          <End Role="sach" Type="Self.sach" Multiplicity="0..1" />
+          <End Role="connect" Type="Self.connect" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sach">
+              <PropertyRef Name="masach" />
+            </Principal>
+            <Dependent Role="connect">
+              <PropertyRef Name="masach" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_sach_nxb">
+          <End Role="nxb" Type="Self.nxb" Multiplicity="1" />
+          <End Role="sach" Type="Self.sach" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="nxb">
+              <PropertyRef Name="manxb" />
+            </Principal>
+            <Dependent Role="sach">
+              <PropertyRef Name="manxb" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_sach_tacgia">
+          <End Role="tacgia" Type="Self.tacgia" Multiplicity="1" />
+          <End Role="sach" Type="Self.sach" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tacgia">
+              <PropertyRef Name="matacgia" />
+            </Principal>
+            <Dependent Role="sach">
+              <PropertyRef Name="matacgia" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_sach_theloai">
+          <End Role="theloai" Type="Self.theloai" Multiplicity="1" />
+          <End Role="sach" Type="Self.sach" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="theloai">
+              <PropertyRef Name="matheloai" />
+            </Principal>
+            <Dependent Role="sach">
+              <PropertyRef Name="matheloai" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="QLNS" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="accountts" EntityType="Self.accountt" />
+          <EntitySet Name="adminS" EntityType="Self.admin" />
+          <EntitySet Name="connects" EntityType="Self.connect" />
+          <EntitySet Name="docgias" EntityType="Self.docgia" />
+          <EntitySet Name="giohangs" EntityType="Self.giohang" />
+          <EntitySet Name="nhanviennhasaches" EntityType="Self.nhanviennhasach" />
+          <EntitySet Name="nxbs" EntityType="Self.nxb" />
+          <EntitySet Name="Positions" EntityType="Self.Position" />
+          <EntitySet Name="saches" EntityType="Self.sach" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+          <EntitySet Name="tacgias" EntityType="Self.tacgia" />
+          <EntitySet Name="theloais" EntityType="Self.theloai" />
+          <AssociationSet Name="FK_accountt_Position" Association="Self.FK_accountt_Position">
+            <End Role="Position" EntitySet="Positions" />
+            <End Role="accountt" EntitySet="accountts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_connect_accountt" Association="Self.FK_connect_accountt">
+            <End Role="accountt" EntitySet="accountts" />
+            <End Role="connect" EntitySet="connects" />
+          </AssociationSet>
+          <AssociationSet Name="FK_docgia_accountt" Association="Self.FK_docgia_accountt">
+            <End Role="accountt" EntitySet="accountts" />
+            <End Role="docgia" EntitySet="docgias" />
+          </AssociationSet>
+          <AssociationSet Name="FK_nhanviennhasach_accountt" Association="Self.FK_nhanviennhasach_accountt">
+            <End Role="accountt" EntitySet="accountts" />
+            <End Role="nhanviennhasach" EntitySet="nhanviennhasaches" />
+          </AssociationSet>
+          <AssociationSet Name="FK_connect_sach" Association="Self.FK_connect_sach">
+            <End Role="sach" EntitySet="saches" />
+            <End Role="connect" EntitySet="connects" />
+          </AssociationSet>
+          <AssociationSet Name="FK_sach_nxb" Association="Self.FK_sach_nxb">
+            <End Role="nxb" EntitySet="nxbs" />
+            <End Role="sach" EntitySet="saches" />
+          </AssociationSet>
+          <AssociationSet Name="FK_sach_tacgia" Association="Self.FK_sach_tacgia">
+            <End Role="tacgia" EntitySet="tacgias" />
+            <End Role="sach" EntitySet="saches" />
+          </AssociationSet>
+          <AssociationSet Name="FK_sach_theloai" Association="Self.FK_sach_theloai">
+            <End Role="theloai" EntitySet="theloais" />
+            <End Role="sach" EntitySet="saches" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="PBL03ModelStoreContainer" CdmEntityContainer="QLNS">
+          <EntitySetMapping Name="accountts">
+            <EntityTypeMapping TypeName="PBL03Model.accountt">
+              <MappingFragment StoreEntitySet="accountt">
+                <ScalarProperty Name="ID_User" ColumnName="ID_User" />
+                <ScalarProperty Name="TaiKhoan" ColumnName="TaiKhoan" />
+                <ScalarProperty Name="MatKhau" ColumnName="MatKhau" />
+                <ScalarProperty Name="Gmail" ColumnName="Gmail" />
+                <ScalarProperty Name="ID_Position" ColumnName="ID_Position" />
+                <ScalarProperty Name="Salt" ColumnName="Salt" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="adminS">
+            <EntityTypeMapping TypeName="PBL03Model.admin">
+              <MappingFragment StoreEntitySet="adminS">
+                <ScalarProperty Name="maadmin" ColumnName="maadmin" />
+                <ScalarProperty Name="ID_Users" ColumnName="ID_Users" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="connects">
+            <EntityTypeMapping TypeName="PBL03Model.connect">
+              <MappingFragment StoreEntitySet="connect">
+                <ScalarProperty Name="ID_connect" ColumnName="ID_connect" />
+                <ScalarProperty Name="masach" ColumnName="masach" />
+                <ScalarProperty Name="madocgia" ColumnName="madocgia" />
+                <ScalarProperty Name="manhanvien" ColumnName="manhanvien" />
+                <ScalarProperty Name="thoigiangiaodich" ColumnName="thoigiangiaodich" />
+                <ScalarProperty Name="ID_User" ColumnName="ID_User" />
+                <ScalarProperty Name="soluongmua" ColumnName="soluongmua" />
+                <ScalarProperty Name="tongtien" ColumnName="tongtien" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="docgias">
+            <EntityTypeMapping TypeName="PBL03Model.docgia">
+              <MappingFragment StoreEntitySet="docgia">
+                <ScalarProperty Name="madocgia" ColumnName="madocgia" />
+                <ScalarProperty Name="hoten" ColumnName="hoten" />
+                <ScalarProperty Name="ngaysinh" ColumnName="ngaysinh" />
+                <ScalarProperty Name="diachi" ColumnName="diachi" />
+                <ScalarProperty Name="gioitinh" ColumnName="gioitinh" />
+                <ScalarProperty Name="sdt" ColumnName="sdt" />
+                <ScalarProperty Name="ID_User" ColumnName="ID_User" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="giohangs">
+            <EntityTypeMapping TypeName="PBL03Model.giohang">
+              <MappingFragment StoreEntitySet="giohang">
+                <ScalarProperty Name="magiohang" ColumnName="magiohang" />
+                <ScalarProperty Name="masach" ColumnName="masach" />
+                <ScalarProperty Name="ID_User" ColumnName="ID_User" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="nhanviennhasaches">
+            <EntityTypeMapping TypeName="PBL03Model.nhanviennhasach">
+              <MappingFragment StoreEntitySet="nhanviennhasach">
+                <ScalarProperty Name="manhanvien" ColumnName="manhanvien" />
+                <ScalarProperty Name="tennhanvien" ColumnName="tennhanvien" />
+                <ScalarProperty Name="diachi" ColumnName="diachi" />
+                <ScalarProperty Name="sdt" ColumnName="sdt" />
+                <ScalarProperty Name="gioitinh" ColumnName="gioitinh" />
+                <ScalarProperty Name="ID_User" ColumnName="ID_User" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="nxbs">
+            <EntityTypeMapping TypeName="PBL03Model.nxb">
+              <MappingFragment StoreEntitySet="nxb">
+                <ScalarProperty Name="manxb" ColumnName="manxb" />
+                <ScalarProperty Name="tennxb" ColumnName="tennxb" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Positions">
+            <EntityTypeMapping TypeName="PBL03Model.Position">
+              <MappingFragment StoreEntitySet="Position">
+                <ScalarProperty Name="ID_Position" ColumnName="ID_Position" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="saches">
+            <EntityTypeMapping TypeName="PBL03Model.sach">
+              <MappingFragment StoreEntitySet="sach">
+                <ScalarProperty Name="masach" ColumnName="masach" />
+                <ScalarProperty Name="tensach" ColumnName="tensach" />
+                <ScalarProperty Name="namxb" ColumnName="namxb" />
+                <ScalarProperty Name="manxb" ColumnName="manxb" />
+                <ScalarProperty Name="matheloai" ColumnName="matheloai" />
+                <ScalarProperty Name="matacgia" ColumnName="matacgia" />
+                <ScalarProperty Name="soluong" ColumnName="soluong" />
+                <ScalarProperty Name="ghichu" ColumnName="ghichu" />
+                <ScalarProperty Name="khusach" ColumnName="khusach" />
+                <ScalarProperty Name="giatien" ColumnName="giatien" />
+                <ScalarProperty Name="dataanh" ColumnName="dataanh" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="PBL03Model.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tacgias">
+            <EntityTypeMapping TypeName="PBL03Model.tacgia">
+              <MappingFragment StoreEntitySet="tacgia">
+                <ScalarProperty Name="matacgia" ColumnName="matacgia" />
+                <ScalarProperty Name="tentacgia" ColumnName="tentacgia" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="theloais">
+            <EntityTypeMapping TypeName="PBL03Model.theloai">
+              <MappingFragment StoreEntitySet="theloai">
+                <ScalarProperty Name="matheloai" ColumnName="matheloai" />
+                <ScalarProperty Name="tentheloai" ColumnName="tentheloai" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
