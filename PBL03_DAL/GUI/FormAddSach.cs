@@ -52,7 +52,6 @@ namespace PBL03_DAL
         }
         public void GetcbbTG()
         {
-            //cbbTG.Items.AddRange(BLL_QLDG.Instance.Getcbbtacgia().ToArray());
             cbbTG.Items.AddRange(BLL_QLSACH.Instance.GetcbbTG().ToArray());
         }
 
@@ -73,9 +72,10 @@ namespace PBL03_DAL
 
         private void btnokaddS_Click(object sender, EventArgs e)
         {
+
             Image pimg = PictureBoxaddS.Image;
             ImageConverter Converter = new ImageConverter();
-            var ImageConver = Converter.ConvertTo(pimg, typeof(byte[]));
+            var ImageConver = Converter.ConvertTo(pimg, typeof(byte[]));//object contains byte array,save in ImageConver
             sach s = new sach
             {
                 tensach = txtaddtenS.Text,
@@ -90,55 +90,10 @@ namespace PBL03_DAL
                 dataanh = (byte[])ImageConver
             };
             BLL_QLSACH.Instance.addsach(s);
-            this.Dispose();
+            MessageBox.Show("Sách đã được thêm thành công !");
 
         }
     }
 }
 
-        //string tentl = cbbtl.text;
-        //int matl = qlns.theloais.where(p => p.tentheloai == tentl).select(p => p.matheloai).firstordefault();
-
-        //string tennxbget = cbbnxb.text;
-        //int manxb = qlns.nxbs.where(p => p.tennxb == tennxbget).select(p => p.manxb).firstordefault();
-
-
-        //string tentg = cbbtg.text;
-        //int matg = qlns.tacgias.where(p => p.tentacgia == tentg).select(p => p.matacgia).firstordefault();
-
-
-        //try
-        //{
-        //    Image pimg = PictureBoxaddS.Image;
-        //    ImageConverter Converter = new ImageConverter();
-        //    var ImageConver = Converter.ConvertTo(pimg, typeof(byte[]));
-
-        //    s.tensach = txtaddtenS.Text;
-        //    s.namxb = Convert.ToInt32(txtaddnamxbS.Text);
-        //    s.manxb = maNXB;
-        //    s.matheloai = matl;
-        //    s.matacgia = matg;
-        //    s.soluong = Convert.ToInt32(txtaddsoluongS.Text);
-        //    s.ghichu = txtaddghichuS.Text;
-        //    s.khusach = txtKhusach.Text;
-        //    s.giatien = Convert.ToInt32(txtgiatienS.Text);
-        //    s.dataanh = (byte[])ImageConver;
-
-
-        //    qlns.saches.Add(s);
-        //    qlns.SaveChanges();
-        //    MessageBox.Show("Thêm sách thành công!");
-        //}
-        //catch (Exception ex)
-        //{
-        //    MessageBox.Show(ex.ToString());
-        //}
- //   }
-
-        //private void FormAddSach_Load(object sender, EventArgs e)
-        //{
-            
-        //}
-    
-
-
+       

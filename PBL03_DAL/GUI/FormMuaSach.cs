@@ -29,25 +29,18 @@ namespace PBL03_DAL
             string TenNhanVienChon = cbbNVmua.SelectedItem.ToString();
             using (QLNS qlns = new QLNS())
             {
-                var getMaNhanVien = qlns.nhanviennhasaches.Where(p => p.tennhanvien == TenNhanVienChon).Select(p => p.manhanvien).FirstOrDefault();//lay ma nhan vien 
-                var Sach = qlns.saches.Where(p => p.tensach == currentNS).Select(p => new { p.masach,p.manxb, p.matacgia, p.matheloai, p.soluong, p.khusach, p.giatien, p.tensach, p.dataanh }).FirstOrDefault();//lay thong tin sach mua
-                var getIDToUpdate = qlns.connects.Where(p => p.masach == Sach.masach && p.ID_User == currentUserID && p.madocgia != null).Select(p => p.ID_connect).FirstOrDefault();
-                var updateConnect = qlns.connects.FirstOrDefault(p => p.ID_connect == getIDToUpdate);
-
-                var UpdateSach = qlns.saches.FirstOrDefault(p => p.masach == Sach.masach);
-
-                int MaNhanVien = Convert.ToInt32(getMaNhanVien);
-                if (updateConnect != null && UpdateSach != null)
+                try
                 {
-                    updateConnect.manhanvien = MaNhanVien;
-                    updateConnect.soluongmua = soluongmua;
-                    updateConnect.tongtien = soluongmua * Sach.giatien;
-                    UpdateSach.soluong -= soluongmua;
-                    qlns.SaveChanges();
+                    BLL_QLSACH.Instance.UpdateConnectSecond(soluongmua, currentNS, currentUserID, TenNhanVienChon);
+
                 }
-                
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+
+                }
+
             } 
-            MessageBox.Show("Bạn đã mua thành công!");
 
 
         }
@@ -58,24 +51,32 @@ namespace PBL03_DAL
 
         private void FormMuaSach_Load(object sender, EventArgs e)
         {
-            using (QLNS qlns = new QLNS())
-            {
+           
                 string currentNS = CurrentNameSach.currentNameSach;
-                var Sach = qlns.saches.Where(p => p.tensach == currentNS).Select(p => new { p.manxb, p.matacgia, p.matheloai, p.soluong, p.khusach, p.giatien, p.tensach, p.dataanh }).FirstOrDefault();
-                var getNXBfromMa = qlns.nxbs.Where(p => p.manxb == Sach.manxb).Select(p => p.tennxb).FirstOrDefault();
-                var getTLfromMa = qlns.theloais.Where(p => p.matheloai == Sach.matheloai).Select(p => p.tentheloai).FirstOrDefault();
-                var getTGfromMa = qlns.tacgias.Where(p => p.matacgia == Sach.manxb).Select(p => p.tentacgia).FirstOrDefault();
+                try
+                {
 
-                lbTLmua.Text = getTLfromMa.ToString();
-                lbTGmua.Text = getTGfromMa.ToString();
-                lbNXBmua.Text = getNXBfromMa.ToString();
-                lbKSmua.Text = Sach.khusach;
-                lbTienmua.Text = Sach.giatien.ToString();
-                ptbMua.Image = Image.FromStream(new MemoryStream(Sach.dataanh));
-                lbTSmua.Text = Sach.tensach;
+                LoadSachMua loadSachMua = BLL_QLSACH.Instance.GetTTSachMua(currentNS);
+
+                lbTLmua.Text = loadSachMua.TenTheLoai;
+                lbTGmua.Text = loadSachMua.TenTacGia;
+                lbNXBmua.Text = loadSachMua.TenNXB;
+                lbKSmua.Text = loadSachMua.KhuSach;
+                lbTienmua.Text = loadSachMua.GiaTien.ToString();
+                ptbMua.Image = Image.FromStream(new MemoryStream(loadSachMua.DataAnh));
+                lbTSmua.Text = loadSachMua.TenSachMua;
 
 
             }
+
+            catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
+
+               
+
+            
         }
 
         private void guna2Button2_Click(object sender, EventArgs e)

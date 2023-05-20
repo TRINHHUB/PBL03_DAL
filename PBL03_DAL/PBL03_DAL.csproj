@@ -71,16 +71,74 @@
     <Compile Include="DAL\DAL_QLSACH.cs" />
     <Compile Include="BLL\BLL_QLDG.cs" />
     <Compile Include="DAL\DAL_QLDG.cs" />
+    <Compile Include="DTO\accountt.cs">
+      <DependentUpon>QLNS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DTO\admin.cs">
+      <DependentUpon>QLNS.tt</DependentUpon>
+    </Compile>
     <Compile Include="DTO\cbbNV.cs" />
     <Compile Include="DTO\cbbPosition.cs" />
+    <Compile Include="DTO\connect.cs">
+      <DependentUpon>QLNS.tt</DependentUpon>
+    </Compile>
     <Compile Include="DTO\CurrentNameSach.cs" />
     <Compile Include="DTO\CurrentUser.cs" />
     <Compile Include="DTO\DGSHOW.cs" />
     <Compile Include="DTO\cbbNXB.cs" />
     <Compile Include="DTO\cbbTacGia.cs" />
     <Compile Include="DTO\cbbTheLoai.cs" />
+    <Compile Include="DTO\docgia.cs">
+      <DependentUpon>QLNS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DTO\giohang.cs">
+      <DependentUpon>QLNS.tt</DependentUpon>
+    </Compile>
     <Compile Include="DTO\Lichsugiaodich.cs" />
+    <Compile Include="DTO\LoadSachMua.cs" />
+    <Compile Include="DTO\nhanviennhasach.cs">
+      <DependentUpon>QLNS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DTO\nxb.cs">
+      <DependentUpon>QLNS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DTO\Position.cs">
+      <DependentUpon>QLNS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DTO\QLNS.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLNS.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DTO\QLNS.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLNS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DTO\QLNS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLNS.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DTO\sach.cs">
+      <DependentUpon>QLNS.tt</DependentUpon>
+    </Compile>
     <Compile Include="DTO\sachshow.cs" />
+    <Compile Include="DTO\sachshowgoiy.cs" />
+    <Compile Include="DTO\ShowESach.cs" />
+    <Compile Include="DTO\ShowGioHang.cs" />
+    <Compile Include="DTO\ShowGoiYMax.cs" />
+    <Compile Include="DTO\sysdiagram.cs">
+      <DependentUpon>QLNS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DTO\tacgia.cs">
+      <DependentUpon>QLNS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DTO\theloai.cs">
+      <DependentUpon>QLNS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DTO\ThongKeShow.cs" />
+    <Compile Include="DTO\ThongKeShowTheoNgay.cs" />
     <Compile Include="GUI\FormAddDocGia.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,6 +162,12 @@
     </Compile>
     <Compile Include="GUI\FormEditDocGia.Designer.cs">
       <DependentUpon>FormEditDocGia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FormGoiY.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormGoiY.Designer.cs">
+      <DependentUpon>FormGoiY.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\GioHangDocGia.cs">
       <SubType>Form</SubType>
@@ -147,6 +211,12 @@
     <Compile Include="GUI\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\ThongTinDocGia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ThongTinDocGia.Designer.cs">
+      <DependentUpon>ThongTinDocGia.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="GUI\QLDocGia.cs">
@@ -174,12 +244,6 @@
     <Compile Include="GUI\SignUp.Designer.cs">
       <DependentUpon>SignUp.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\AddImages.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\AddImages.Designer.cs">
-      <DependentUpon>AddImages.cs</DependentUpon>
-    </Compile>
     <Compile Include="GUI\ThongTinSach.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -198,6 +262,12 @@
     <EmbeddedResource Include="GUI\FormEditDocGia.resx">
       <DependentUpon>FormEditDocGia.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormGoiY.resx">
+      <DependentUpon>FormGoiY.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormThongKe.resx">
+      <DependentUpon>FormThongKe.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\GioHangDocGia.resx">
       <DependentUpon>GioHangDocGia.cs</DependentUpon>
     </EmbeddedResource>
@@ -212,6 +282,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ThongTinDocGia.resx">
+      <DependentUpon>ThongTinDocGia.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -235,12 +308,16 @@
     <EmbeddedResource Include="GUI\SignUp.resx">
       <DependentUpon>SignUp.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\AddImages.resx">
-      <DependentUpon>AddImages.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="GUI\ThongTinSach.resx">
       <DependentUpon>ThongTinSach.cs</DependentUpon>
     </EmbeddedResource>
+    <EntityDeploy Include="DTO\QLNS.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>QLNS.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="DTO\QLNS.edmx.diagram">
+      <DependentUpon>QLNS.edmx</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -339,6 +416,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-collaborator-female-60.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DTO\QLNS.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>QLNS.edmx</DependentUpon>
+      <LastGenOutput>QLNS.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="DTO\QLNS.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>QLNS.edmx</DependentUpon>
+      <LastGenOutput>QLNS.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

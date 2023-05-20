@@ -1,4 +1,5 @@
-﻿using PBL03_DAL.DTO;
+﻿using PBL03_DAL.BLL;
+using PBL03_DAL.DTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -35,28 +36,17 @@ namespace PBL03_DAL
             {
                 try
                 {
-                    using (QLNS qlns = new QLNS())
-                    {
+                    
                         DateTime dt = dtpDoanhThu.Value;
                         DateTime dt2 = dtp2DoanhThu.Value;
+                        List<ThongKeShowTheoNgay> list = new List<ThongKeShowTheoNgay>();
+                        list = BLL_QLSACH.Instance.getThongKeTheoNgay(dt, dt2);
 
-                        var thongKe = qlns.connects
-                            .Where(p => p.thoigiangiaodich >= dt && p.thoigiangiaodich <= dt2)
-                            .Where(p => p.madocgia != null)
-                            .Select(p => new
-                            {
-                                TenNhanVien = qlns.nhanviennhasaches.Where(n => n.manhanvien == p.manhanvien).Select(n => n.tennhanvien).FirstOrDefault(),
-                                TenDocGia = qlns.docgias.Where(d => d.madocgia == p.madocgia).Select(d => d.hoten).FirstOrDefault(),
-                                TenSach = qlns.saches.Where(s => s.masach == p.masach).Select(s => s.tensach).FirstOrDefault(),
-                                ThoiGianGiaoDich = p.thoigiangiaodich,
-                                SoLuongMua = p.soluongmua,
-                                TongTien = p.tongtien,
-                            }).ToList();
-                        if (thongKe != null)
+                        if (list != null)
                         {
-                            dgrDoanhThu.DataSource = thongKe;
+                            dgrDoanhThu.DataSource = list;
                             int tongtien = 0;
-                            foreach (var i in thongKe)
+                            foreach (var i in list)
                             {
                                 tongtien += (int)i.TongTien;
                             }
@@ -66,7 +56,7 @@ namespace PBL03_DAL
                         {
                             MessageBox.Show("Không có giao dịch trong thời gian này");
                         }
-                    }
+                    
 
                 }
                 catch (Exception ex)
@@ -76,37 +66,28 @@ namespace PBL03_DAL
             }
             else
             {
-                using (var qlns = new QLNS())
+                try
                 {
-                    var bestSellingBooks = qlns.connects
-                    .GroupBy(c => c.masach)
-                    .Select(g => new {
-                        MaSach = g.Key,
-                        TongSoLuongMua = g.Sum(c => c.soluongmua),
-                        Tongtien = g.Sum(c => c.tongtien),
-
-                    })
-                    .OrderByDescending(b => b.TongSoLuongMua)
-                    .ToList();                                                                  // toán tử null coalescing ??
-                    int maxSoLuongMua = bestSellingBooks.FirstOrDefault()?.TongSoLuongMua ?? 0; // ? kiểm tra đối tượng trước có null hay không,nếu null trả  về null tránh lỗi NullReferenceExcpetion
-                    var booksWithMaxSoLuongMua = bestSellingBooks.Where(b => b.TongSoLuongMua == maxSoLuongMua);
-
-                    var getTenSachFromMa = from c in booksWithMaxSoLuongMua
-                                           join s in qlns.saches on c.MaSach equals s.masach
-                                           select new { TenSach = s.tensach, tongSoLuongMua = c.TongSoLuongMua, tongTien = c.Tongtien };
-
-
-                    if (getTenSachFromMa != null)
+                    int tongtienBestSellingBooks = 0;
+                    List<ThongKeShow> list = new List<ThongKeShow>();
+                    list = BLL_QLSACH.Instance.getThongKeMax();
+                    foreach (ThongKeShow i in list)
                     {
-                        dgrDoanhThu.DataSource = getTenSachFromMa.ToList(); ;
-                        int tongtienBestSellingBooks = 0;
-                        foreach (var i in booksWithMaxSoLuongMua)
-                        {
-                            tongtienBestSellingBooks += (int)i.Tongtien;
-                        }
-                        lbDoanhThu.Text = tongtienBestSellingBooks.ToString();
+                        tongtienBestSellingBooks += (int)i.TongTien;
+                        
+
                     }
 
+                    if (list != null)
+                    {
+                        dgrDoanhThu.DataSource = list;
+                        lbDoanhThu.Text = tongtienBestSellingBooks.ToString();
+
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi" + ex.ToString());
                 }
 
             }
@@ -116,6 +97,13 @@ namespace PBL03_DAL
         private void btnxemDoanhThu_Click(object sender, EventArgs e)
         {
             ShowThongKe();
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            MainForm mf = new MainForm();
+            this.Close();
+            mf.Show();
         }
     }
 

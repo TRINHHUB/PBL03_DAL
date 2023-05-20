@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PBL03_DAL.GUI;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -43,6 +44,20 @@ namespace PBL03_DAL
             FormLichSuGiaoDich lsgd = new FormLichSuGiaoDich();
             this.Hide();
             lsgd.Show();
+        }
+
+        private void btnGoiY_Click(object sender, EventArgs e)
+        {
+            FormGoiY fgy = new FormGoiY();
+            this.Hide();
+            fgy.Show();
+        }
+
+        private void btnThongTinTaiKhoan_Click(object sender, EventArgs e)
+        {
+            ThongTinDocGia ttdg = new ThongTinDocGia();
+            this.Hide();
+            ttdg.Show();
         }
     }
 }

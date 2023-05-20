@@ -1,4 +1,5 @@
 ﻿using Guna.UI2.WinForms;
+using PBL03_DAL.BLL;
 using PBL03_DAL.DTO;
 using System;
 using System.Collections.Generic;
@@ -35,25 +36,12 @@ namespace PBL03_DAL
         }
         private void LoadUserControl()
         {
-            QLNS qlns = new QLNS();
             // load anh
             int currentUserID = CurrentUser.ID_User;
-            var gioHangSach = qlns.connects
-                .Join(
-                qlns.saches,
-                connect => connect.masach,
-                sach => sach.masach,
-                (connect, sach) => new
-                {
-                    connect.ID_User,
-                    connect.masach,
-                    connect.madocgia,
-                    sach.tensach,
-                    sach.dataanh,
-                    sach.giatien
-                });
-            var image = gioHangSach.Where(p => p.ID_User == currentUserID && p.madocgia == null ).Select(p => p.dataanh).ToArray();
-            var nameBook = gioHangSach.Where(p => p.ID_User == currentUserID && p.madocgia == null ).Select(p => p.tensach).ToArray();
+            List<ShowGioHang> list = new List<ShowGioHang>();
+            list =  BLL_QLSACH.Instance.dgvGioHang();
+            var image = list.Where(p => p.ID_User == currentUserID && p.MaDocGia == null ).Select(p => p.DataAnh).ToArray();
+            var nameBook = list.Where(p => p.ID_User == currentUserID && p.MaDocGia == null ).Select(p => p.TenSach).ToArray();
 
 
 
@@ -143,43 +131,20 @@ namespace PBL03_DAL
             if (result == DialogResult.Yes)
             {
                 Guna2Button btn = sender as Guna2Button;
-                QLNS qlns = new QLNS();
                 string lbContainNameSachMua = ((Guna2Button)sender).Name;
                 int currentUserID = CurrentUser.ID_User;
                 CurrentNameSach.currentNameSach = lbContainNameSachMua;
 
-                var thanhtoan = qlns.saches.Join(
-                    qlns.connects,
-                    s => s.masach,
-                    con => con.masach,
-                    (s, con) => new
-                    {
-                        s.tensach,
-                        s.masach,
-                        s.soluong,
-                        con.madocgia,
-                        con.ID_User
-                    }
-                    );
-                var SelectMaSachToThanhToan = thanhtoan.Where(p => p.tensach == lbContainNameSachMua).Select(p => p.masach).FirstOrDefault();
-                var getMadocgiaThanhToan = qlns.docgias.Where(p => p.ID_User == currentUserID).Select(p => p.madocgia).FirstOrDefault();
-
-
-                if (true)
+                try
                 {
-                    connect c = new connect();
-                    c.ID_User = currentUserID;
-                    c.masach = SelectMaSachToThanhToan;
-                    c.madocgia = getMadocgiaThanhToan;
-                    c.thoigiangiaodich = DateTime.Now;
-
-                    qlns.connects.Add(c);
-                    qlns.SaveChanges();
+                    BLL_QLSACH.Instance.MuaSachFromGioHang(lbContainNameSachMua, currentUserID);
 
                 }
-
-                FormMuaSach fms = new FormMuaSach();
-                fms.Show();
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
+                
             }
         }
         private void btn1_Click(object sender, EventArgs e)
@@ -190,33 +155,21 @@ namespace PBL03_DAL
             if (result == DialogResult.Yes)
             {
                 int currentUserID = CurrentUser.ID_User;
+                string lbContainNameSach = ((Guna2Button)sender).Name;
                 Guna2Button btn1 = sender as Guna2Button;
 
-                QLNS qlns = new QLNS();
-                var jointoDel = qlns.connects
-                .Join(
-                qlns.saches,
-                connect => connect.masach,
-                sach => sach.masach,
-                (connect, sach) => new
+                try
                 {
-                    connect.ID_connect,
-                    connect.masach,
-                    connect.ID_User,
-                    sach.tensach,
-                });
-                //Lấy tên sách từ tên nút được chọn
-                string lbContainNameSach = ((Guna2Button)sender).Name;
-                var SelectMaSachToDel = jointoDel.Where(p => p.tensach == lbContainNameSach).Select(p => p.masach).FirstOrDefault();
-                var giohangToDelete = qlns.connects.Where(con => con.masach == SelectMaSachToDel && con.ID_User == currentUserID).FirstOrDefault();
+                    BLL_QLSACH.Instance.DeleteGioHang(lbContainNameSach,currentUserID);
+                    grbGioHang.Controls.Clear();
+                    LoadUserControl();
 
-                if (giohangToDelete != null)
-                {
-                    qlns.connects.Remove(giohangToDelete);
-                    qlns.SaveChanges();
                 }
-                grbGioHang.Controls.Clear();
-                LoadUserControl();
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
+                
             }
         }
     }

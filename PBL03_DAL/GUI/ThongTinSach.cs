@@ -16,6 +16,8 @@ using System.Windows.Documents;
 using System.Security.Cryptography.Xml;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 using PBL03_DAL.DTO;
+using System.Net.NetworkInformation;
+using PBL03_DAL.BLL;
 
 namespace PBL03_DAL
 {
@@ -28,14 +30,16 @@ namespace PBL03_DAL
             this.MouseDown += new MouseEventHandler(guna2GroupBox1_MouseDown);
             this.MouseMove += new MouseEventHandler(guna2GroupBox1_MouseMove);
         }
+        // truyền vào image 1 đối tượng stream(dữ liệu luồng),
+        //image dạng byte,nên sử dụng lớp MemmoryStream để chuyển đổi
 
         private void LoadUserControl()
         {
-            QLNS qlns = new QLNS();
-            sach s = new sach();
-            // load anh
-            var image = qlns.saches.Select(p => p.dataanh).ToArray();
-            var tensach = qlns.saches.Select(p => p.tensach).ToArray();
+            List<ShowESach> list = new List<ShowESach>();
+            list = BLL_QLSACH.Instance.ShowESach();
+            var image = list.Select(p => p.DataAnh).ToArray();
+            var tensach = list.Select(p => p.TenSach).ToArray();
+            
 
             int x = 20, y = 71;
             int count = 0;
@@ -130,43 +134,23 @@ namespace PBL03_DAL
             if (result == DialogResult.Yes)
             {
                 Guna2Button btn = sender as Guna2Button;
-                QLNS qlns = new QLNS();
                 string lbContainNameSachMua = ((Guna2Button)sender).Name;
                 int currentUserID = CurrentUser.ID_User;
                 CurrentNameSach.currentNameSach = lbContainNameSachMua;
 
-                var thanhtoan = qlns.saches.Join(
-                    qlns.connects,
-                    s => s.masach,
-                    con => con.masach,
-                    (s, con) => new
-                    {
-                        s.tensach,
-                        s.masach,
-                        s.soluong,
-                        con.madocgia,
-                        con.ID_User
-                    }
-                    );
-                var SelectMaSachToThanhToan = thanhtoan.Where(p => p.tensach == lbContainNameSachMua).Select(p => p.masach).FirstOrDefault();
-                var getMadocgiaThanhToan = qlns.docgias.Where(p => p.ID_User == currentUserID).Select(p => p.madocgia).FirstOrDefault();
-
-
-                if(true)
+                try
                 {
-                    connect c = new connect();
-                    c.ID_User = currentUserID;
-                    c.masach = SelectMaSachToThanhToan;
-                    c.madocgia = getMadocgiaThanhToan;
-                    c.thoigiangiaodich = DateTime.Now;
 
-                    qlns.connects.Add(c);
-                    qlns.SaveChanges();
+                    BLL_QLSACH.Instance.UpdateHistoryFirst(lbContainNameSachMua, currentUserID);
+                        FormMuaSach fms = new FormMuaSach();
+                        fms.Show();
 
+                    
                 }
-
-                FormMuaSach fms = new FormMuaSach();
-                fms.Show();
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }           
             }
 
 
@@ -186,24 +170,14 @@ namespace PBL03_DAL
                 string lbContainNameSach = ((Guna2Button)sender).Name;
                 int currentUserID = CurrentUser.ID_User;
 
-                var gioHang = qlns.saches.Where(s => s.tensach == lbContainNameSach).Select(p => p.masach).FirstOrDefault();
-                var gioHangcheckUser = qlns.accountts.Where(p => p.ID_User == currentUserID).Select(p => p.ID_User).FirstOrDefault();
-                var checkExistGioHang = qlns.connects.Where(p => p.ID_User == currentUserID && p.madocgia == null).Select(p => p.masach).FirstOrDefault();
-
-                if (gioHang != checkExistGioHang)
+                try
                 {
-                    connect con = new connect();
-                    con.masach = gioHang;
-                    con.ID_User = gioHangcheckUser;
-                    qlns.connects.Add(con);
-                    qlns.SaveChanges();
+                    BLL_QLSACH.Instance.AddGioHang(lbContainNameSach, currentUserID);
 
-                    MessageBox.Show("Sách đã được thêm vào giỏ hàng");
                 }
-
-                else
+                catch (Exception ex)
                 {
-                    MessageBox.Show("Sách này đã có trong giỏ hàng!");
+                    MessageBox.Show(ex.ToString());
                 }
             }
                 

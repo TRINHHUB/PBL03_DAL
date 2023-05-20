@@ -49,19 +49,17 @@
             // 
             this.guna2Panel1.Controls.Add(this.guna2HtmlLabel1);
             this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
-            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(1067, 52);
+            this.guna2Panel1.Size = new System.Drawing.Size(800, 42);
             this.guna2Panel1.TabIndex = 0;
             // 
             // guna2HtmlLabel1
             // 
             this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(437, 9);
-            this.guna2HtmlLabel1.Margin = new System.Windows.Forms.Padding(4);
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(328, 7);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(228, 34);
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(181, 27);
             this.guna2HtmlLabel1.TabIndex = 0;
             this.guna2HtmlLabel1.Text = "LỊCH SỬ GIAO DỊCH";
             this.guna2HtmlLabel1.TextAlignment = System.Drawing.ContentAlignment.TopCenter;
@@ -89,12 +87,11 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvLSGD.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvLSGD.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvLSGD.Location = new System.Drawing.Point(48, 82);
-            this.dgvLSGD.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvLSGD.Location = new System.Drawing.Point(36, 67);
             this.dgvLSGD.Name = "dgvLSGD";
             this.dgvLSGD.RowHeadersVisible = false;
             this.dgvLSGD.RowHeadersWidth = 51;
-            this.dgvLSGD.Size = new System.Drawing.Size(957, 470);
+            this.dgvLSGD.Size = new System.Drawing.Size(718, 382);
             this.dgvLSGD.TabIndex = 1;
             this.dgvLSGD.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvLSGD.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -126,10 +123,9 @@
             this.btnLSGD.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnLSGD.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLSGD.ForeColor = System.Drawing.Color.White;
-            this.btnLSGD.Location = new System.Drawing.Point(532, 23);
-            this.btnLSGD.Margin = new System.Windows.Forms.Padding(4);
+            this.btnLSGD.Location = new System.Drawing.Point(399, 19);
             this.btnLSGD.Name = "btnLSGD";
-            this.btnLSGD.Size = new System.Drawing.Size(240, 53);
+            this.btnLSGD.Size = new System.Drawing.Size(180, 43);
             this.btnLSGD.TabIndex = 2;
             this.btnLSGD.Text = "Xem";
             this.btnLSGD.Click += new System.EventHandler(this.guna2Button1_Click);
@@ -138,7 +134,6 @@
             // 
             this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel2.Location = new System.Drawing.Point(0, 0);
-            this.guna2HtmlLabel2.Margin = new System.Windows.Forms.Padding(4);
             this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
             this.guna2HtmlLabel2.Size = new System.Drawing.Size(3, 2);
             this.guna2HtmlLabel2.TabIndex = 6;
@@ -150,10 +145,9 @@
             this.guna2Panel2.Controls.Add(this.lbLSGD);
             this.guna2Panel2.Controls.Add(this.btnLSGD);
             this.guna2Panel2.Controls.Add(this.guna2HtmlLabel3);
-            this.guna2Panel2.Location = new System.Drawing.Point(0, 609);
-            this.guna2Panel2.Margin = new System.Windows.Forms.Padding(4);
+            this.guna2Panel2.Location = new System.Drawing.Point(0, 495);
             this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Size = new System.Drawing.Size(1067, 96);
+            this.guna2Panel2.Size = new System.Drawing.Size(800, 78);
             this.guna2Panel2.TabIndex = 7;
             // 
             // guna2Button1
@@ -164,10 +158,9 @@
             this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.Location = new System.Drawing.Point(810, 23);
-            this.guna2Button1.Margin = new System.Windows.Forms.Padding(4);
+            this.guna2Button1.Location = new System.Drawing.Point(608, 19);
             this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Size = new System.Drawing.Size(240, 53);
+            this.guna2Button1.Size = new System.Drawing.Size(180, 43);
             this.guna2Button1.TabIndex = 3;
             this.guna2Button1.Text = "THOÁT";
             this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click_1);
@@ -176,10 +169,9 @@
             // 
             this.lbLSGD.BackColor = System.Drawing.Color.Transparent;
             this.lbLSGD.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbLSGD.Location = new System.Drawing.Point(257, 33);
-            this.lbLSGD.Margin = new System.Windows.Forms.Padding(4);
+            this.lbLSGD.Location = new System.Drawing.Point(209, 27);
             this.lbLSGD.Name = "lbLSGD";
-            this.lbLSGD.Size = new System.Drawing.Size(61, 30);
+            this.lbLSGD.Size = new System.Drawing.Size(49, 23);
             this.lbLSGD.TabIndex = 1;
             this.lbLSGD.Text = "LABLE";
             // 
@@ -187,24 +179,22 @@
             // 
             this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel3.Location = new System.Drawing.Point(17, 33);
-            this.guna2HtmlLabel3.Margin = new System.Windows.Forms.Padding(4);
+            this.guna2HtmlLabel3.Location = new System.Drawing.Point(13, 27);
             this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
-            this.guna2HtmlLabel3.Size = new System.Drawing.Size(144, 30);
+            this.guna2HtmlLabel3.Size = new System.Drawing.Size(114, 23);
             this.guna2HtmlLabel3.TabIndex = 0;
             this.guna2HtmlLabel3.Text = "Số tiền đã chi :";
             this.guna2HtmlLabel3.Click += new System.EventHandler(this.guna2HtmlLabel3_Click);
             // 
             // FormLichSuGiaoDich
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1117, 716);
+            this.ClientSize = new System.Drawing.Size(838, 582);
             this.Controls.Add(this.guna2Panel2);
             this.Controls.Add(this.guna2HtmlLabel2);
             this.Controls.Add(this.dgvLSGD);
             this.Controls.Add(this.guna2Panel1);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormLichSuGiaoDich";
             this.Text = "FormLSGD";
             this.guna2Panel1.ResumeLayout(false);

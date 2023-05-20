@@ -101,6 +101,21 @@ namespace PBL03_DAL.BLL
                 }
                 return dg;
             }
-        } 
+        }
+        public docgia GetdocgiaByidUer(int id)
+        {
+            using (QLNS db = new QLNS())
+            {
+                docgia dg = new docgia();
+                foreach (docgia i in db.docgias)
+                {
+                    if (id == i.ID_User)
+                    {
+                        dg = i;
+                    }
+                }
+                return dg;
+            }
+        }
     }
 }

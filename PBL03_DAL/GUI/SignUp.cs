@@ -96,6 +96,10 @@ namespace PBL03_DAL
 
                 if(cbbSignUp.SelectedIndex == 0)
                 {
+                    ac.ID_Position = 1;
+                }
+                if(cbbSignUp.SelectedIndex == 1)
+                {
                     ac.ID_Position = 3;
                 }
                 else
