@@ -28,6 +28,7 @@ namespace PBL03_DAL.DTO
         public string Gmail { get; set; }
         public Nullable<int> ID_Position { get; set; }
         public string Salt { get; set; }
+        public string MaXacNhan { get; set; }
     
         public virtual Position Position { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

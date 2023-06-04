@@ -26,10 +26,8 @@ namespace PBL03_DAL.DTO
         }
     
         public virtual DbSet<accountt> accountts { get; set; }
-        public virtual DbSet<admin> adminS { get; set; }
         public virtual DbSet<connect> connects { get; set; }
         public virtual DbSet<docgia> docgias { get; set; }
-        public virtual DbSet<giohang> giohangs { get; set; }
         public virtual DbSet<nhanviennhasach> nhanviennhasaches { get; set; }
         public virtual DbSet<nxb> nxbs { get; set; }
         public virtual DbSet<Position> Positions { get; set; }

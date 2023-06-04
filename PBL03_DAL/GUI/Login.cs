@@ -1,5 +1,6 @@
 ﻿using PBL03_DAL.BLL;
 using PBL03_DAL.DTO;
+using PBL03_DAL.GUI;
 using System;
 using System.CodeDom;
 using System.Collections.Generic;
@@ -62,6 +63,12 @@ namespace PBL03_DAL
                         this.Hide();
                         mf.Show();
                     }
+                    else if(data.ID_Position == 2)
+                    {
+                        FormNhanVien fnv = new FormNhanVien();
+                        this.Hide();
+                        fnv.Show();
+                    }
                     else
                     {
                         FormDocGia fgd = new FormDocGia();
@@ -110,6 +117,10 @@ namespace PBL03_DAL
                 byte[] hashedBytes = sha256.ComputeHash(saltedPasswordBytes);
                 return Convert.ToBase64String(hashedBytes);
             }
+        }
+
+        private void labelFogotMK_Click(object sender, EventArgs e)
+        {
         }
     }
 }

@@ -15,13 +15,7 @@
           <Property Name="Gmail" Type="nvarchar" MaxLength="50" />
           <Property Name="ID_Position" Type="int" />
           <Property Name="Salt" Type="nvarchar" MaxLength="50" />
-        </EntityType>
-        <EntityType Name="adminS">
-          <Key>
-            <PropertyRef Name="maadmin" />
-          </Key>
-          <Property Name="maadmin" Type="int" Nullable="false" />
-          <Property Name="ID_Users" Type="int" />
+          <Property Name="MaXacNhan" Type="nchar" MaxLength="10" />
         </EntityType>
         <EntityType Name="connect">
           <Key>
@@ -46,14 +40,6 @@
           <Property Name="diachi" Type="nvarchar" MaxLength="50" />
           <Property Name="gioitinh" Type="bit" />
           <Property Name="sdt" Type="nvarchar" MaxLength="50" />
-          <Property Name="ID_User" Type="int" />
-        </EntityType>
-        <EntityType Name="giohang">
-          <Key>
-            <PropertyRef Name="magiohang" />
-          </Key>
-          <Property Name="magiohang" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="masach" Type="int" />
           <Property Name="ID_User" Type="int" />
         </EntityType>
         <EntityType Name="nhanviennhasach">
@@ -221,10 +207,8 @@
         </Association>
         <EntityContainer Name="PBL03ModelStoreContainer">
           <EntitySet Name="accountt" EntityType="Self.accountt" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="adminS" EntityType="Self.adminS" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="connect" EntityType="Self.connect" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="docgia" EntityType="Self.docgia" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="giohang" EntityType="Self.giohang" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="nhanviennhasach" EntityType="Self.nhanviennhasach" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="nxb" EntityType="Self.nxb" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Position" EntityType="Self.Position" Schema="dbo" store:Type="Tables" />
@@ -280,17 +264,11 @@
           <Property Name="Gmail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="ID_Position" Type="Int32" />
           <Property Name="Salt" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MaXacNhan" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
           <NavigationProperty Name="Position" Relationship="Self.FK_accountt_Position" FromRole="accountt" ToRole="Position" />
           <NavigationProperty Name="connects" Relationship="Self.FK_connect_accountt" FromRole="accountt" ToRole="connect" />
           <NavigationProperty Name="docgias" Relationship="Self.FK_docgia_accountt" FromRole="accountt" ToRole="docgia" />
           <NavigationProperty Name="nhanviennhasaches" Relationship="Self.FK_nhanviennhasach_accountt" FromRole="accountt" ToRole="nhanviennhasach" />
-        </EntityType>
-        <EntityType Name="admin">
-          <Key>
-            <PropertyRef Name="maadmin" />
-          </Key>
-          <Property Name="maadmin" Type="Int32" Nullable="false" />
-          <Property Name="ID_Users" Type="Int32" />
         </EntityType>
         <EntityType Name="connect">
           <Key>
@@ -319,14 +297,6 @@
           <Property Name="sdt" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="ID_User" Type="Int32" />
           <NavigationProperty Name="accountt" Relationship="Self.FK_docgia_accountt" FromRole="docgia" ToRole="accountt" />
-        </EntityType>
-        <EntityType Name="giohang">
-          <Key>
-            <PropertyRef Name="magiohang" />
-          </Key>
-          <Property Name="magiohang" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="masach" Type="Int32" />
-          <Property Name="ID_User" Type="Int32" />
         </EntityType>
         <EntityType Name="nhanviennhasach">
           <Key>
@@ -502,10 +472,8 @@
         </Association>
         <EntityContainer Name="QLNS" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="accountts" EntityType="Self.accountt" />
-          <EntitySet Name="adminS" EntityType="Self.admin" />
           <EntitySet Name="connects" EntityType="Self.connect" />
           <EntitySet Name="docgias" EntityType="Self.docgia" />
-          <EntitySet Name="giohangs" EntityType="Self.giohang" />
           <EntitySet Name="nhanviennhasaches" EntityType="Self.nhanviennhasach" />
           <EntitySet Name="nxbs" EntityType="Self.nxb" />
           <EntitySet Name="Positions" EntityType="Self.Position" />
@@ -561,14 +529,7 @@
                 <ScalarProperty Name="Gmail" ColumnName="Gmail" />
                 <ScalarProperty Name="ID_Position" ColumnName="ID_Position" />
                 <ScalarProperty Name="Salt" ColumnName="Salt" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="adminS">
-            <EntityTypeMapping TypeName="PBL03Model.admin">
-              <MappingFragment StoreEntitySet="adminS">
-                <ScalarProperty Name="maadmin" ColumnName="maadmin" />
-                <ScalarProperty Name="ID_Users" ColumnName="ID_Users" />
+                <ScalarProperty Name="MaXacNhan" ColumnName="MaXacNhan" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -595,15 +556,6 @@
                 <ScalarProperty Name="diachi" ColumnName="diachi" />
                 <ScalarProperty Name="gioitinh" ColumnName="gioitinh" />
                 <ScalarProperty Name="sdt" ColumnName="sdt" />
-                <ScalarProperty Name="ID_User" ColumnName="ID_User" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="giohangs">
-            <EntityTypeMapping TypeName="PBL03Model.giohang">
-              <MappingFragment StoreEntitySet="giohang">
-                <ScalarProperty Name="magiohang" ColumnName="magiohang" />
-                <ScalarProperty Name="masach" ColumnName="masach" />
                 <ScalarProperty Name="ID_User" ColumnName="ID_User" />
               </MappingFragment>
             </EntityTypeMapping>

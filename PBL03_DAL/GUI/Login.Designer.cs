@@ -137,6 +137,7 @@
             this.labelFogotMK.Size = new System.Drawing.Size(94, 13);
             this.labelFogotMK.TabIndex = 5;
             this.labelFogotMK.Text = "Forgot Password";
+            this.labelFogotMK.Click += new System.EventHandler(this.labelFogotMK_Click);
             // 
             // label1
             // 

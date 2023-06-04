@@ -59,5 +59,6 @@ namespace PBL03_DAL
             this.Hide();
             ttdg.Show();
         }
+
     }
 }

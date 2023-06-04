@@ -102,6 +102,21 @@ namespace PBL03_DAL.BLL
                 return dg;
             }
         }
+        public nhanviennhasach GetNhanVienByid(int id)
+        {
+            using (QLNS db = new QLNS())
+            {
+                nhanviennhasach dg = new nhanviennhasach();
+                foreach (nhanviennhasach i in db.nhanviennhasaches)
+                {
+                    if (id == i.ID_User)
+                    {
+                        dg = i;
+                    }
+                }
+                return dg;
+            }
+        }
         public docgia GetdocgiaByidUer(int id)
         {
             using (QLNS db = new QLNS())
