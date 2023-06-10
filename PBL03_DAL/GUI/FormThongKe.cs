@@ -40,7 +40,7 @@ namespace PBL03_DAL
                         DateTime dt = dtpDoanhThu.Value;
                         DateTime dt2 = dtp2DoanhThu.Value;
                         List<ThongKeShowTheoNgay> list = new List<ThongKeShowTheoNgay>();
-                        list = BLL_QLSACH.Instance.getThongKeTheoNgay(dt, dt2);
+                        list = BLL_QLSACH.Instance.getThongKe(dt, dt2);
 
                         if (list != null)
                         {

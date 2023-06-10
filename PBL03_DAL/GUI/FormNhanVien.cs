@@ -19,6 +19,9 @@ namespace PBL03_DAL.GUI
 
         private void btnXemSach_Click(object sender, EventArgs e)
         {
+            ThongKeTrongNgay tktn = new ThongKeTrongNgay();
+            this.Hide();
+            tktn.Show();
         }
 
         private void btnThongTinTaiKhoan_Click(object sender, EventArgs e)

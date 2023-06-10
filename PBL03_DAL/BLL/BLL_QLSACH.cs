@@ -564,13 +564,33 @@ namespace PBL03_DAL.BLL
                 return lig;
             }
         }
-        public List<ThongKeShowTheoNgay> getThongKeTheoNgay(DateTime dt,DateTime dt2)
+        public List<ThongKeShowTheoNgay> getThongKe(DateTime dt,DateTime dt2)
         {
             List<ThongKeShowTheoNgay> list = new List<ThongKeShowTheoNgay>();
             using(QLNS qlns = new QLNS())
             {
                 list = qlns.connects
                             .Where(p => p.thoigiangiaodich >= dt && p.thoigiangiaodich <= dt2)
+                            .Where(p => p.madocgia != null)
+                            .Select(p => new ThongKeShowTheoNgay
+                            {
+                                TenNhanVien = qlns.nhanviennhasaches.Where(n => n.manhanvien == p.manhanvien).Select(n => n.tennhanvien).FirstOrDefault(),
+                                TenDocGia = qlns.docgias.Where(d => d.madocgia == p.madocgia).Select(d => d.hoten).FirstOrDefault(),
+                                TenSach = qlns.saches.Where(s => s.masach == p.masach).Select(s => s.tensach).FirstOrDefault(),
+                                ThoiGianGiaoDich = (DateTime)p.thoigiangiaodich,
+                                SoLuongMua = (int)p.soluongmua,
+                                TongTien = (int)p.tongtien,
+                            }).ToList();
+                return list;
+            }
+        }
+        public List<ThongKeShowTheoNgay> getThongKeTheoNgay(DateTime timestart, DateTime timeNow)
+        {
+            List<ThongKeShowTheoNgay> list = new List<ThongKeShowTheoNgay>();
+            using (QLNS qlns = new QLNS())
+            {
+                list = qlns.connects
+                            .Where(p => p.thoigiangiaodich >= timestart && p.thoigiangiaodich <= timeNow)
                             .Where(p => p.madocgia != null)
                             .Select(p => new ThongKeShowTheoNgay
                             {
